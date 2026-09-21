@@ -1,0 +1,105 @@
+name: Deploy Quartz site to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  # Obsidian vault 側の変更で再デプロイ（vault の main がpushされたら発火）
+  repository_dispatch:
+    types: [vault-updated]
+  workflow_dispatch:
+  # vault リポジトリの最新を定期取得してビルド（変更なし時はスキップ）
+  schedule:
+    - cron: "0 * * * *"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      deploy: ${{ steps.flag.outputs.deploy }}
+    steps:
+      - uses: actions/checkout@v4
+
+      # vault の最新SHAを取得し、デプロイ済みか確認（変更なしならスキップ）
+      - name: Get vault HEAD SHA
+        id: vault
+        run: |
+          sha=$(git ls-remote https://github.com/allusionistwiki/AllusionistWiki_obsidian.git refs/heads/main | cut -f1)
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+
+      - name: Check if this vault SHA was already deployed
+        id: cached
+        uses: actions/cache/restore@v4
+        with:
+          path: .deploy-marker
+          key: deployed-${{ steps.vault.outputs.sha }}
+
+      - name: Set deploy flag
+        id: flag
+        run: |
+          if [ "${{ steps.cached.outputs.cache-hit }}" = "true" ]; then
+            echo "vault unchanged (sha ${{ steps.vault.outputs.sha }}), skipping build"
+            echo "deploy=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "deploy=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Fetch wiki content from Obsidian vault repo
+        if: steps.flag.outputs.deploy == 'true'
+        run: |
+          git clone --depth 1 https://github.com/allusionistwiki/AllusionistWiki_obsidian.git /tmp/vault
+          mkdir -p content
+          cp -r /tmp/vault/wiki/. content/
+
+      - uses: actions/setup-node@v4
+        if: steps.flag.outputs.deploy == 'true'
+        with:
+          node-version: 22
+
+      - name: Install Dependencies
+        if: steps.flag.outputs.deploy == 'true'
+        run: npm ci
+
+      - name: Build Quartz
+        if: steps.flag.outputs.deploy == 'true'
+        run: npx quartz build
+
+      - name: Upload artifact
+        if: steps.flag.outputs.deploy == 'true'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+      # このvault SHAはデプロイ済みと記録（次回以降スキップ用）
+      - name: Write deploy marker
+        if: steps.flag.outputs.deploy == 'true'
+        run: |
+          mkdir -p .deploy-marker
+          echo "deployed" > .deploy-marker/deployed.txt
+
+      - name: Mark vault SHA as deployed
+        if: steps.flag.outputs.deploy == 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: .deploy-marker
+          key: deployed-${{ steps.vault.outputs.sha }}
+
+  deploy:
+    needs: build
+    if: needs.build.outputs.deploy == 'true'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
