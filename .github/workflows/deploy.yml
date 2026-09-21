@@ -78,20 +78,6 @@ jobs:
         with:
           path: public
 
-      # このvault SHAはデプロイ済みと記録（次回以降スキップ用）
-      - name: Write deploy marker
-        if: steps.flag.outputs.deploy == 'true'
-        run: |
-          mkdir -p .deploy-marker
-          echo "deployed" > .deploy-marker/deployed.txt
-
-      - name: Mark vault SHA as deployed
-        if: steps.flag.outputs.deploy == 'true'
-        uses: actions/cache/save@v4
-        with:
-          path: .deploy-marker
-          key: deployed-${{ steps.vault.outputs.sha }}
-
   deploy:
     needs: build
     if: needs.build.outputs.deploy == 'true'
@@ -103,3 +89,21 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      # デプロイ成功後にのみvault SHAを記録（失敗時は次回再試行される）
+      - name: Get vault HEAD SHA
+        run: |
+          sha=$(git ls-remote https://github.com/allusionistwiki/AllusionistWiki_obsidian.git refs/heads/main | cut -f1)
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+        id: vault
+
+      - name: Mark vault SHA as deployed
+        run: |
+          mkdir -p .deploy-marker
+          echo "deployed" > .deploy-marker/deployed.txt
+
+      - name: Save deploy marker
+        uses: actions/cache/save@v4
+        with:
+          path: .deploy-marker
+          key: deployed-${{ steps.vault.outputs.sha }}
