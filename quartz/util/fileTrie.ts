@@ -1,6 +1,19 @@
 import { ContentDetails } from "../plugins/emitters/contentIndex"
 import { FullSlug, joinSegments } from "./path"
 
+// 表示層のフォルダ名マッピング（英語 → 日本語）。
+// 実際の vault ファイル（フォルダ名・ファイル名）は変更せず、表示名のみ差し替える。
+// キーは slug セグメントを "/" で結合したフォルダパス。
+const FOLDER_DISPLAY_NAMES: Record<string, string> = {
+  "allusions": "引喩・暗示",
+  "allusions/Mythology": "神話",
+  "allusions/Mythology/M_External": "実世界の神話",
+  "allusions/Mythology/M_Internal": "作中の神話",
+  "allusions/Literature": "文学",
+  "allusions/Literature/L_External": "実世界の文学",
+  "allusions/Literature/L_Internal": "作中の文学",
+}
+
 interface FileTrieData {
   slug: string
   title: string
@@ -29,8 +42,11 @@ export class FileTrieNode<T extends FileTrieData = ContentDetails> {
 
   get displayName(): string {
     const nonIndexTitle = this.data?.title === "index" ? undefined : this.data?.title
+    // フォルダノードは、FOLDER_DISPLAY_NAMES に登録されていれば日本語表示名を優先する。
+    const folderPath = joinSegments(...this.slugSegments)
+    const folderName = this.isFolder ? FOLDER_DISPLAY_NAMES[folderPath] : undefined
     return (
-      this.displayNameOverride ?? nonIndexTitle ?? this.fileSegmentHint ?? this.slugSegment ?? ""
+      this.displayNameOverride ?? folderName ?? nonIndexTitle ?? this.fileSegmentHint ?? this.slugSegment ?? ""
     )
   }
 
