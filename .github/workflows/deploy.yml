@@ -59,6 +59,11 @@ jobs:
           mkdir -p content
           cp -r /tmp/vault/wiki/. content/
 
+      - name: Generate recent-commits page (GitHub API)
+        if: steps.flag.outputs.deploy == 'true'
+        run: |
+          python3 scripts/fetch_recent_commits.py 10
+
       - uses: actions/setup-node@v4
         if: steps.flag.outputs.deploy == 'true'
         with:
