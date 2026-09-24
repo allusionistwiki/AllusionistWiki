@@ -89,11 +89,23 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
     enableRadial,
   } = JSON.parse(graph.dataset["cfg"]!) as D3Config
 
+  // 自動生成ページ・index系・log・status はグラフの対象外。
+  // data から除外することで、ノード・リンク・重みづけ（リンク数ベースの半径）のすべてから排除される。
+  // group（terminology/groups/*）は index ではないため除外しない。
+  function isExcludedFromGraph(slug: SimpleSlug): boolean {
+    if (slug === "recent-updates" || slug === "recent-commits") return true
+    if (slug === "index" || slug.endsWith("/index")) return true
+    if (slug === "log" || slug === "status") return true
+    return false
+  }
+
   const data: Map<SimpleSlug, ContentDetails> = new Map(
-    Object.entries<ContentDetails>(await fetchData).map(([k, v]) => [
-      simplifySlug(k as FullSlug),
-      v,
-    ]),
+    Object.entries<ContentDetails>(await fetchData)
+      .filter(([k]) => !isExcludedFromGraph(simplifySlug(k as FullSlug)))
+      .map(([k, v]) => [
+        simplifySlug(k as FullSlug),
+        v,
+      ]),
   )
   const links: SimpleLinkData[] = []
   const tags: SimpleSlug[] = []

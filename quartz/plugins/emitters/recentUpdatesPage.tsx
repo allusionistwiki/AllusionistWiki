@@ -54,7 +54,7 @@ export const RecentUpdatesPage: QuartzEmitterPlugin<Partial<RecentUpdatesOptions
         slug,
         frontmatter: {
           title: "直近更新記事",
-          description: "最終更新日が新しい順に100件表示（自動生成）",
+          description: "最終更新日が新しい順に1000件表示（自動生成）",
         },
       })
 

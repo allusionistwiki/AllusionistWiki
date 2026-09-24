@@ -84,7 +84,7 @@ const config: QuartzConfig = {
         enableSiteMap: true,
         enableRSS: true,
       }),
-      Plugin.RecentUpdatesPage({ limit: 100 }),
+      Plugin.RecentUpdatesPage({ limit: 1000 }),
       Plugin.Assets(),
       Plugin.Static(),
       Plugin.Favicon(),

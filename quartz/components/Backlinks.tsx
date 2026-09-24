@@ -13,6 +13,16 @@ const defaultOptions: BacklinksOptions = {
   hideWhenEmpty: true,
 }
 
+// 自動生成ページ・index系・log・status はバックリンクの対象外。
+// 対象ページ自体の表示と、他ページへの表示の両方を除外する。
+// group（terminology/groups/*）は index ではないため除外しない。
+function isExcludedFromBacklinks(slug: SimpleSlug): boolean {
+  if (slug === "recent-updates" || slug === "recent-commits") return true
+  if (slug === "index" || slug.endsWith("/index")) return true
+  if (slug === "log" || slug === "status") return true
+  return false
+}
+
 export default ((opts?: Partial<BacklinksOptions>) => {
   const options: BacklinksOptions = { ...defaultOptions, ...opts }
   const { OverflowList, overflowListAfterDOMLoaded } = OverflowListFactory()
@@ -24,7 +34,15 @@ export default ((opts?: Partial<BacklinksOptions>) => {
     cfg,
   }: QuartzComponentProps) => {
     const slug = simplifySlug(fileData.slug!)
-    const backlinkFiles = allFiles.filter((file) => file.links?.includes(slug))
+    // 対象ページ自体にはバックリンクセクションを表示しない
+    if (isExcludedFromBacklinks(slug)) {
+      return null
+    }
+    // 対象ページを他ページのバックリンク一覧から除外する
+    const backlinkFiles = allFiles.filter(
+      (file) =>
+        file.links?.includes(slug) && !isExcludedFromBacklinks(simplifySlug(file.slug!)),
+    )
     if (options.hideWhenEmpty && backlinkFiles.length == 0) {
       return null
     }

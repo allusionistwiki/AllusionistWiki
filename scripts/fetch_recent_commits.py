@@ -4,7 +4,7 @@ fetch_recent_commits.py — GitHub API から vault（Obsidian）の直近コミ
 content/recent-commits.md を生成する。CI（deploy.yml）でビルド前に実行する。
 
 - 認証不要（公開リポジトリの API・レート制限 60 回/時/IP）
-- 直近 N 件（既定 10 件）を Markdown テーブルとして出力
+- 直近 N 件（既定 100 件）を Markdown テーブルとして出力
 - 日時は JST に変換
 """
 import json
@@ -14,7 +14,7 @@ import datetime
 
 REPO = "allusionistwiki/AllusionistWiki_obsidian"
 OUT = "content/recent-commits.md"
-LIMIT = int(sys.argv[1]) if len(sys.argv) > 1 else 10
+LIMIT = int(sys.argv[1]) if len(sys.argv) > 1 else 100
 
 def esc(s: str) -> str:
     return s.replace("|", "\\|").replace("\n", " ")
