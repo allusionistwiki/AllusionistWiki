@@ -12,6 +12,15 @@ const FOLDER_DISPLAY_NAMES: Record<string, string> = {
   "allusions/Literature": "文学",
   "allusions/Literature/L_External": "実世界の文学",
   "allusions/Literature/L_Internal": "作中の文学",
+  "analogies": "再帰構造",
+  "characters": "人物",
+  "episodes": "各話",
+  "mysteries": "謎・伏線",
+  "mysteries/Foreshadowing": "伏線",
+  "reflections": "感想",
+  "reflections/by-episode": "話別",
+  "terminology": "用語",
+  "terminology/groups": "グループ",
 }
 
 interface FileTrieData {
