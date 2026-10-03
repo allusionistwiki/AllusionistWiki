@@ -235,7 +235,7 @@ Third-party materials are not included in this license.
 これらの場合、新しいリポジトリ・サイトには**次のすべてを明記**してください：
 
 1. **材料利用の明記**：「本コンテンツの全部または一部は、AllusionistWiki を材料として生成されています」
-2. **出典リンク**：<https://allusionistwiki.github.io/AllusionistWiki/>
+2. **出典リンク**：<https://allusionistwiki.github.io/>
 3. **ライセンス表示**：本 Wiki の内容は CC BY-NC-SA 4.0 で提供されています
 
 > **「主要構成物」と「部分的参照」の区別**：
