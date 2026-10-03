@@ -1,8 +1,8 @@
 # 幻想再帰のアリュージョニスト Wiki（Web公開版）
 
-[![Deploy](https://github.com/allusionistwiki/allusionistwiki.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/allusionistwiki/allusionistwiki.github.io/actions)
+[![Deploy](https://github.com/allusionistwiki/AllusionistWiki/actions/workflows/deploy.yml/badge.svg)](https://github.com/allusionistwiki/AllusionistWiki/actions)
 
-**公開サイト: https://allusionistwiki.github.io/**
+**公開サイト: https://allusionistwiki.github.io/AllusionistWiki/**
 
 「ネットミームから現代思想まで引喩が散りばめたオカルトパンク」——本作の多層アナロジー（引喩・神話参照・展開の相似/相違）を典拠付きで体系化する分析WikiのWeb公開版。[Quartz](https://quartz.jzhao.xyz/) でObsidian vaultから静的サイトとしてビルドしています。
 
