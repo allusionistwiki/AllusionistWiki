@@ -25,6 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       deploy: ${{ steps.flag.outputs.deploy }}
+      vault_sha: ${{ steps.vault.outputs.sha }}
     steps:
       - uses: actions/checkout@v4
 
@@ -40,7 +41,9 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: .deploy-marker
-          key: deployed-${{ steps.vault.outputs.sha }}
+          # v2: 旧マーカー（deployed-<sha>）を無効化。バグで誤記録された
+          # 「デプロイ済み」マーカーを跨いで必ず1回再ビルドさせる。
+          key: deployed-v2-${{ steps.vault.outputs.sha }}
 
       - name: Set deploy flag
         id: flag
@@ -96,12 +99,11 @@ jobs:
         uses: actions/deploy-pages@v4
 
       # デプロイ成功後にのみvault SHAを記録（失敗時は次回再試行される）
-      - name: Get vault HEAD SHA
-        run: |
-          sha=$(git ls-remote https://github.com/allusionistwiki/AllusionistWiki_obsidian.git refs/heads/main | cut -f1)
-          echo "sha=$sha" >> "$GITHUB_OUTPUT"
-        id: vault
-
+      # ★build が実際に取得・ビルドした SHA をそのまま使うこと。
+      #   ここで ls-remote を再実行すると、ビルド後に vault へ入った新規コミットの
+      #   SHA を「デプロイ済み」と誤記録し、以後の定期実行が全部スキップされて
+      #   サイトが古いまま固着する（2026-10-03 の /AllusionistWiki プレフィックス
+      #   欠落リンク事故の原因）。
       - name: Mark vault SHA as deployed
         run: |
           mkdir -p .deploy-marker
@@ -111,4 +113,4 @@ jobs:
         uses: actions/cache/save@v4
         with:
           path: .deploy-marker
-          key: deployed-${{ steps.vault.outputs.sha }}
+          key: deployed-v2-${{ needs.build.outputs.vault_sha }}
