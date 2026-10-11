@@ -90,7 +90,8 @@ const config: QuartzConfig = {
       Plugin.Favicon(),
       Plugin.NotFoundPage(),
       // Comment out CustomOgImages to speed up build time
-      Plugin.CustomOgImages(),
+      // CustomOgImages は全ページ分の OG 画像を satori/resvg で描くためビルド時間の大半を占める。OG画像なしで運用（v2 実測: 9分→40秒）
+      // Plugin.CustomOgImages(),
     ],
   },
 }

@@ -62,6 +62,16 @@ jobs:
           mkdir -p content
           cp -r /tmp/vault/wiki/. content/
 
+      # 増分ビルド用キャッシュ（transpile ワーカー等）。restore 出来れば再トランスパイルを省略
+      - name: Restore Quartz build cache
+        if: steps.flag.outputs.deploy == 'true'
+        uses: actions/cache/restore@v4
+        with:
+          path: .quartz-cache
+          key: quartz-cache-${{ runner.os }}-${{ github.sha }}
+          restore-keys: |
+            quartz-cache-${{ runner.os }}-
+
       - name: Generate recent-commits page (GitHub API)
         if: steps.flag.outputs.deploy == 'true'
         run: |
@@ -72,13 +82,29 @@ jobs:
         with:
           node-version: 22
 
-      - name: Install Dependencies
+      # node_modules キャッシュ（lock 不変なら npm ci を丸ごとスキップ）
+      - name: Restore node_modules cache
         if: steps.flag.outputs.deploy == 'true'
+        id: npmcache
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: npm-${{ runner.os }}-node22-${{ hashFiles('package-lock.json') }}
+
+      - name: Install Dependencies
+        if: steps.flag.outputs.deploy == 'true' && steps.npmcache.outputs.cache-hit != 'true'
         run: npm ci
 
       - name: Build Quartz
         if: steps.flag.outputs.deploy == 'true'
         run: npx quartz build
+
+      - name: Save Quartz build cache
+        if: steps.flag.outputs.deploy == 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: .quartz-cache
+          key: quartz-cache-save-${{ runner.os }}-${{ github.sha }}
 
       - name: Upload artifact
         if: steps.flag.outputs.deploy == 'true'
