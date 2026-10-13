@@ -41,11 +41,13 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: .deploy-marker
+          # v5: サイト側コミット SHA をキーに追加。quartz コード/ワークフロー変更時
+          # （vault 不変）にビルドがスキップされサイトが旧版のまま固着する穴を塞ぐ。
           # v4: L1 層は AllusionistWiki2 独立サイトへ移設（本サイトは v1 vault SHA のみ）。
           # v3: L1 層 SHA をキーに追加（L1 更新が vault 不変でスキップされる穴を塞ぐ）。
           # v2: 旧マーカー（deployed-<sha>）を無効化。バグで誤記録された
           # 「デプロイ済み」マーカーを跨いで必ず1回再ビルドさせる。
-          key: deployed-v4-${{ steps.vault.outputs.sha }}
+          key: deployed-v5-${{ steps.vault.outputs.sha }}-${{ github.sha }}
 
       - name: Set deploy flag
         id: flag
@@ -149,4 +151,4 @@ jobs:
         uses: actions/cache/save@v4
         with:
           path: .deploy-marker
-          key: deployed-v4-${{ needs.build.outputs.vault_sha }}
+          key: deployed-v5-${{ needs.build.outputs.vault_sha }}-${{ github.sha }}
