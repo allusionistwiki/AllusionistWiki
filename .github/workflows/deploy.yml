@@ -26,7 +26,6 @@ jobs:
     outputs:
       deploy: ${{ steps.flag.outputs.deploy }}
       vault_sha: ${{ steps.vault.outputs.sha }}
-      l1_sha: ${{ steps.l1.outputs.sha }}
     steps:
       - uses: actions/checkout@v4
 
@@ -37,22 +36,16 @@ jobs:
           sha=$(git ls-remote https://github.com/allusionistwiki/AllusionistWiki_obsidian.git refs/heads/main | cut -f1)
           echo "sha=$sha" >> "$GITHUB_OUTPUT"
 
-      # L1 層（旧 LLMWiki2_Obsidian）の SHA もマーカーに含める（L1 更新でも再ビルドさせる）
-      - name: Get L1 HEAD SHA
-        id: l1
-        run: |
-          sha=$(git ls-remote https://github.com/allusionistwiki/AllusionistLLMWiki2_Obsidian.git refs/heads/main | cut -f1)
-          echo "sha=$sha" >> "$GITHUB_OUTPUT"
-
       - name: Check if this vault SHA was already deployed
         id: cached
         uses: actions/cache/restore@v4
         with:
           path: .deploy-marker
+          # v4: L1 層は AllusionistWiki2 独立サイトへ移設（本サイトは v1 vault SHA のみ）。
           # v3: L1 層 SHA をキーに追加（L1 更新が vault 不変でスキップされる穴を塞ぐ）。
           # v2: 旧マーカー（deployed-<sha>）を無効化。バグで誤記録された
           # 「デプロイ済み」マーカーを跨いで必ず1回再ビルドさせる。
-          key: deployed-v3-${{ steps.vault.outputs.sha }}-${{ steps.l1.outputs.sha }}
+          key: deployed-v4-${{ steps.vault.outputs.sha }}
 
       - name: Set deploy flag
         id: flag
@@ -71,14 +64,13 @@ jobs:
           mkdir -p content
           cp -r /tmp/vault/wiki/. content/
 
-      # L1 解析層（旧 LLMWiki2）を /AllusionistWiki/l1/ として同サイト内に取り込み
-      - name: Fetch L1 content (ex-LLMWiki2)
+      # L1 層は AllusionistWiki2 独立サイトへ移設済み。
+      # 旧 /AllusionistWiki/l1/* URL は meta refresh スタブで新サイトへ転送（外部被リンク保全）
+      - name: Generate L1 redirect stubs (moved to AllusionistWiki2)
         if: steps.flag.outputs.deploy == 'true'
         run: |
           git clone --depth 1 https://github.com/allusionistwiki/AllusionistLLMWiki2_Obsidian.git /tmp/l1
-          mkdir -p content/l1
-          cp -r /tmp/l1/wiki/. content/l1/
-          printf -- '---\ntitle: L1 解析層（旧 LLMWiki2）\ndescription: LLM 自動抽出・自動審査の解析フック層。人間レビュー済み層は本Wiki本体\ncreated: 2026-10-12\nmodified: 2026-10-12\n---\n\n# L1 解析層（旧 LLMWiki2）\n\nこの層は **L1（機械抽出メイン）** の産出物です。大半は LLM による自動抽出・自動審査（llm_verified）で、人間レビュー済み（human_verified）への変換が進行中。変換済みは本Wiki本体（人間訂正済み公開層）に昇格しています。\n\n- 来歴: 旧サイト `allusionistwiki.github.io/AllusionistLLMWiki2/`（2026-10-12 に L1 層として格下げ・統合）\n- 作業データ（facts/candidates 等の生データ）: [AllusionistWiki_work](https://github.com/allusionistwiki/AllusionistWiki_work)\n- 階層モデル（L0〜L7）: [DESIGN_NOTES](https://github.com/allusionistwiki/AllusionistWiki_obsidian/blob/main/DESIGN_NOTES.md)\n' > content/l1/_layer.md
+          python3 scripts/gen_l1_redirects.py
 
       # 増分ビルド用キャッシュ（transpile ワーカー等）。restore 出来れば再トランスパイルを省略
       - name: Restore Quartz build cache
@@ -157,4 +149,4 @@ jobs:
         uses: actions/cache/save@v4
         with:
           path: .deploy-marker
-          key: deployed-v3-${{ needs.build.outputs.vault_sha }}-${{ needs.build.outputs.l1_sha }}
+          key: deployed-v4-${{ needs.build.outputs.vault_sha }}
