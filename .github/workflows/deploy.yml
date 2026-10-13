@@ -62,6 +62,15 @@ jobs:
           mkdir -p content
           cp -r /tmp/vault/wiki/. content/
 
+      # L1 解析層（旧 LLMWiki2）を /AllusionistWiki/l1/ として同サイト内に取り込み
+      - name: Fetch L1 content (ex-LLMWiki2)
+        if: steps.flag.outputs.deploy == 'true'
+        run: |
+          git clone --depth 1 https://github.com/allusionistwiki/AllusionistLLMWiki2_Obsidian.git /tmp/l1
+          mkdir -p content/l1
+          cp -r /tmp/l1/wiki/. content/l1/
+          printf -- '---\ntitle: L1 解析層（旧 LLMWiki2）\ndescription: LLM 自動抽出・自動審査の解析フック層。人間レビュー済み層は本Wiki本体\ncreated: 2026-10-12\nmodified: 2026-10-12\n---\n\n# L1 解析層（旧 LLMWiki2）\n\nこの層は **L1（機械抽出メイン）** の産出物です。大半は LLM による自動抽出・自動審査（llm_verified）で、人間レビュー済み（human_verified）への変換が進行中。変換済みは本Wiki本体（人間訂正済み公開層）に昇格しています。\n\n- 来歴: 旧サイト `allusionistwiki.github.io/AllusionistLLMWiki2/`（2026-10-12 に L1 層として格下げ・統合）\n- 作業データ（facts/candidates 等の生データ）: [AllusionistWiki_work](https://github.com/allusionistwiki/AllusionistWiki_work)\n- 階層モデル（L0〜L7）: [DESIGN_NOTES](https://github.com/allusionistwiki/AllusionistWiki_obsidian/blob/main/DESIGN_NOTES.md)\n' > content/l1/_layer.md
+
       # 増分ビルド用キャッシュ（transpile ワーカー等）。restore 出来れば再トランスパイルを省略
       - name: Restore Quartz build cache
         if: steps.flag.outputs.deploy == 'true'
