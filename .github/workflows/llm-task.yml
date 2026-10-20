@@ -71,18 +71,15 @@ jobs:
         env:
           HERMES_HOME: ${{ secrets.HOST_HERMES_HOME }}
           HERMES_BIN: ${{ secrets.HOST_HERMES_BIN }}
+          HERMES_DIR: ${{ secrets.HOST_HERMES_DIR }}
           PYTHONUNBUFFERED: "1"
         run: |
           set -o pipefail
           : "${HERMES_HOME:?HOST_HERMES_HOME secret is not set}"
           : "${HERMES_BIN:?HOST_HERMES_BIN secret is not set}"
-          BIN="$HERMES_BIN"
-          case "$BIN" in
-            ?:*) BIN="$(echo "$BIN" | sed -E 's#^([A-Za-z]):[\/]#/l/#')" ;;
-          esac
-          echo "bin-kind: $(test -f "$BIN" && echo file || echo not-file)"
-          echo "home-kind: $(test -d "$HERMES_HOME" && echo dir-ok || echo not-dir)"
-          "$BIN" chat -q "$(cat "$RUNNER_TEMP/task.md")" 2>&1 | tee "$RUNNER_TEMP/hermes-out.log"
+          : "${HERMES_DIR:?HOST_HERMES_DIR secret is not set}"
+          cd "$HERMES_DIR"
+          MSYSTEM=MINGW64 MSYS_NO_PATHCONV=1 ./hermes.exe chat -q "$(cat "$RUNNER_TEMP/task.md")" 2>&1 | tee "$RUNNER_TEMP/hermes-out.log"
 
       - name: Report
         shell: bash
@@ -161,18 +158,15 @@ jobs:
         env:
           HERMES_HOME: ${{ secrets.HOST_HERMES_HOME }}
           HERMES_BIN: ${{ secrets.HOST_HERMES_BIN }}
+          HERMES_DIR: ${{ secrets.HOST_HERMES_DIR }}
           PYTHONUNBUFFERED: "1"
         run: |
           set -o pipefail
           : "${HERMES_HOME:?HOST_HERMES_HOME secret is not set}"
           : "${HERMES_BIN:?HOST_HERMES_BIN secret is not set}"
-          BIN="$HERMES_BIN"
-          case "$BIN" in
-            ?:*) BIN="$(echo "$BIN" | sed -E 's#^([A-Za-z]):[\/]#/l/#')" ;;
-          esac
-          echo "bin-kind: $(test -f "$BIN" && echo file || echo not-file)"
-          echo "home-kind: $(test -d "$HERMES_HOME" && echo dir-ok || echo not-dir)"
-          "$BIN" chat -q "$(cat "$RUNNER_TEMP/task.md")" 2>&1 | tee "$RUNNER_TEMP/hermes-out.log"
+          : "${HERMES_DIR:?HOST_HERMES_DIR secret is not set}"
+          cd "$HERMES_DIR"
+          MSYSTEM=MINGW64 MSYS_NO_PATHCONV=1 ./hermes.exe chat -q "$(cat "$RUNNER_TEMP/task.md")" 2>&1 | tee "$RUNNER_TEMP/hermes-out.log"
 
       - name: Open PR from implementation
         env:
