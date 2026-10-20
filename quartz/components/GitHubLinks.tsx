@@ -8,13 +8,10 @@ const SITE = "https://allusionistwiki.github.io/AllusionistWiki"
 export default (() => {
   const component: QuartzComponent = ({ fileData }: QuartzComponentProps) => {
     if (fileData.slug === "index") return null
-    const fp = fileData.filePath // e.g. content/claims/sample-claim.md
-    const enc = fp.split("/").map(encodeURIComponent).join("/")
+    const fp = fileData.filePath ?? "" // e.g. content/claims/sample-claim.md
+    const enc = fp ? fp.split("/").map(encodeURIComponent).join("/") : ""
     const title = (fileData.frontmatter?.title as string) || fileData.slug
     const slug = fileData.slug ?? ""
-    const issueBody = encodeURIComponent(
-      `対象ページ: ${title}\nURL: ${SITE}/${slug}\n\n`,
-    )
     const base = `https://github.com/${REPO}`
     const pageUrl = `${SITE}/${slug}`
     // 主張 ID 自動入力: claims/ 配下のページは slug 末尾が主張 ID
@@ -33,7 +30,7 @@ export default (() => {
           </li>
           <li>
             <a
-              href={`https://tally.so/r/EqzzbX?url=${encodeURIComponent(pageUrl)}${claimQ}`}
+              href={`https://tally.so/r/dbWbZq?url=${encodeURIComponent(pageUrl)}${claimQ}`}
             >
               匿名フォーム（ログイン不要）
             </a>
