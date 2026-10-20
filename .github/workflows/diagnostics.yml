@@ -1,0 +1,19 @@
+name: Runner diagnostics
+on:
+  workflow_dispatch:
+jobs:
+  probe:
+    runs-on: self-hosted
+    steps:
+      - name: Environment facts
+        shell: bash
+        run: |
+          echo "== user: $(whoami)"
+          echo "== git: $(git --version | head -1)"
+          echo "== uv: $(command -v uv || echo MISSING)"
+          echo "== python(venv-alias): $(command -v python || echo MISSING)"
+          echo "== python3: $(command -v python3 || echo MISSING)"
+          echo "== node: $(command -v node || echo MISSING)"
+          echo "== gh: $(command -v gh || echo MISSING)"
+          echo "== PATH entries:"
+          echo "$PATH" | tr ':' '\n' | sed 's#^#  #'
