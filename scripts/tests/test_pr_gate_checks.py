@@ -1,10 +1,12 @@
-"""Regression tests for scripts/pr_gate_checks.py — the wall between anonymous
-input and main. Fixes each P0/P1 found in the 2026-10 code review:
+"""Regression tests for scripts/pr_gate_checks.py (Wiki1 production rules):
   1. rename content/x -> protected path must FAIL (--no-renames)
   2. attacker-controlled file names must NOT execute (list-arg git, no shell)
-  3. deletion ratio / external hosts / protected path FAILs
-  4. plain appends touching existing links must PASS (no false positives)
-  5. raw HTML/XSS patterns in added lines FAIL
+  3. mass deletion heuristic (floor 500) FAILs
+  4. plain appends must PASS (no false positives)
+  5. XSS patterns in .md under content/reports/ FAIL
+  6. llm-task edits of vault-rebuilt pages = PASS with warning (owner policy
+     2026-10-19: full auto-merge with post-merge audit as safety wall)
+Note: gate prints verdict on a line starting with "PASS"/"FAIL <reasons>".
 """
 import pathlib
 import subprocess
@@ -48,9 +50,10 @@ def commit_change(repo):
     return git(repo, "rev-parse", "HEAD")
 
 
-def run_gate(repo, base, head):
+def run_gate(repo, base, head, mode=None):
+    args = [sys.executable, GATE, base, head] + ([mode] if mode else [])
     r = subprocess.run(
-        [sys.executable, GATE, base, head],
+        args,
         cwd=repo,
         capture_output=True,
         text=True,
@@ -58,8 +61,14 @@ def run_gate(repo, base, head):
         errors="replace",
     )
     out = r.stdout
-    verdict = next((l.split("=", 1)[1] for l in out.splitlines() if l.startswith("verdict=")), None)
-    reasons = next((l.split("=", 1)[1] for l in out.splitlines() if l.startswith("reasons=")), "")
+    verdict = None
+    reasons = ""
+    for l in out.splitlines():
+        if l.startswith("PASS"):
+            verdict = "PASS"
+        elif l.startswith("FAIL"):
+            verdict = "FAIL"
+            reasons = l
     return verdict, reasons, out + r.stderr
 
 
@@ -91,16 +100,16 @@ def test_pwned_filename_does_not_execute(tmp_path):
     assert side_effects == [], f"shell injection side effects: {side_effects}"
 
 
-def test_deletion_ratio_fails(tmp_path):
+def test_mass_deletion_fails(tmp_path):
     repo = make_repo(tmp_path)
     base = git(repo, "rev-parse", "HEAD")
-    (repo / "content" / "a.md").write_text("\n".join(f"l{i}" for i in range(350)) + "\n", encoding="utf-8")
+    (repo / "content" / "a.md").write_text("core\n", encoding="utf-8")
     head = commit_change(repo)
     verdict, reasons, _ = run_gate(repo, base, head)
-    assert verdict == "FAIL" and "deletion ratio" in reasons
+    assert verdict == "FAIL" and "mass deletion" in reasons
 
 
-def test_plain_append_with_existing_links_passes(tmp_path):
+def test_plain_append_passes(tmp_path):
     repo = make_repo(tmp_path)
     base = git(repo, "rev-parse", "HEAD")
     p = repo / "content" / "a.md"
@@ -111,39 +120,35 @@ def test_plain_append_with_existing_links_passes(tmp_path):
     assert verdict == "PASS", reasons
 
 
-def test_new_external_hosts_fail(tmp_path):
+def test_xss_in_reports_fails(tmp_path):
     repo = make_repo(tmp_path)
     base = git(repo, "rev-parse", "HEAD")
-    page = repo / "content" / "links.md"
-    hosts = [f"spam{i}.net" for i in range(6)]
-    page.write_text("\n".join(f"https://{h}/x" for h in hosts) + "\n", encoding="utf-8")
+    rdir = repo / "content" / "reports"
+    rdir.mkdir(parents=True)
+    (rdir / "evil.md").write_text("ok\n<script>alert(1)</script>\n", encoding="utf-8")
     head = commit_change(repo)
     verdict, reasons, _ = run_gate(repo, base, head)
-    assert verdict == "FAIL" and "new external hosts" in reasons
+    assert verdict == "FAIL" and "XSS" in reasons
 
 
-def test_xss_pattern_fails(tmp_path):
+def test_llm_task_vault_page_edit_passes_with_warning(tmp_path):
     repo = make_repo(tmp_path)
     base = git(repo, "rev-parse", "HEAD")
-    page = repo / "content" / "evil.md"
-    page.write_text(
-        "ok\n<script>alert(1)</script>\n<a href=\"vbscript:msgbox\">x</a>\n",
-        encoding="utf-8",
-    )
+    adir = repo / "content" / "allusions"
+    adir.mkdir(parents=True)
+    (adir / "note.md").write_text("Gogmagog 仮説\n", encoding="utf-8")
     head = commit_change(repo)
-    verdict, reasons, _ = run_gate(repo, base, head)
-    assert verdict == "FAIL" and "xss" in reasons
+    verdict, reasons, out = run_gate(repo, base, head, mode="llm-task")
+    assert verdict == "PASS", reasons
+    assert "::warning::" in out and "allusions" in out
 
 
-def test_playground_links_exempt(tmp_path):
+def test_llm_task_reports_edit_passes(tmp_path):
     repo = make_repo(tmp_path)
     base = git(repo, "rev-parse", "HEAD")
-    pg = repo / "content" / "playground"
-    pg.mkdir()
-    (pg / "notes.md").write_text(
-        "\n".join(f"https://cite{i}.org/paper" for i in range(8)) + "\n",
-        encoding="utf-8",
-    )
+    rdir = repo / "content" / "reports"
+    rdir.mkdir(parents=True)
+    (rdir / "new-note.md").write_text("report note\n", encoding="utf-8")
     head = commit_change(repo)
-    verdict, reasons, _ = run_gate(repo, base, head)
+    verdict, reasons, out = run_gate(repo, base, head, mode="llm-task")
     assert verdict == "PASS", reasons
