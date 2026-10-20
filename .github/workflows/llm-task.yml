@@ -32,6 +32,7 @@ jobs:
           BODY: ${{ github.event.pull_request.body }}
           AUTHOR: ${{ github.event.pull_request.user.login }}
           NUM: ${{ github.event.pull_request.number }}
+          HOST_CODE_ROOT: ${{ secrets.HOST_CODE_ROOT }}
         run: |
           : "${HOST_CODE_ROOT:?HOST_CODE_ROOT secret is not set}"
           cat > "$RUNNER_TEMP/task.md" <<EOF
@@ -124,6 +125,7 @@ jobs:
           BODY: ${{ github.event.issue.body }}
           AUTHOR: ${{ github.event.issue.user.login }}
           NUM: ${{ github.event.issue.number }}
+          HOST_CODE_ROOT: ${{ secrets.HOST_CODE_ROOT }}
         run: |
           : "${HOST_CODE_ROOT:?HOST_CODE_ROOT secret is not set}"
           cat > "$RUNNER_TEMP/task.md" <<EOF
