@@ -76,7 +76,13 @@ jobs:
           set -o pipefail
           : "${HERMES_HOME:?HOST_HERMES_HOME secret is not set}"
           : "${HERMES_BIN:?HOST_HERMES_BIN secret is not set}"
-          "$HERMES_BIN" chat -q "$(cat "$RUNNER_TEMP/task.md")" 2>&1 | tee "$RUNNER_TEMP/hermes-out.log"
+          BIN="$HERMES_BIN"
+          case "$BIN" in
+            ?:*) BIN="$(echo "$BIN" | sed -E 's#^([A-Za-z]):[\/]#/l/#')" ;;
+          esac
+          echo "bin-kind: $(test -f "$BIN" && echo file || echo not-file)"
+          echo "home-kind: $(test -d "$HERMES_HOME" && echo dir-ok || echo not-dir)"
+          "$BIN" chat -q "$(cat "$RUNNER_TEMP/task.md")" 2>&1 | tee "$RUNNER_TEMP/hermes-out.log"
 
       - name: Report
         shell: bash
@@ -160,7 +166,13 @@ jobs:
           set -o pipefail
           : "${HERMES_HOME:?HOST_HERMES_HOME secret is not set}"
           : "${HERMES_BIN:?HOST_HERMES_BIN secret is not set}"
-          "$HERMES_BIN" chat -q "$(cat "$RUNNER_TEMP/task.md")" 2>&1 | tee "$RUNNER_TEMP/hermes-out.log"
+          BIN="$HERMES_BIN"
+          case "$BIN" in
+            ?:*) BIN="$(echo "$BIN" | sed -E 's#^([A-Za-z]):[\/]#/l/#')" ;;
+          esac
+          echo "bin-kind: $(test -f "$BIN" && echo file || echo not-file)"
+          echo "home-kind: $(test -d "$HERMES_HOME" && echo dir-ok || echo not-dir)"
+          "$BIN" chat -q "$(cat "$RUNNER_TEMP/task.md")" 2>&1 | tee "$RUNNER_TEMP/hermes-out.log"
 
       - name: Open PR from implementation
         env:
