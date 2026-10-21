@@ -18,6 +18,7 @@ jobs:
   implement:
     if: github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'llm-task')
     runs-on: [self-hosted, Windows, X64]
+    environment: strata-audit
     env:
       PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
     timeout-minutes: 180
@@ -93,6 +94,7 @@ jobs:
   implement_issue:
     if: github.event_name == 'issues' && contains(github.event.issue.labels.*.name, 'llm-task') && github.event.issue.pull_request == null
     runs-on: [self-hosted, Windows, X64]
+    environment: strata-audit
     env:
       PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
     timeout-minutes: 180
@@ -117,8 +119,8 @@ jobs:
         shell: bash
         env:
           HERMES_DIR: ${{ secrets.HOST_HERMES_DIR }}
-          STRATA_API_URL: ${{ vars.STRATA_API_URL }}
-          STRATA_MODEL: ${{ vars.STRATA_MODEL }}
+          STRATA_API_URL: ${{ secrets.STRATA_API_URL }}
+          STRATA_MODEL: ${{ secrets.STRATA_MODEL }}
           STRATA_API_KEY: ${{ secrets.STRATA_API_KEY }}
         run: |
           set -uo pipefail
