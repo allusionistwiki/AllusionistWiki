@@ -18,6 +18,8 @@ jobs:
   implement:
     if: github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'llm-task')
     runs-on: [self-hosted, Windows, X64]
+    env:
+      PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
     timeout-minutes: 180
     steps:
       - uses: actions/checkout@v4
@@ -69,7 +71,7 @@ jobs:
         if: steps.need.outputs.need == 'yes'
         shell: bash
         env:
-          HERMES_HOME: ${{ secrets.HOST_HERMES_HOME }}
+          HERMES_HOME: "${{ github.workspace }}/.hermes-runner-home"
           HERMES_BIN: ${{ secrets.HOST_HERMES_BIN }}
           HERMES_DIR: ${{ secrets.HOST_HERMES_DIR }}
           PYTHONUNBUFFERED: "1"
@@ -91,6 +93,8 @@ jobs:
   implement_issue:
     if: github.event_name == 'issues' && contains(github.event.issue.labels.*.name, 'llm-task') && github.event.issue.pull_request == null
     runs-on: [self-hosted, Windows, X64]
+    env:
+      PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
     timeout-minutes: 180
     steps:
       - uses: actions/checkout@v4
@@ -109,6 +113,9 @@ jobs:
             git checkout -B llm-issue-$n
           fi
 
+      - name: Prepare runner Hermes home
+        shell: bash
+        run: mkdir -p "$GITHUB_WORKSPACE/.hermes-runner-home"
       - name: Skip Hermes if already implemented
         id: need
         shell: bash
@@ -156,7 +163,7 @@ jobs:
         if: steps.need.outputs.need == 'yes'
         shell: bash
         env:
-          HERMES_HOME: ${{ secrets.HOST_HERMES_HOME }}
+          HERMES_HOME: "${{ github.workspace }}/.hermes-runner-home"
           HERMES_BIN: ${{ secrets.HOST_HERMES_BIN }}
           HERMES_DIR: ${{ secrets.HOST_HERMES_DIR }}
           PYTHONUNBUFFERED: "1"
