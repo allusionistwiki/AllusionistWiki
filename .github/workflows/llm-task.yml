@@ -115,7 +115,23 @@ jobs:
 
       - name: Prepare runner Hermes home
         shell: bash
-        run: mkdir -p "$GITHUB_WORKSPACE/.hermes-runner-home"
+        env:
+          HERMES_DIR: ${{ secrets.HOST_HERMES_DIR }}
+          STRATA_API_URL: ${{ vars.STRATA_API_URL }}
+          STRATA_MODEL: ${{ vars.STRATA_MODEL }}
+          STRATA_API_KEY: ${{ secrets.STRATA_API_KEY }}
+        run: |
+          set -uo pipefail
+          cd "$HERMES_DIR"
+          export HERMES_HOME="${{ github.workspace }}/.hermes-runner-home"
+          mkdir -p "$HERMES_HOME"
+          if [ ! -f "$HERMES_HOME/config.yaml" ]; then
+            ./hermes.exe config set model.provider custom
+            ./hermes.exe config set model.base_url "$STRATA_API_URL"
+            ./hermes.exe config set model.api_key "$STRATA_API_KEY"
+            ./hermes.exe config set model.default "$STRATA_MODEL"
+          fi
+          echo "hermes home ready"
       - name: Skip Hermes if already implemented
         id: need
         shell: bash
