@@ -28,6 +28,11 @@ interface Options {
   rssFullHtml: boolean
   rssSlug: string
   includeEmptyFiles: boolean
+  /** contentIndex.json / sitemap / RSS から除外するスラッグ接頭辞（例 ["l1/"]）。
+   *  L1 移設スタブのように別リポジトリ由来で index に出す意味のないページを
+   *  サイドバー（Explorer）・グラフ・検索のデータから丸ごと消す。
+   *  /l1/ 二重配置だと全ページロード時の contentIndex.json fetch が倍化しフリーズする */
+  excludePrefixes?: string[]
 }
 
 const defaultOptions: Options = {
@@ -37,6 +42,7 @@ const defaultOptions: Options = {
   rssFullHtml: false,
   rssSlug: "index",
   includeEmptyFiles: true,
+  excludePrefixes: [],
 }
 
 function generateSiteMap(cfg: GlobalConfiguration, idx: ContentIndexMap): string {
@@ -101,6 +107,9 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
       const linkIndex: ContentIndexMap = new Map()
       for (const [tree, file] of content) {
         const slug = file.data.slug!
+        if ((opts?.excludePrefixes ?? []).some((p) => slug.startsWith(p))) {
+          continue
+        }
         const date = getDate(ctx.cfg.configuration, file.data) ?? new Date()
         if (opts?.includeEmptyFiles || (file.data.text && file.data.text !== "")) {
           linkIndex.set(slug, {

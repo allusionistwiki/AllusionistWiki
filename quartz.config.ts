@@ -83,6 +83,11 @@ const config: QuartzConfig = {
       Plugin.ContentIndex({
         enableSiteMap: true,
         enableRSS: true,
+        // L1 層は別リポジトリ由来（旧 LLMWiki2 vault → AllusionistWiki2 へ移設済み）で、
+        // v1 の /l1/* は転送スタブ 15,980 ページ。contentIndex に載ると
+        // Explorer（サイドバー）・グラフ・検索に無理やり流入するため層ごと除外
+        // （/AllusionistWiki/l1/* の URL 自体はスタブなのでそのまま有効）
+        excludePrefixes: ["l1/"],
       }),
       Plugin.RecentUpdatesPage({ limit: 1000 }),
       Plugin.Assets(),
