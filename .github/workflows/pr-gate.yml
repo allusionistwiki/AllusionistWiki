@@ -29,7 +29,17 @@ jobs:
       - name: Mechanical checks
         id: checks
         run: |
-          python3 scripts/pr_gate_checks.py "${{ github.event.pull_request.base.sha }}" "${{ github.event.pull_request.head.sha }}" | tee /dev/stdout | tr -d '\r' >> "$GITHUB_OUTPUT"
+          set -o pipefail
+          out=$(python3 scripts/pr_gate_checks.py "${{ github.event.pull_request.base.sha }}" "${{ github.event.pull_request.head.sha }}" | tr -d '\r'); rc=$?
+          echo "$out"
+          first=$(printf '%s' "$out" | head -1)
+          reasons=$(printf '%s' "$out" | grep -E '^(FAIL|::warning::)' | tr '\n' '; ' || true)
+          case "$first" in
+            PASS) echo "verdict=PASS" >> "$GITHUB_OUTPUT" ;;
+            *)    echo "verdict=FAIL" >> "$GITHUB_OUTPUT" ;;
+          esac
+          echo "reasons=$reasons" >> "$GITHUB_OUTPUT"
+          exit 0
 
       - name: Build check
         id: build
