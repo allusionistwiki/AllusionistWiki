@@ -1,14 +1,7 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
-import type { FileTrieNode } from "./quartz/util/fileTrie"
 import CreatedModifiedMeta from "./quartz/components/CreatedModifiedMeta"
 import GitHubLinks from "./quartz/components/GitHubLinks"
-
-// Wiki1 のサイドバー（Explorer）には L1 層へのリンクを出さない:
-// L1 は /AllusionistWiki/l1/ 下位層であり、本文の入口索引からのみ辿る（v2 側に正規の入口がある）
-const explorerWithoutL1 = Component.Explorer({
-  filterFn: (node: FileTrieNode) => node.slugSegment !== "tags" && node.slugSegment !== "l1",
-})
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
@@ -47,7 +40,7 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    explorerWithoutL1,
+    Component.Explorer(),
   ],
   right: [
     Component.Graph(),
@@ -72,7 +65,7 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    explorerWithoutL1,
+    Component.Explorer(),
   ],
   right: [],
 }
