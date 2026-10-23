@@ -77,6 +77,8 @@ jobs:
           : "${PAT:?PAT_TOKEN secret is not set}"
           # strip copied-in whitespace/newlines from the secret value (common "Bad credentials" cause)
           PAT="${PAT//[[:space:]]/}"
+          # diagnostics: length + prefix only (value never printed)
+          echo "PATLEN=${#PAT} PREFIX=${PAT:0:4}"
           comment() {
             python - "$1" "$RUNNER_TEMP/cmt.json" <<'PY'
           import json, sys
