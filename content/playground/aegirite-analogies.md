@@ -45,7 +45,7 @@ description: Issue #3 編集提案（Tally 自動起票）への応答。アエ�
 | [MY_ch5270_Akira_Bird_Cycle](https://allusionistwiki.github.io/AllusionistWiki2/mysteries/MY_ch5270_Akira_Bird_Cycle/) | 霊鳥↔石の回収ループと「百十一羽」の未回収 | 本ページの比喩③④が仮説供給 |
 | [MY_ch5266_Ultramarine_Wish](https://allusionistwiki.github.io/AllusionistWiki2/mysteries/MY_ch5266_Ultramarine_Wish/) | アエタイト＋入れ子人形の贈り物の真意（真の恋人・天空の少女） | 比喩⑤と接続 |
 | [A_ch5454_alludes_to_..._galadri](https://allusionistwiki.github.io/AllusionistWiki2/claims/A_ch5454_alludes_to_E_ch5454_シナモリアキラ_other_ガロアンディアン_p232234_indian_mythology_galadri/)・A_ch5497（ハルピュイア神話「アクィラ」） | アキラの鳥相（鳥とされた存在）への既存比喩 | 比喩③が継承 |
-| [Lab Playground: gogmagog](https://allusionistwiki.github.io/AllusionistWikiLab/playground/gogmagog)（`promotion-candidate`） | ゴグマゴグ照合（5-15・5-26） | 比喩④の相互リンク先 |
+| [Playground: gogmagog](./gogmagog.html)（`promotion-candidate`） | ゴグマゴグ照合（5-15・5-26） | 比喩④の相互リンク先 |
 
 既存分析は「アエタイト＝民俗的な安産のお守り鉱石」「入れ子＝自己相似」という方向まで到達済みで、依頼への答えの半分はすでに正規層にあります。**以下はそこに「最も対応の良い実在の典拠」と「未挙額の他の例え」を足す試みです。**
 
@@ -86,7 +86,7 @@ description: Issue #3 編集提案（Tally 自動起票）への応答。アエ�
 
 「首のないアキラの紋章は外世界の呪力を宿す」（¶199）に対応する例え候補:
 
-- **首を咥える鳥**: アルビオンの巨人王ゴグマゴグ伝承に「鳥の嘴に男の首を乗せた紋章（head of staves）」がある。本 Wiki には既に [Lab: gogmagog 照合ページ](https://allusionistwiki.github.io/AllusionistWikiLab/playground/gogmagog)（5-15・5-26、`promotion-candidate`）があり、「首のモチーフ×異界の権力」が作品中に反復する証拠が揃いつつある。相互リンク推奨（対応の直接証拠は未確認）。
+- **首を咥える鳥**: アルビオンの巨人王ゴグマゴグ伝承に「鳥の嘴に男の首を乗せた紋章（head of staves）」がある。本 Wiki には既に [gogmagog 照合ページ](./gogmagog.html)（5-15・5-26、`promotion-candidate`）があり、「首のモチーフ×異界の権力」が作品中に反復する証拠が揃いつつある。相互リンク推奨（対応の直接証拠は未確認）。
 - **サー・ガウェインと緑の騎士**: 新年ごとに繰り返される**斬首遊戯（beheading game）**——首を斬られ、自分の首を担いで去る騎士。一年後に再演される約束（＝**再演**の構造そのもの）。「首のない＋鳥＋周期」の組み合わせは断章の「再演」テーマと構造的に似る。**構造の相似であり直接典拠の証拠はなし**。
 - **オスカー・ワイルド『夜鷹と薔薇』**: 愛のために死ぬ鳥、という図像。贈答が「真の恋人に贈る」安産のお守り（¶198–199）で、断章に「真実の忠愛」の悲劇が語られる（¶346）。モチーフの薄い共鳴としてのみ記録（**根拠なし**）。
 - 「外世界の呪力」の字義対応: アキラ（シナモリ・アキラ）自身が**異界（外世界）からの転生者**であり、断章の再演に「異界からの転生者」として参加する（¶ 断章6-2）。紋章＝外世界由来の霊鳥＝アキラ——**作中論では自己参照**であり、比喩というより仕込みの明示。L1 の「アキラ identity」系ミステリ（MY_ch5257 系）に接続。
