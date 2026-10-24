@@ -10,7 +10,7 @@ comments: false
 # 【口舌】の正体（確定事実と未検証推察の併記）
 
 > [!NOTE]
-> このページは [Playground（遊び場）](../index.md) の仮説ページです。**「確定事実」節の原文引用は private 原文（`AllusionistWiki_raw`・kakuyomu 版）の段落索引 ¶ に照合済み**ですが、本页全体は Core 層未登録の仮説層に属します。Core 層への引用は [[promotion]] による昇格後に限り可能です。
+> このページは [Playground（遊び場）](../index.md) の仮説ページです。**「確定事実」節の原文引用は private 原文（`AllusionistWiki_raw`・kakuyomu 版）の段落索引 ¶ に照合済み**ですが、本页全体は Core 層未登録の仮説層に属します。Core 層への引用は [昇格プロトコル](index.md#promotion) による昇格後に限り可能です。
 
 ## 1. 発端（依頼）と再実装の経緯
 
@@ -112,6 +112,6 @@ K3 により『司書』は口舌の手足とされる。作中の『司書』�
 ## 関連
 
 - [[playground/index|Playground 運用則]]
-- [[hypothesis-template]] — 本页の書式は本テンプレートの写し
-- [[promotion]] — `promotion-candidate` に対する昇格手順
+- [仮説メモテンプレート](index.md#template) — 本页の書式は本テンプレートの写し
+- [昇格プロトコル](index.md#promotion) — `promotion-candidate` に対する昇格手順
 - [[../foreshadow-test|伏線台帳（試験用）]] — 口舌関連の伏線エントリは本页作成時点でなし

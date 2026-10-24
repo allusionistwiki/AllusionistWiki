@@ -10,7 +10,7 @@ comments: false
 # 六人の関係性マップ（ベアトリーチェの融合先と、アズーリア・レオ・青嶺瑠璃の繋がり）
 
 > [!NOTE]
-> このページは [Playground（遊び場）](../index.md) の仮説ページです。**「確定事実」節の原文引用は private 原文（`AllusionistWiki_raw`・kakuyomu 版）の段落索引 ¶ に照合済み**ですが、本页全体は Core 層未登録の仮説層に属します。Core 層への引用は [[promotion]] による昇格後に限り可能です。
+> このページは [Playground（遊び場）](../index.md) の仮説ページです。**「確定事実」節の原文引用は private 原文（`AllusionistWiki_raw`・kakuyomu 版）の段落索引 ¶ に照合済み**ですが、本页全体は Core 層未登録の仮説層に属します。Core 層への引用は [昇格プロトコル](index.md#promotion) による昇格後に限り可能です。
 
 ## 1. 発端（依頼）
 

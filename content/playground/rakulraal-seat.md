@@ -10,7 +10,7 @@ comments: false
 # 第一位のラクルラールの座は誰が勝ち取ったのか（4 章ラスト・イツノとマラコーダの会話）
 
 > [!NOTE]
-> このページは [Playground（遊び場）](../index.md) の仮説ページです。**「確定事実」節の原文引用は private 原文（`AllusionistWiki_raw`・kakuyomu 版）の段落索引 ¶ に照合済み**ですが、本页全体は Core 層未登録の仮説層に属します。Core 層への引用は [[promotion]] による昇格後に限り可能です。
+> このページは [Playground（遊び場）](../index.md) の仮説ページです。**「確定事実」節の原文引用は private 原文（`AllusionistWiki_raw`・kakuyomu 版）の段落索引 ¶ に照合済み**ですが、本页全体は Core 層未登録の仮説層に属します。Core 層への引用は [昇格プロトコル](index.md#promotion) による昇格後に限り可能です。
 
 ## 1. 発端（依頼）
 
@@ -130,7 +130,7 @@ Issue #27（Tally 編集提案フォーム経由・依頼者 allusionistwiki／�
 ## 関連
 
 - [[playground/index|Playground 運用則]]
-- [[hypothesis-template]] — 本页の書式は本テンプレートの写し
-- [[promotion]] — `promotion-candidate` に対する昇格手順
+- [仮説メモテンプレート](index.md#template) — 本页の書式は本テンプレートの写し
+- [昇格プロトコル](index.md#promotion) — `promotion-candidate` に対する昇格手順
 - [[kouzetsu]] — 同じく Tally 編集提案（問い）を ¶ 照合で実装した仮説ページ（前例）
 - [[../foreshadow-test|伏線台帳（試験用）]] — ラクルラール／マラコーダ関連の伏線エントリは本页作成時点でなし

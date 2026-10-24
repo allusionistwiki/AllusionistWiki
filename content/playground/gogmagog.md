@@ -10,7 +10,7 @@ comments: false
 # 5-15 の「ゴグマゴグ」——イギリス伝承の巨人か、聖書のゴグとマゴグか
 
 > [!NOTE]
-> このページは [Playground（遊び場）](../index.md) の仮説ページです。**原文引用は private 原文（`AllusionistWiki_raw`）の kakuyomu 版段落索引 ¶ に照合済み**（p 番号は L1 baseline `AllusionistLLMWiki2/raw/chNNNN.txt` の行頭ページマーカーに照合）。解读の節は依旧として仮説層に属し、Core 層への引用は [[promotion]] による昇格後に限り可能です。
+> このページは [Playground（遊び場）](../index.md) の仮説ページです。**原文引用は private 原文（`AllusionistWiki_raw`）の kakuyomu 版段落索引 ¶ に照合済み**（p 番号は L1 baseline `AllusionistLLMWiki2/raw/chNNNN.txt` の行頭ページマーカーに照合）。解读の節は依旧として仮説層に属し、Core 層への引用は [昇格プロトコル](index.md#promotion) による昇格後に限り可能です。
 
 ## 1. 発端（依頼）
 
@@ -143,7 +143,7 @@ Issue #73（依頼者 allusionistwiki・編集提案）は依頼の前提を特�
 ## 関連
 
 - [[playground/index|Playground 運用則]]
-- [[hypothesis-template]] — 本页の書式準拠先
-- [[promotion]] — 昇格手順（§2 の事実群と §7-4 の仮説が昇格ドラフトの対象）
+- [仮説メモテンプレート](index.md#template) — 本页の書式準拠先
+- [昇格プロトコル](index.md#promotion) — 昇格手順（§2 の事実群と §7-4 の仮説が昇格ドラフトの対象）
 - [[kouzetsu]] — 同じ 5-15（¶422）を扱う口舌仮説ページ（本页の ¶ 索引照合のアンカー）
 - [[../foreshadow-test|伏線台帳（試験用）]]
