@@ -11,7 +11,7 @@ const config: QuartzConfig = {
     pageTitle: "幻想再帰のアリュージョニスト Wiki",
     pageTitleSuffix: "",
     enableSPA: true,
-    enablePopovers: true,
+    enablePopovers: false,
     analytics: {
       provider: null,
     },
