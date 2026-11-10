@@ -72,7 +72,7 @@ jobs:
         if: steps.flag.outputs.deploy == 'true'
         run: |
           git clone --depth 1 https://github.com/allusionistwiki/AllusionistLLMWiki2_Obsidian.git /tmp/l1
-          python3 scripts/gen_l1_redirects.py
+          python3 scripts/gen_l1_redirects.py /tmp/l1/wiki
 
       # 増分ビルド用キャッシュ（transpile ワーカー等）。restore 出来れば再トランスパイルを省略
       - name: Restore Quartz build cache
