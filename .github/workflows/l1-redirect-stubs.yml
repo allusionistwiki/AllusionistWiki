@@ -27,15 +27,15 @@ jobs:
       - name: Generate stubs
         run: |
           python3 scripts/gen_l1_redirects.py .vault-tmp/wiki
-          ls content/l1 | wc -l
+          ls redirects/l1 | wc -l
       - name: Commit and push
         run: |
           git config user.name "allusionistwiki-bot"
           git config user.email "allusionist.wiki@gmail.com"
-          git add content/l1
+          git add redirects/l1
           if git diff --cached --quiet; then
             echo "no changes"
           else
-            git commit -m "regenerate l1 redirect stubs ($(ls content/l1 | wc -l) pages)"
+            git commit -m "regenerate l1 redirect stubs ($(ls redirects/l1 | wc -l) pages)"
             git push origin HEAD:main
           fi
