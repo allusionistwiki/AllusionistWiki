@@ -40,7 +40,18 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer({
+      // モバイル（iOS）対策: 初期畳み＋タップ開封は最上位節のみ（数千ノード DOM 防止）
+      folderDefaultState: "collapsed",
+      folderClickBehavior: "collapse",
+      mapFn: (node: any) => {
+        if (node.children.length > 40) {
+          node.collapsed = true
+          node.children = []
+        }
+        return node
+      },
+    }),
   ],
   right: [
     Component.Graph(),
@@ -65,7 +76,18 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer({
+      // モバイル（iOS）対策: 初期畳み＋タップ開封は最上位節のみ（数千ノード DOM 防止）
+      folderDefaultState: "collapsed",
+      folderClickBehavior: "collapse",
+      mapFn: (node: any) => {
+        if (node.children.length > 40) {
+          node.collapsed = true
+          node.children = []
+        }
+        return node
+      },
+    }),
   ],
   right: [],
 }
