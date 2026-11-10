@@ -8,7 +8,7 @@ meta refresh + 手動リンク付きスタブ md で生成する（旧 URL の�
 import sys
 from pathlib import Path
 
-VAULT = Path("/tmp/l1/wiki")
+VAULT = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("/tmp/l1/wiki")
 OUT = Path("content/l1")
 BASE = "https://allusionistwiki.github.io/AllusionistWiki2/L1/"
 
