@@ -9,7 +9,7 @@ import sys
 from pathlib import Path
 
 VAULT = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("/tmp/l1/wiki")
-OUT = Path("redirects/l1")
+OUT = Path("content/l1")
 BASE = "https://allusionistwiki.github.io/AllusionistWiki2/L1/"
 
 def slugify(s: str) -> str:
@@ -28,7 +28,7 @@ def main():
             target = BASE + slugify(target_rel[:-6]) + "/"
         else:
             target = BASE + slugify(target_rel)
-        out = OUT / rel
+        out = OUT / (str(rel) + ".md")
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(
             "---\ntitle: 移設済み（AllusionistWiki2 へ）\n---\n\n"
