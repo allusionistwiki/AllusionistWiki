@@ -1,0 +1,7 @@
+---
+title: 移設済み（AllusionistWiki2 へ）
+---
+
+<meta http-equiv="refresh" content="0; url=https://allusionistwiki.github.io/AllusionistWiki2/L1/l1/claims/A_ch5176_analogous_to_E_ch5176_骨槍_appears_as_体内からの生成_p260262_internal_parasitism,body_horror_genre">
+
+この L1 ページは **アリュージョニスト Wiki 2** へ移設しました。移動しない場合は [こちら](https://allusionistwiki.github.io/AllusionistWiki2/L1/l1/claims/A_ch5176_analogous_to_E_ch5176_骨槍_appears_as_体内からの生成_p260262_internal_parasitism,body_horror_genre) を開いてください。

@@ -1,0 +1,7 @@
+---
+title: 移設済み（AllusionistWiki2 へ）
+---
+
+<meta http-equiv="refresh" content="0; url=https://allusionistwiki.github.io/AllusionistWiki2/L1/l1/claims/A_ch5029_analogous_to_E_コルセスカの社会的信用による保証_企業ブランドや社会的地位による契約担保シグナリング理論">
+
+この L1 ページは **アリュージョニスト Wiki 2** へ移設しました。移動しない場合は [こちら](https://allusionistwiki.github.io/AllusionistWiki2/L1/l1/claims/A_ch5029_analogous_to_E_コルセスカの社会的信用による保証_企業ブランドや社会的地位による契約担保シグナリング理論) を開いてください。

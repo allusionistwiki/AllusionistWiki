@@ -1,0 +1,7 @@
+---
+title: 移設済み（AllusionistWiki2 へ）
+---
+
+<meta http-equiv="refresh" content="0; url=https://allusionistwiki.github.io/AllusionistWiki2/L1/l2/claims/A_ch5157_inverts_E_p104_cerlatris_prayer_buddhist_attachment_aversion">
+
+この L1 ページは **アリュージョニスト Wiki 2** へ移設しました。移動しない場合は [こちら](https://allusionistwiki.github.io/AllusionistWiki2/L1/l2/claims/A_ch5157_inverts_E_p104_cerlatris_prayer_buddhist_attachment_aversion) を開いてください。

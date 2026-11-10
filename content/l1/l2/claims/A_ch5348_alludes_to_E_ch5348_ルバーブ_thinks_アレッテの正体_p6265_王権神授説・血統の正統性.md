@@ -1,0 +1,7 @@
+---
+title: 移設済み（AllusionistWiki2 へ）
+---
+
+<meta http-equiv="refresh" content="0; url=https://allusionistwiki.github.io/AllusionistWiki2/L1/l2/claims/A_ch5348_alludes_to_E_ch5348_ルバーブ_thinks_アレッテの正体_p6265_王権神授説・血統の正統性">
+
+この L1 ページは **アリュージョニスト Wiki 2** へ移設しました。移動しない場合は [こちら](https://allusionistwiki.github.io/AllusionistWiki2/L1/l2/claims/A_ch5348_alludes_to_E_ch5348_ルバーブ_thinks_アレッテの正体_p6265_王権神授説・血統の正統性) を開いてください。

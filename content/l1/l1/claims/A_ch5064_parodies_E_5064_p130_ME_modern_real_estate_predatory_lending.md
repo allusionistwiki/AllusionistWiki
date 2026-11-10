@@ -1,0 +1,7 @@
+---
+title: 移設済み（AllusionistWiki2 へ）
+---
+
+<meta http-equiv="refresh" content="0; url=https://allusionistwiki.github.io/AllusionistWiki2/L1/l1/claims/A_ch5064_parodies_E_5064_p130_ME_modern_real_estate_predatory_lending">
+
+この L1 ページは **アリュージョニスト Wiki 2** へ移設しました。移動しない場合は [こちら](https://allusionistwiki.github.io/AllusionistWiki2/L1/l1/claims/A_ch5064_parodies_E_5064_p130_ME_modern_real_estate_predatory_lending) を開いてください。

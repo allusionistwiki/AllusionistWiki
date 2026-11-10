@@ -1,0 +1,7 @@
+---
+title: 移設済み（AllusionistWiki2 へ）
+---
+
+<meta http-equiv="refresh" content="0; url=https://allusionistwiki.github.io/AllusionistWiki2/L1/l1/claims/A_ch5494_inverts_E_Black_Insect_Knights_Violence_Yakuza_Organized_Crime_Image">
+
+この L1 ページは **アリュージョニスト Wiki 2** へ移設しました。移動しない場合は [こちら](https://allusionistwiki.github.io/AllusionistWiki2/L1/l1/claims/A_ch5494_inverts_E_Black_Insect_Knights_Violence_Yakuza_Organized_Crime_Image) を開いてください。

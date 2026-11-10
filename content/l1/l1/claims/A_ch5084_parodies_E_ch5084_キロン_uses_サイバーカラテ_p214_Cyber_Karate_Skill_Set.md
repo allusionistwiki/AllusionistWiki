@@ -1,0 +1,7 @@
+---
+title: 移設済み（AllusionistWiki2 へ）
+---
+
+<meta http-equiv="refresh" content="0; url=https://allusionistwiki.github.io/AllusionistWiki2/L1/l1/claims/A_ch5084_parodies_E_ch5084_キロン_uses_サイバーカラテ_p214_Cyber_Karate_Skill_Set">
+
+この L1 ページは **アリュージョニスト Wiki 2** へ移設しました。移動しない場合は [こちら](https://allusionistwiki.github.io/AllusionistWiki2/L1/l1/claims/A_ch5084_parodies_E_ch5084_キロン_uses_サイバーカラテ_p214_Cyber_Karate_Skill_Set) を開いてください。

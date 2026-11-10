@@ -1,0 +1,7 @@
+---
+title: 移設済み（AllusionistWiki2 へ）
+---
+
+<meta http-equiv="refresh" content="0; url=https://allusionistwiki.github.io/AllusionistWiki2/L1/l1/claims/A_ch5431_analogous_to_E_人工知能による統治とリスク回避_アルゴリズム差別・AI社会実装の倫理課題">
+
+この L1 ページは **アリュージョニスト Wiki 2** へ移設しました。移動しない場合は [こちら](https://allusionistwiki.github.io/AllusionistWiki2/L1/l1/claims/A_ch5431_analogous_to_E_人工知能による統治とリスク回避_アルゴリズム差別・AI社会実装の倫理課題) を開いてください。
