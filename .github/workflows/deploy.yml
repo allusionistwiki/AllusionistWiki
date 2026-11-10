@@ -72,6 +72,8 @@ jobs:
         if: steps.flag.outputs.deploy == 'true'
         run: |
           git clone --depth 1 https://github.com/allusionistwiki/AllusionistLLMWiki2_Obsidian.git /tmp/l1
+          python3 scripts/gen_l1_redirects.py /tmp/l1/wiki
+          rm -rf public/l1
           git -C /tmp/l1 archive HEAD wiki | tar -x -C /tmp/l1
           (cd /tmp/l1 && find wiki -name '*.html') | sed 's#^wiki/#public/l1/#' | while read f; do mkdir -p "$(dirname "$f")"; touch "$f"; done
           find public/l1 -type f | wc -l
