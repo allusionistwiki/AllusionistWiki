@@ -10,7 +10,7 @@ from pathlib import Path
 
 VAULT = Path("/tmp/l1/wiki")
 OUT = Path("content/l1")
-BASE = "https://allusionistwiki.github.io/AllusionistWiki2/l1/"
+BASE = "https://allusionistwiki.github.io/AllusionistWiki2/L1/"
 
 def slugify(s: str) -> str:
     s = s.replace("&", "and")
