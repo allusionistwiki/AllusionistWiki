@@ -1,7 +1,0 @@
----
-title: 移設済み（AllusionistWiki2 へ）
----
-
-<meta http-equiv="refresh" content="0; url=https://allusionistwiki.github.io/AllusionistWiki2/L1/l2/claims/A_ch5158_alludes_to_E_ch5158_ミルーニャ_confesses_利己性_p78_Psychopathy,Narcissism">
-
-この L1 ページは **アリュージョニスト Wiki 2** へ移設しました。移動しない場合は [こちら](https://allusionistwiki.github.io/AllusionistWiki2/L1/l2/claims/A_ch5158_alludes_to_E_ch5158_ミルーニャ_confesses_利己性_p78_Psychopathy,Narcissism) を開いてください。

@@ -1,7 +1,0 @@
----
-title: 移設済み（AllusionistWiki2 へ）
----
-
-<meta http-equiv="refresh" content="0; url=https://allusionistwiki.github.io/AllusionistWiki2/L1/l1/claims/A_ch5399_analogous_to_E_ch5399_うずめ_other_握手会の実施_p312_machine_learning_few_shot">
-
-この L1 ページは **アリュージョニスト Wiki 2** へ移設しました。移動しない場合は [こちら](https://allusionistwiki.github.io/AllusionistWiki2/L1/l1/claims/A_ch5399_analogous_to_E_ch5399_うずめ_other_握手会の実施_p312_machine_learning_few_shot) を開いてください。

@@ -1,7 +1,0 @@
----
-title: 移設済み（AllusionistWiki2 へ）
----
-
-<meta http-equiv="refresh" content="0; url=https://allusionistwiki.github.io/AllusionistWiki2/L1/l1/claims/A_ch5239_sublates_E_ch5239_トリシューラ_defines_心_p12_mind_as_software_hardware_linkage">
-
-この L1 ページは **アリュージョニスト Wiki 2** へ移設しました。移動しない場合は [こちら](https://allusionistwiki.github.io/AllusionistWiki2/L1/l1/claims/A_ch5239_sublates_E_ch5239_トリシューラ_defines_心_p12_mind_as_software_hardware_linkage) を開いてください。

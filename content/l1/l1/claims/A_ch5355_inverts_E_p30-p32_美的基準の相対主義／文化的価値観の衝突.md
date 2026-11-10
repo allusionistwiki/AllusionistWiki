@@ -1,7 +1,0 @@
----
-title: 移設済み（AllusionistWiki2 へ）
----
-
-<meta http-equiv="refresh" content="0; url=https://allusionistwiki.github.io/AllusionistWiki2/L1/l1/claims/A_ch5355_inverts_E_p30-p32_美的基準の相対主義／文化的価値観の衝突">
-
-この L1 ページは **アリュージョニスト Wiki 2** へ移設しました。移動しない場合は [こちら](https://allusionistwiki.github.io/AllusionistWiki2/L1/l1/claims/A_ch5355_inverts_E_p30-p32_美的基準の相対主義／文化的価値観の衝突) を開いてください。

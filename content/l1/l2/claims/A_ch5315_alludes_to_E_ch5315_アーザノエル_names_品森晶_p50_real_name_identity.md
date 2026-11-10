@@ -1,7 +1,0 @@
----
-title: 移設済み（AllusionistWiki2 へ）
----
-
-<meta http-equiv="refresh" content="0; url=https://allusionistwiki.github.io/AllusionistWiki2/L1/l2/claims/A_ch5315_alludes_to_E_ch5315_アーザノエル_names_品森晶_p50_real_name_identity">
-
-この L1 ページは **アリュージョニスト Wiki 2** へ移設しました。移動しない場合は [こちら](https://allusionistwiki.github.io/AllusionistWiki2/L1/l2/claims/A_ch5315_alludes_to_E_ch5315_アーザノエル_names_品森晶_p50_real_name_identity) を開いてください。
