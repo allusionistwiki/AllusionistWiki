@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+      <title>幻想再帰のアリュージョニスト Wiki</title>
+      <link>https://allusionistwiki.github.io/AllusionistWiki</link>
+      <description>最新の10件 on 幻想再帰のアリュージョニスト Wiki</description>
+      <generator>Quartz -- quartz.jzhao.xyz</generator>
+      <item>
+    <title>アエタイトと霊鳥アキラ: 例えの鎖を深読みする（Playground）</title>
+    <link>https://allusionistwiki.github.io/AllusionistWiki/playground/aegirite-analogies</link>
+    <guid>https://allusionistwiki.github.io/AllusionistWiki/playground/aegirite-analogies</guid>
+    <description><![CDATA[ Issue ]]></description>
+    <pubDate>Thu, 22 Oct 2026 15:00:00 GMT</pubDate>
+  </item><item>
+    <title>依頼・報告 — 誤り / reject / 編集依頼 / 情報提供</title>
+    <link>https://allusionistwiki.github.io/AllusionistWiki/reports/</link>
+    <guid>https://allusionistwiki.github.io/AllusionistWiki/reports/</guid>
+    <description><![CDATA[ 本番 Wiki への報告・依頼の専用入口。4 種別（誤り / reject / 編集依頼 / 情報提供）を GitHub Issue（高速・推奨）と匿名フォームから受け付け、自動パイプライン（トリアージ→LLM 実装→機械ゲート→LLM 監査）で処理します ]]></description>
+    <pubDate>Mon, 19 Oct 2026 15:00:00 GMT</pubDate>
+  </item><item>
+    <title>5-15 の「ゴグマゴグ」——イギリス伝承の巨人か、聖書のゴグとマゴグか</title>
+    <link>https://allusionistwiki.github.io/AllusionistWiki/playground/gogmagog</link>
+    <guid>https://allusionistwiki.github.io/AllusionistWiki/playground/gogmagog</guid>
+    <description><![CDATA[ 5-15 の「ゴグマゴグ」——イギリス伝承の巨人か、聖書のゴグとマゴグか NOTE このページは Playground（遊び場） の仮説ページです。原文引用は private 原文（AllusionistWiki_raw）の kakuyomu 版段落索引 ¶ に照合済み（p 番号は L1 baseline AllusionistLLMWiki2/raw/chNNNN.txt の行頭ページマーカーに照合）。解读の節は依旧として仮説層に属し、Core 層への引用は 昇格プロトコル による昇格後に限り可能です。 1. ]]></description>
+    <pubDate>Sat, 17 Oct 2026 15:00:00 GMT</pubDate>
+  </item><item>
+    <title>【口舌】の正体（原文 ¶ 照合で確定化した事実と、未検証の推察）</title>
+    <link>https://allusionistwiki.github.io/AllusionistWiki/playground/kouzetsu</link>
+    <guid>https://allusionistwiki.github.io/AllusionistWiki/playground/kouzetsu</guid>
+    <description><![CDATA[ 【口舌】の正体（確定事実と未検証推察の併記） NOTE このページは Playground（遊び場） の仮説ページです。「確定事実」節の原文引用は private 原文（AllusionistWiki_raw・kakuyomu 版）の段落索引 ¶ に照合済みですが、本页全体は Core 層未登録の仮説層に属します。Core 層への引用は 昇格プロトコル による昇格後に限り可能です。 1. ]]></description>
+    <pubDate>Fri, 16 Oct 2026 15:00:00 GMT</pubDate>
+  </item><item>
+    <title>第一位のラクルラールの座は誰が勝ち取ったのか（4 章ラスト・イツノとマラコーダの会話）</title>
+    <link>https://allusionistwiki.github.io/AllusionistWiki/playground/rakulraal-seat</link>
+    <guid>https://allusionistwiki.github.io/AllusionistWiki/playground/rakulraal-seat</guid>
+    <description><![CDATA[ 第一位のラクルラールの座は誰が勝ち取ったのか（4 章ラスト・イツノとマラコーダの会話） NOTE このページは Playground（遊び場） の仮説ページです。「確定事実」節の原文引用は private 原文（AllusionistWiki_raw・kakuyomu 版）の段落索引 ¶ に照合済みですが、本页全体は Core 層未登録の仮説層に属します。Core 層への引用は 昇格プロトコル による昇格後に限り可能です。 1. ]]></description>
+    <pubDate>Fri, 16 Oct 2026 15:00:00 GMT</pubDate>
+  </item><item>
+    <title>六人の関係性マップ（ベアトリーチェの融合先と、アズーリア・レオ・青嶺瑠璃の繋がり）</title>
+    <link>https://allusionistwiki.github.io/AllusionistWiki/playground/relations-six</link>
+    <guid>https://allusionistwiki.github.io/AllusionistWiki/playground/relations-six</guid>
+    <description><![CDATA[ 六人の関係性マップ（ベアトリーチェの融合先と、アズーリア・レオ・青嶺瑠璃の繋がり） NOTE このページは Playground（遊び場） の仮説ページです。「確定事実」節の原文引用は private 原文（AllusionistWiki_raw・kakuyomu 版）の段落索引 ¶ に照合済みですが、本页全体は Core 層未登録の仮説層に属します。Core 層への引用は 昇格プロトコル による昇格後に限り可能です。 1. ]]></description>
+    <pubDate>Fri, 16 Oct 2026 15:00:00 GMT</pubDate>
+  </item><item>
+    <title>Playground（遊び場）: 仮説自由記述層</title>
+    <link>https://allusionistwiki.github.io/AllusionistWiki/playground/</link>
+    <guid>https://allusionistwiki.github.io/AllusionistWiki/playground/</guid>
+    <description><![CDATA[ スキーマ検証を受けない自由記述の場。マクロな考察・仮説・LLM との対話ログを「思考の痕跡」として置き、Core 層への昇格候補を育てる（Issue ]]></description>
+    <pubDate>Thu, 15 Oct 2026 15:00:00 GMT</pubDate>
+  </item><item>
+    <title>直近コミット</title>
+    <link>https://allusionistwiki.github.io/AllusionistWiki/recent-commits</link>
+    <guid>https://allusionistwiki.github.io/AllusionistWiki/recent-commits</guid>
+    <description><![CDATA[ vault（Obsidian）の直近のコミット（自動生成） ]]></description>
+    <pubDate>Thu, 24 Sep 2026 18:21:23 GMT</pubDate>
+  </item><item>
+    <title>幻想再帰のアリュージョニスト Wiki</title>
+    <link>https://allusionistwiki.github.io/AllusionistWiki/</link>
+    <guid>https://allusionistwiki.github.io/AllusionistWiki/</guid>
+    <description><![CDATA[ 「ネットミームから現代思想まで引喩が散りばめたオカルトパンク」の多層アナロジーを典拠付きで体系化する分析Wiki ]]></description>
+    <pubDate>Thu, 24 Sep 2026 15:00:00 GMT</pubDate>
+  </item><item>
+    <title>ライセンス</title>
+    <link>https://allusionistwiki.github.io/AllusionistWiki/license</link>
+    <guid>https://allusionistwiki.github.io/AllusionistWiki/license</guid>
+    <description><![CDATA[ 本Wikiの分割ライセンス（CC BY-NC-SA 4.0 / CC0 / 第三者素材除外）の説明 ]]></description>
+    <pubDate>Thu, 24 Sep 2026 15:00:00 GMT</pubDate>
+  </item>
+    </channel>
+  </rss>

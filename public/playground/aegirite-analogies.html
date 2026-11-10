@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr"><head><title>アエタイトと霊鳥アキラ: 例えの鎖を深読みする（Playground）</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="幻想再帰のアリュージョニスト Wiki"/><meta property="og:title" content="アエタイトと霊鳥アキラ: 例えの鎖を深読みする（Playground）"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="アエタイトと霊鳥アキラ: 例えの鎖を深読みする（Playground）"/><meta name="twitter:description" content="Issue"/><meta property="og:description" content="Issue"/><meta property="og:image:alt" content="Issue"/><meta property="og:image" content="https://allusionistwiki.github.io/AllusionistWiki/static/og-image.png"/><meta property="og:image:url" content="https://allusionistwiki.github.io/AllusionistWiki/static/og-image.png"/><meta name="twitter:image" content="https://allusionistwiki.github.io/AllusionistWiki/static/og-image.png"/><meta property="og:image:type" content="image/.png"/><meta property="twitter:domain" content="allusionistwiki.github.io/AllusionistWiki"/><meta property="og:url" content="https://allusionistwiki.github.io/AllusionistWiki/playground/aegirite-analogies"/><meta property="twitter:url" content="https://allusionistwiki.github.io/AllusionistWiki/playground/aegirite-analogies"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="Issue"/><meta name="generator" content="Quartz"/><link href="../index.css?v=dev" rel="stylesheet" type="text/css" spa-preserve/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  padding: 2rem;
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiQzpcXFVzZXJzXFxkNWR4XFxEb3dubG9hZHNcXENvZGVcXEFsbHVzaW9uaXN0V2lraVxccXVhcnR6XFxjb21wb25lbnRzXFxzdHlsZXMiLCJzb3VyY2VzIjpbIm1lcm1haWQuaW5saW5lLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUdGO0VBQ0U7OztBQUtGO0VBQ0U7RUFDQTs7O0FBSUo7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7O0FBR0Y7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTs7QUFHRjtFQUNFO0VBQ0E7O0FBSUo7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFOztBQUdGO0VBQ0U7O0FBSUY7RUFDRTtFQUNBO0VBQ0EiLCJzb3VyY2VzQ29udGVudCI6WyIuZXhwYW5kLWJ1dHRvbiB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxvYXQ6IHJpZ2h0O1xuICBwYWRkaW5nOiAwLjRyZW07XG4gIG1hcmdpbjogMC4zcmVtO1xuICByaWdodDogMDsgLy8gTk9URTogcmlnaHQgd2lsbCBiZSBzZXQgaW4gbWVybWFpZC5pbmxpbmUudHNcbiAgY29sb3I6IHZhcigtLWdyYXkpO1xuICBib3JkZXItY29sb3I6IHZhcigtLWRhcmspO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1saWdodCk7XG4gIGJvcmRlcjogMXB4IHNvbGlkO1xuICBib3JkZXItcmFkaXVzOiA1cHg7XG4gIG9wYWNpdHk6IDA7XG4gIHRyYW5zaXRpb246IDAuMnM7XG5cbiAgJiA+IHN2ZyB7XG4gICAgZmlsbDogdmFyKC0tbGlnaHQpO1xuICAgIGZpbHRlcjogY29udHJhc3QoMC4zKTtcbiAgfVxuXG4gICY6aG92ZXIge1xuICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICBib3JkZXItY29sb3I6IHZhcigtLXNlY29uZGFyeSk7XG4gIH1cblxuICAmOmZvY3VzIHtcbiAgICBvdXRsaW5lOiAwO1xuICB9XG59XG5cbnByZSB7XG4gICY6aG92ZXIgPiAuZXhwYW5kLWJ1dHRvbiB7XG4gICAgb3BhY2l0eTogMTtcbiAgICB0cmFuc2l0aW9uOiAwLjJzO1xuICB9XG59XG5cbiNtZXJtYWlkLWNvbnRhaW5lciB7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgY29udGFpbjogbGF5b3V0O1xuICB6LWluZGV4OiA5OTk7XG4gIGxlZnQ6IDA7XG4gIHRvcDogMDtcbiAgd2lkdGg6IDEwMHZ3O1xuICBoZWlnaHQ6IDEwMHZoO1xuICBvdmVyZmxvdzogaGlkZGVuO1xuICBkaXNwbGF5OiBub25lO1xuICBiYWNrZHJvcC1maWx0ZXI6IGJsdXIoNHB4KTtcbiAgYmFja2dyb3VuZDogcmdiYSgwLCAwLCAwLCAwLjUpO1xuXG4gICYuYWN0aXZlIHtcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIH1cblxuICAmID4gI21lcm1haWQtc3BhY2Uge1xuICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tbGlnaHQpO1xuICAgIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgICBwb3NpdGlvbjogZml4ZWQ7XG4gICAgdG9wOiA1MCU7XG4gICAgbGVmdDogNTAlO1xuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlKC01MCUsIC01MCUpO1xuICAgIGhlaWdodDogODB2aDtcbiAgICB3aWR0aDogODB2dztcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xuXG4gICAgJiA+IC5tZXJtYWlkLWNvbnRlbnQge1xuICAgICAgcGFkZGluZzogMnJlbTtcbiAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgIHRyYW5zZm9ybS1vcmlnaW46IDAgMDtcbiAgICAgIHRyYW5zaXRpb246IHRyYW5zZm9ybSAwLjFzIGVhc2U7XG4gICAgICBvdmVyZmxvdzogdmlzaWJsZTtcbiAgICAgIG1pbi1oZWlnaHQ6IDIwMHB4O1xuICAgICAgbWluLXdpZHRoOiAyMDBweDtcblxuICAgICAgcHJlIHtcbiAgICAgICAgbWFyZ2luOiAwO1xuICAgICAgICBib3JkZXI6IG5vbmU7XG4gICAgICB9XG5cbiAgICAgIHN2ZyB7XG4gICAgICAgIG1heC13aWR0aDogbm9uZTtcbiAgICAgICAgaGVpZ2h0OiBhdXRvO1xuICAgICAgfVxuICAgIH1cblxuICAgICYgPiAubWVybWFpZC1jb250cm9scyB7XG4gICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICBib3R0b206IDIwcHg7XG4gICAgICByaWdodDogMjBweDtcbiAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICBnYXA6IDhweDtcbiAgICAgIHBhZGRpbmc6IDhweDtcbiAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICBib3JkZXItcmFkaXVzOiA2cHg7XG4gICAgICBib3gtc2hhZG93OiAwIDJweCA0cHggcmdiYSgwLCAwLCAwLCAwLjEpO1xuICAgICAgei1pbmRleDogMjtcblxuICAgICAgLm1lcm1haWQtY29udHJvbC1idXR0b24ge1xuICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICAgICAgd2lkdGg6IDMycHg7XG4gICAgICAgIGhlaWdodDogMzJweDtcbiAgICAgICAgcGFkZGluZzogMDtcbiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHQpO1xuICAgICAgICBjb2xvcjogdmFyKC0tZGFyayk7XG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDRweDtcbiAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xuICAgICAgICBmb250LXNpemU6IDE2cHg7XG4gICAgICAgIGZvbnQtZmFtaWx5OiB2YXIoLS1ib2R5Rm9udCk7XG4gICAgICAgIHRyYW5zaXRpb246IGFsbCAwLjJzIGVhc2U7XG5cbiAgICAgICAgJjpob3ZlciB7XG4gICAgICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgICAgfVxuXG4gICAgICAgICY6YWN0aXZlIHtcbiAgICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMXB4KTtcbiAgICAgICAgfVxuXG4gICAgICAgIC8vIFN0eWxlIHRoZSByZXNldCBidXR0b24gZGlmZmVyZW50bHlcbiAgICAgICAgJjpudGgtY2hpbGQoMikge1xuICAgICAgICAgIHdpZHRoOiBhdXRvO1xuICAgICAgICAgIHBhZGRpbmc6IDAgMTJweDtcbiAgICAgICAgICBmb250LXNpemU6IDE0cHg7XG4gICAgICAgIH1cbiAgICAgIH1cbiAgICB9XG4gIH1cbn1cbiJdfQ== */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="../prescript.js?v=dev" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://allusionistwiki.github.io/AllusionistWiki/index.xml"/></head><body data-slug="playground/aegirite-analogies"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">幻想再帰のアリュージョニスト Wiki</a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>検索</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="検索ワードを入力" placeholder="検索ワードを入力"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="ダークモード"><title>ダークモード</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="ライトモード"><title>ライトモード</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="リーダーモード"><title>リーダーモード</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../playground/">Playground（遊び場）: 仮説自由記述層</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>アエタイトと霊鳥アキラ: 例えの鎖を深読みする（Playground）</a></div></nav><h1 class="article-title">アエタイトと霊鳥アキラ: 例えの鎖を深読みする（Playground）</h1><p class="content-meta"><span class="content-meta-segment"><span>作成 <time datetime="2026-10-22T15:00:00.000Z">2026年10月23日</time></span></span><span class="content-meta-segment"><span>19 min read</span></span></p></div></div><article class="popover-hint"><h1 id="アエタイトと霊鳥アキラ-例えの鎖を深読みする">アエタイトと霊鳥アキラ: 例えの鎖を深読みする<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#アエタイトと霊鳥アキラ-例えの鎖を深読みする" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<blockquote class="callout note" data-callout="note">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>状態: <code>exploring</code></p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>この層の記述はすべて<strong>仮説（Hypothesis）または思考の痕跡</strong>であり、確定した事実ではありません。事実として引用しないでください。うち「比喩① 鷲石（aetites）」の節のみ <code>promotion-candidate</code>（正規層への反映候補）とします。原文にない飛躍には「根拠なし」と注記します。
+起案: Issue #3（2026-10-23・Tally 回収による自動起票・依頼者 シナモリアキラ『』氏）。「以下何に例えられているか深読みできますか？他の例えはあります？」への回答として執筆。</p>
+</div>
+</blockquote>
+<h2 id="0-依頼された典拠と原文照合結果">0. 依頼された典拠と原文照合結果<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#0-依頼された典拠と原文照合結果" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>依頼文の典拠 3 件はすべて原文に存在することを確認済みです（syosetu 版 ¶ 番号で照合。kakuyomu・PDF 版にも同文あり）。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>#</th><th>依頼の典拠</th><th>照合箇所（syosetu 版）</th><th>状態</th></tr></thead><tbody><tr><td>1</td><td>「アエタイトに宿りし霊鳥アキラ」</td><td>ch0096（断章6-1）¶197、ch00097（断章6-2）¶406「そうか。ではアエタイトに宿りし霊鳥アキラよ、礼を言うぞ」</td><td>✅ 確認</td></tr><tr><td>2</td><td>「それはアエタイトと申しまして、…怪鳥アキラがもたらしたる呪水晶がその正体…」</td><td>ch00096 ¶197</td><td>✅ 確認</td></tr><tr><td>3</td><td>「首のないアキラの紋章」</td><td>ch00096 ¶199（「スキリシアでは、首のないアキラの紋章は外世界の呪力を宿すという伝承が」）</td><td>✅ 確認</td></tr></tbody></table></div>
+<p>本分析で追加照合した原文（すべて三版で確認）:</p>
+<ul>
+<li>ch00096 ¶210: 「<strong>鷲石に着想を得まして</strong>、人形でこれを再現してみましたのがこちら。人形の中に人形、その中にまた人形。これぞ入れ子人形でございます」</li>
+<li>ch00096 ¶212 以下: 入れ子人形の展開（9 重、内包）</li>
+<li>ch00096 ¶198: 「小さな石を内包した様が子を宿している母親に似ていることから、安産を祈願する呪力が宿っているとされております」</li>
+<li>ch00097 ¶332–335: 「直後、小さな石がひび割れた。そして、中から夥しい数の猛禽たちが飛び出した」「百十一羽の霊鳥アキラは屍肉を啄む――空飛ぶ死人は、<strong>鳥葬</strong>に限ります」</li>
+<li>ch00097 ¶348–349: 鳥が一ヶ所に集い「アエタイトと呼ばれる石に戻った霊鳥」が回収される</li>
+<li>ch00097 ¶326: 「陛下、<strong>ウルトラマリン様</strong>のアエタイトをお持ちですか」</li>
+</ul>
+<blockquote class="callout warning" data-callout="warning">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>アクセスメモ（2026-10-27 解消） </p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>執筆当時（2026-10-23）、参照許可リストの <code>AllusionistWiki_obsidian</code>（vault 本体）は llm-task 実行環境から <strong>Permission denied</strong> で読めず、本層の既存ページとの突合は未実施だった。2026-10-27 にローカル環境で vault 本体（<code>wiki/</code>）と出版 Wiki content（v1/v2）を直接読み、突合を実施した:</p>
+<ul>
+<li>vault 既存の事実ページ（<code>wiki/terminology/単語（一覧）/アエタイト</code>、<code>wiki/episodes/ch00096・ch00097・ch00099</code>、<code>wiki/reflections/by-episode/ch00099</code>）は、本ページが依拠する事実（¶197・¶198・¶199・¶210・¶326・¶332–335・¶348–349・¶406、百十一羽、鳥葬、ウルトラマリンの献上）と一致 — <strong>矛盾なし（source-verified）</strong>。</li>
+<li>vault・v1・v2 の既存層に鷲石（aetites）解析は不在 → 比喩①の新規性は維持され <code>promotion-candidate</code> 地位も維持。</li>
+<li><code>mysteries/Open_Questions.md</code> の未回収課題「怪鳥アキラと霊鳥アキラの関係」（断章5-1↔6-2、同一か？）に対し、比喩①の「鷲が運ぶ石（aetites）」系譜は同一性の方向の証拠を供給する。昇格実装時の反映先として記録。
+分析の依拠（L1 vault・出版 Wiki content・外部典拠）は §8 来歴のとおり。</li>
+</ul>
+</div>
+</blockquote>
+<h2 id="1-既存分析正規層の棚卸し">1. 既存分析（正規層）の棚卸し<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#1-既存分析正規層の棚卸し" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>先に進む前に、依頼は「既存分析の再利用・拡張」を明示的に望んでいるため、L1/L2 に既載の関連解析を挙げます。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>既存ページ（正規層）</th><th>内容</th><th>位置づけ</th></tr></thead><tbody><tr><td><a href="https://allusionistwiki.github.io/AllusionistWiki2/entities/items/E_item_%E3%82%A2%E3%82%A8%E3%82%BF%E3%82%A4%E3%83%88/" class="external">E_item_アエタイト<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></td><td>石中の石・安産の呪力・初出 ch5266 の事実ページ</td><td>事実層（依頼典拠①②に対応）</td></tr><tr><td><a href="https://allusionistwiki.github.io/AllusionistWiki2/claims/A_ch5266_analogous_to_E_p120-p135_Apexite/" class="external">A_ch5266_analogous_to_E_p120-p135_Apexite<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></td><td>「アエタイト＝尖晶石（Apexite）の安産お守り の借用」比喩類似に限定</td><td><strong>比喩①はこの claim に対する補強であり、より対応の良い後継候補</strong></td></tr><tr><td><a href="https://allusionistwiki.github.io/AllusionistWiki2/references/ME_Apexite/" class="external">ME_Apexite<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></td><td>外部参照: 尖晶石（安産）</td><td>同上</td></tr><tr><td><a href="https://allusionistwiki.github.io/AllusionistWiki2/claims/A_ch5266_alludes_to_E_p147-p158_NestedDolls_Matryoshka/" class="external">A_ch5266_alludes_to_E_p147-p158_NestedDolls_Matryoshka<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></td><td>入れ子人形＝マトリョーシカ／フラクタル（自己相似）</td><td>本ページの比喩②が継承</td></tr><tr><td><a href="https://allusionistwiki.github.io/AllusionistWiki2/mysteries/MY_ch5270_Akira_Bird_Cycle/" class="external">MY_ch5270_Akira_Bird_Cycle<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></td><td>霊鳥↔石の回収ループと「百十一羽」の未回収</td><td>本ページの比喩③④が仮説供給</td></tr><tr><td><a href="https://allusionistwiki.github.io/AllusionistWiki2/mysteries/MY_ch5266_Ultramarine_Wish/" class="external">MY_ch5266_Ultramarine_Wish<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></td><td>アエタイト＋入れ子人形の贈り物の真意（真の恋人・天空の少女）</td><td>比喩⑤と接続</td></tr><tr><td><a href="https://allusionistwiki.github.io/AllusionistWiki2/claims/A_ch5454_alludes_to_E_ch5454_%E3%82%B7%E3%83%8A%E3%83%A2%E3%83%AA%E3%82%A2%E3%82%AD%E3%83%A9_other_%E3%82%AC%E3%83%AD%E3%82%A2%E3%83%B3%E3%83%87%E3%82%A3%E3%82%A2%E3%83%B3_p232234_indian_mythology_galadri/" class="external">A_ch5454_alludes_to_…_galadri<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>・A_ch5497（ハルピュイア神話「アクィラ」）</td><td>アキラの鳥相（鳥とされた存在）への既存比喩</td><td>比喩③が継承</td></tr><tr><td><a href="../playground/gogmagog" class="internal alias" data-slug="playground/gogmagog">Playground: gogmagog</a>（<code>promotion-candidate</code>）</td><td>ゴグマゴグ照合（5-15・5-26）</td><td>比喩④の相互リンク先</td></tr></tbody></table></div>
+<p>既存分析は「アエタイト＝民俗的な安産のお守り鉱石」「入れ子＝自己相似」という方向まで到達済みで、依頼への答えの半分はすでに正規層にあります。<strong>以下はそこに「最も対応の良い実在の典拠」と「未挙額の他の例え」を足す試みです。</strong></p>
+<h2 id="2-比喩本命promotion-candidate-アエタイト鷲石aetites--eagle-stone中世石霊誌の魔石">2. 比喩①（本命・promotion-candidate）: アエタイト＝「鷲石（aetites / eagle stone）」——中世石霊誌の魔石<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2-比喩本命promotion-candidate-アエタイト鷲石aetites--eagle-stone中世石霊誌の魔石" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>依頼の 3 典拠を束ねる最有力の実在典拠は、**鷲石（ラテン語 aetites、英語 eagle-stone）**です。L1 が仮定した尖晶石（Apexite）説より、記述との一致が段違いに高いことを原文側・外部典拠側の双方から確認しました。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>作品内の記述</th><th>鷲石（aetites）の伝承</th></tr></thead><tbody><tr><td>「石の中の空洞に更に小さな石が入っている」「揺らすとカラカラと鳴る」（¶197）</td><td>中世の定義そのもの: 「aetites とは空洞を持ち、小さな石や砂を内包し、揺らすと音を立てる石」。1920 年代の鉱床学定義（鉄質の殻＋内部の遊離する小石）も一致</td></tr><tr><td>「怪鳥アキラがもたらしたる」（鳥が運来する）</td><td>「鷲が巣に持ち込む」「鷲はこれ無しには繁殖できない」——石の名（aetos＝鷲）は鳥に由来。Ailianos（自然の動物論 1.35）「鷲は己の名を冠す石 aetite を運ぶ」</td></tr><tr><td>「子を宿している母親に似ている」「安産を祈願する呪力」（¶198）</td><td>ダイオスクリデス 5.160・プラスス（自然史 36.39）: 流産防止・分娩促進。「石の中の石は胎児を母胎に表す」（中世の注釈文、¶198 とほぼ同文）</td></tr><tr><td>「真の恋人に贈っていただければ」（贈答＝愛・縁結び）</td><td>Marbode de Rennes『石について』（Lapidary, c.1096）以来、.loadstone ほか魔石は「愛・結婚の調和」の効能で流布</td></tr><tr><td>作中の名称「アエタイト」</td><td>「aetites／aetitis」の音写と直接整合する。実在鉱物 aegirine（イオ輝石、北欧神話の海巨人 Ægir 命名）とも同形だが、<strong>性状（空洞＋内石＋鳥＋安産）は鷲石に完全一致</strong>しイオ輝石には一致しない</td></tr></tbody></table></div>
+<p><strong>決定的な内部証拠</strong>：ch00096 ¶210 で賢者自身が「<strong>鷲石に着想を得まして</strong>」入れ子人形を説明している。作品側が「石の中の石」の典拠を「鷲石」と名指ししており、アエタイト記述（¶197–199）と入れ子人形記述（¶210–212）は同一の発想——<strong>鷲石の自己複製性を人形で再現する</strong>——の双子として読める。作品が自分の比喩の素を自己引用している形跡であり、推定の強度は高い。</p>
+<p>外部典拠: <a href="https://en.wikipedia.org/wiki/aetites" class="external">Wikipedia: Aetites<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>・<a href="https://www.cambridge.org/core/journals/antiquity/article/abs/aetites-or-the-eaglestone/153FC105C747C5ADFED62F191B19BE3F" class="external">Antiquity 誌「Aetites or the Eagle-stone」<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>・<a href="https://www.medievalists.net/2011/06/loadstones-are-a-girl%e2%80%99s-best-friend-lapidary-cures-midwives-and-manuals-of-popular-healing-in-medieval-and-early-modern-england/" class="external">Medievalists.net（中世石霊誌と安産）<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>・<a href="http://www.melammu-project.eu/database/gen_html/a0001437.html" class="external">Aelian NA 1.35 引用（Melammu）<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p>
+<p><strong>正規層への反映提案</strong>（昇格プロトコル準拠、人間レビュー必須）:</p>
+<ol>
+<li>新規 claim <code>A_ch5266_alludes_to_E_Aetites</code>（predicate: alludes_to、対象 ME_Aetites）。evidence は ¶197/¶198/¶210（三版対応）</li>
+<li>新規 external_reference <code>ME_Aetites</code>（鷲石、Dioscorides V.160・Pliny NH XXXVI.39・Marbode Lapidary を出典に）</li>
+<li>既存 <code>A_ch5266_analogous_to_E_p120-p135_Apexite</code> の審査欄に「鷲石（aetites）説との並立」への追記（Apexite 説は名称・外来性の補強として生存させ、記述一致の主位は鷲石説に譲る）</li>
+</ol>
+<h2 id="3-比喩構造の比喩既存分析の継承-鳥が運ぶ鳥の器作品主題幻想再帰の自己参照ループ">3. 比喩②（構造の比喩・既存分析の継承）: 鳥が運ぶ鳥の器——作品主題「幻想再帰」の自己参照ループ<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#3-比喩構造の比喩既存分析の継承-鳥が運ぶ鳥の器作品主題幻想再帰の自己参照ループ" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li>L1 済みの「マトリョーシカ／フラクタル（自己相似）」分析（A_ch5266_NestedDolls_Matryoshka）は、アエタイト（石中の石）と入れ子人形（人形中の人形）が<strong>同一の入れ子動機</strong>で結ばれている点をさらに支える（¶210 の「鷲石に着想を得まして」が橋）。</li>
+<li><strong>循環</strong>: 怪鳥アキラ → 呪水晶（アエタイト）を運ぶ → 石を割ると「百十一羽の霊鳥アキラ」が出て（¶332–335）→ 役目を終えると石に「戻る」（¶348–349）。産んだものが産み手を内包する——ウロボロス型の自己発生輪。「石の中の石」「物語の中の物語（再演）」「作者の中の登場人物」という全巻の再帰主題（作品名「幻想再帰」）を、小道具が一点で凝縮する仕掛けとして読める。<strong>作品名との対応自体は根拠なし</strong>（内部に明示の手がかりは未確認）。</li>
+<li>「中から夥しい数の猛禽が飛び出す」（¶333）＝割れた石から鳥が生まれる＝<strong>宇宙卵（世界卵）<strong>の誕生図像。石の「安産」記述（¶198）が脱出直後の「新たな文明」の場面（¶341–343）に呼応する構造は示唆的だが、宇宙卵との明示対応は</strong>根拠なし（連想）</strong>。</li>
+</ul>
+<h2 id="4-比喩鳥の比喩-鳥葬と百十一羽検証できた実在儀礼と検証できていない語源">4. 比喩③（鳥の比喩）: 「鳥葬」と「百十一羽」——検証できた実在儀礼と、検証できていない語源<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#4-比喩鳥の比喩-鳥葬と百十一羽検証できた実在儀礼と検証できていない語源" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li><strong>鳥葬（sky burial）</strong>: 「空飛ぶ死人は、鳥葬に限ります」（¶335）はそのまま実在の葬法。チベットの天葬、ゾロアスター教のダフマ（沈黙の塔）——死者を猛禽に与える。Ovidius『変身物語』I 編の洪水後、泥を啄んで大地を清める鳥（Parnassos の鳥）のくだりが「死人を啄む鳥＝世界の浄化」という本作の機能と同型で、断章の「世界修復」テーマの遠い参照元になりうる（<strong>連想</strong>）。</li>
+<li><strong>110 羽という数</strong>: 英語の集団名詞の逸話に「カラス 100 羽は a murder、110 羽は a conspiracy」という言い伝えがあり、「110 猛禽＝conspiracy（共謀）」が「三つ巴」の共謀（¶ 断章6-2「この戦いは始めから三つ巴」）と響き合う可能性はあるが、この数対応の典拠を今回<strong>確認できなかった（根拠なし・未検証）</strong>。未回収のまま <a href="https://allusionistwiki.github.io/AllusionistWiki2/mysteries/MY_ch5270_Akira_Bird_Cycle/" class="external">MY_ch5270_Akira_Bird_Cycle<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> に記録済み。</li>
+<li>既存の鳥の比喩（Galadri: A_ch5454、ハルピュイア「アクィラ」: A_ch5497）は有効で、本節はそれを上書きしない。追加强候として: 鷲石伝承の「鷲（aquila）」と「アキラ」の音頭、および日本神話の<strong>白鳥（イナサノシラトリ＝秋葉の明鳥）<strong>が真実を告げる霊鳥である型（記紀）——いずれも音韻・機能の連想で</strong>根拠なし</strong>。</li>
+</ul>
+<h2 id="5-比喩紋章の比喩-首のない紋章斬首遊戯と首を運ぶ鳥">5. 比喩④（紋章の比喩）: 首のない紋章——斬首遊戯と首を運ぶ鳥<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#5-比喩紋章の比喩-首のない紋章斬首遊戯と首を運ぶ鳥" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>「首のないアキラの紋章は外世界の呪力を宿す」（¶199）に対応する例え候補:</p>
+<ul>
+<li><strong>首を咥える鳥</strong>: アルビオンの巨人王ゴグマゴグ伝承に「鳥の嘴に男の首を乗せた紋章（head of staves）」がある。本 Wiki には既に <a href="../playground/gogmagog" class="internal alias" data-slug="playground/gogmagog">gogmagog 照合ページ</a>（5-15・5-26、<code>promotion-candidate</code>）があり、「首のモチーフ×異界の権力」が作品中に反復する証拠が揃いつつある。相互リンク推奨（対応の直接証拠は未確認）。</li>
+<li><strong>サー・ガウェインと緑の騎士</strong>: 新年ごとに繰り返される<strong>斬首遊戯（beheading game）</strong>——首を斬られ、自分の首を担いで去る騎士。一年後に再演される約束（＝<strong>再演</strong>の構造そのもの）。「首のない＋鳥＋周期」の組み合わせは断章の「再演」テーマと構造的に似る。<strong>構造の相似であり直接典拠の証拠はなし</strong>。</li>
+<li><strong>オスカー・ワイルド『夜鷹と薔薇』</strong>: 愛のために死ぬ鳥、という図像。贈答が「真の恋人に贈る」安産のお守り（¶198–199）で、断章に「真実の忠愛」の悲劇が語られる（¶346）。モチーフの薄い共鳴としてのみ記録（<strong>根拠なし</strong>）。</li>
+<li>「外世界の呪力」の字義対応: アキラ（シナモリ・アキラ）自身が<strong>異界（外世界）からの転生者</strong>であり、断章の再演に「異界からの転生者」として参加する（¶ 断章6-2）。紋章＝外世界由来の霊鳥＝アキラ——<strong>作中論では自己参照</strong>であり、比喩というより仕込みの明示。L1 の「アキラ identity」系ミステリ（MY_ch5257 系）に接続。</li>
+</ul>
+<h2 id="6-比喩色の比喩-ウルトラマリン海の向こうから来た石">6. 比喩⑤（色の比喩）: ウルトラマリン——「海の向こう」から来た石<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#6-比喩色の比喩-ウルトラマリン海の向こうから来た石" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>「ウルトラマリン様のアエタイト」（¶326）のウルトラマリン（ultramarinus）は、<strong>ラピスラズリから作る群青顔料</strong>の語で、語源は「ultra mare＝海の彼方」。<strong>「海の彼方＝外世界」から来た、最も高価で聖母の衣にのみ許される「石そのものの色」</strong>——「外世界の呪力を宿す石」（¶199）の贈り主の名として、語源が記述と自己参照的に噛み合っている。L1 の未回収 <a href="https://allusionistwiki.github.io/AllusionistWiki2/mysteries/MY_ch5266_Ultramarine_Wish/" class="external">MY_ch5266_Ultramarine_Wish<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a> の「贈り物の真意」に対する一つの解答形（群青＝天・聖母＝真の恋の結実の配色コード）を提案する。作品側の明示は未確認（<strong>推定</strong>）。</p>
+<h2 id="7-依頼への直接回答総括">7. 依頼への直接回答（総括）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#7-依頼への直接回答総括" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li><strong>何に例えられているか</strong>: 最短の答えは「<strong>鷲石（aetites）——鷲が巣に運ぶ、石の中の石。中世ヨーロッパの安産の魔石</strong>」。作中記述（鳥が運ぶ／空洞＋内石／カラカラ音／安産／贈答）は中世石霊誌の条目と全項目で一致し、作品自身が「鷲石に着想を得て」と自己引用している（¶210）。</li>
+<li><strong>他の例え</strong>: ①自己相似・再帰（マトリョーシカ、フラクタル＝作品主題の象徴核）、②鳥葬（天葬・沈黙の塔）＝死者を啄む浄化、③首のない紋章＝斬首遊戯・首を咥える鳥の紋章系譜（ゴグマゴグ／緑の騎士）、④群青＝海の彼方から来た聖母の色、⑤（連想圏）宇宙卵・aetites の語源としての鷲（aquila）。</li>
+</ul>
+<h2 id="8-来歴provenance">8. 来歴（provenance）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#8-来歴provenance" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>項目</th><th>値</th></tr></thead><tbody><tr><td>起票</td><td>Issue #3（2026-10-23T11:55:01Z、Tally 自動起票・[form] 編集提案、依頼者 シナモリアキラ『』）</td></tr><tr><td>原文照合</td><td>syosetu 版 ch00096/ch00097 の ¶ 索引で ¶197・¶198・¶199・¶210・¶212・¶326・¶332–335・¶346・¶348–349・¶406 を特定。kakuyomu 版 ch00266（4-35 断章6②）および PDF 版 ch00096/ch00097 に対応文を確認（三典拠）</td></tr><tr><td>既存分析</td><td>L1 vault（AllusionistLLMWiki2/wiki）の E_item_アエタイト・A_ch5266 系 claim・MY_ch5266/5270 諸ミステリ・A_ch5454・A_ch5497 を読了・引用。出版 Wiki（AllusionistWiki2 content）の対応ページ URL を併記</td></tr><tr><td>外部典拠</td><td>Wikipedia「Aetites」、Cambridge Antiquity「Aetites or the Eagle-stone」、Medievalists.net（中世 lapidary 治療）、Melammu（Aelian NA 1.35）— 2026-10-23 取得</td></tr><tr><td>未達</td><td><code>AllusionistWiki_obsidian</code> への読み取りが実行環境で Permission denied（突合未実施）。110 羽の集団名詞説の出典未確認。「鷲石」以外の各比喩は原文側の手がかり不足を各節に明記</td></tr><tr><td>実装</td><td>llm-task（llm-issue-3）により 2026-10-23 執筆。正規層への反映提案は §2 末尾の 3 項目</td></tr></tbody></table></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>グラフビュー</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-555" aria-expanded="true"><h3>目次</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#アエタイトと霊鳥アキラ-例えの鎖を深読みする" data-for="アエタイトと霊鳥アキラ-例えの鎖を深読みする">アエタイトと霊鳥アキラ: 例えの鎖を深読みする</a></li><li class="depth-1"><a href="#0-依頼された典拠と原文照合結果" data-for="0-依頼された典拠と原文照合結果">0. 依頼された典拠と原文照合結果</a></li><li class="depth-1"><a href="#1-既存分析正規層の棚卸し" data-for="1-既存分析正規層の棚卸し">1. 既存分析（正規層）の棚卸し</a></li><li class="depth-1"><a href="#2-比喩本命promotion-candidate-アエタイト鷲石aetites--eagle-stone中世石霊誌の魔石" data-for="2-比喩本命promotion-candidate-アエタイト鷲石aetites--eagle-stone中世石霊誌の魔石">2. 比喩①（本命・promotion-candidate）: アエタイト＝「鷲石（aetites / eagle stone）」——中世石霊誌の魔石</a></li><li class="depth-1"><a href="#3-比喩構造の比喩既存分析の継承-鳥が運ぶ鳥の器作品主題幻想再帰の自己参照ループ" data-for="3-比喩構造の比喩既存分析の継承-鳥が運ぶ鳥の器作品主題幻想再帰の自己参照ループ">3. 比喩②（構造の比喩・既存分析の継承）: 鳥が運ぶ鳥の器——作品主題「幻想再帰」の自己参照ループ</a></li><li class="depth-1"><a href="#4-比喩鳥の比喩-鳥葬と百十一羽検証できた実在儀礼と検証できていない語源" data-for="4-比喩鳥の比喩-鳥葬と百十一羽検証できた実在儀礼と検証できていない語源">4. 比喩③（鳥の比喩）: 「鳥葬」と「百十一羽」——検証できた実在儀礼と、検証できていない語源</a></li><li class="depth-1"><a href="#5-比喩紋章の比喩-首のない紋章斬首遊戯と首を運ぶ鳥" data-for="5-比喩紋章の比喩-首のない紋章斬首遊戯と首を運ぶ鳥">5. 比喩④（紋章の比喩）: 首のない紋章——斬首遊戯と首を運ぶ鳥</a></li><li class="depth-1"><a href="#6-比喩色の比喩-ウルトラマリン海の向こうから来た石" data-for="6-比喩色の比喩-ウルトラマリン海の向こうから来た石">6. 比喩⑤（色の比喩）: ウルトラマリン——「海の向こう」から来た石</a></li><li class="depth-1"><a href="#7-依頼への直接回答総括" data-for="7-依頼への直接回答総括">7. 依頼への直接回答（総括）</a></li><li class="depth-1"><a href="#8-来歴provenance" data-for="8-来歴provenance">8. 来歴（provenance）</a></li><li class="overflow-end"></li></ul></div><div class="github-links"><h4>報告・依頼 — 誤り / reject / 編集依頼 / 情報提供</h4><ul><li class="gh"><a href="https://github.com/allusionistwiki/AllusionistWiki/issues/new?template=reject.yml&amp;title=%5B%E3%82%A2%E3%82%A8%E3%82%BF%E3%82%A4%E3%83%88%E3%81%A8%E9%9C%8A%E9%B3%A5%E3%82%A2%E3%82%AD%E3%83%A9%3A%20%E4%BE%8B%E3%81%88%E3%81%AE%E9%8E%96%E3%82%92%E6%B7%B1%E8%AA%AD%E3%81%BF%E3%81%99%E3%82%8B%EF%BC%88Playground%EF%BC%89%5D%20&amp;page=https%3A%2F%2Fallusionistwiki.github.io%2FAllusionistWiki%2Fplayground%2Faegirite-analogies">GitHub Issue（高速・推奨）</a></li><li><a href="https://tally.so/r/dbWbZq?url=https%3A%2F%2Fallusionistwiki.github.io%2FAllusionistWiki%2Fplayground%2Faegirite-analogies">匿名フォーム（ログイン不要）</a></li></ul><h4>編集・ソース（GitHub）</h4><ul><li class="gh"><a href="https://github.com/allusionistwiki/AllusionistWiki/edit/main/content/playground/aegirite-analogies.md">このページを編集（PR 作成）</a></li><li class="gh"><a href="https://github.com/allusionistwiki/AllusionistWiki/blob/main/content/playground/aegirite-analogies.md">ソース閲覧</a></li><li class="gh"><a href="https://github.com/allusionistwiki/AllusionistWiki/commits/main/content/playground/aegirite-analogies.md">編集履歴</a></li></ul></div></div><footer class><p>作成 <a href="https://quartz.jzhao.xyz/">Quartz v4.5.2</a> © 2026</p><ul><li><a href="https://github.com/allusionistwiki/AllusionistWiki_obsidian">Obsidian vault（ソース）</a></li><li><a href="https://github.com/allusionistwiki/AllusionistWiki">Quartz プロジェクト</a></li></ul></footer></div></div></body><script type="application/javascript">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module">function f(i,e){if(!i)return;function r(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function t(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}i?.addEventListener("click",r),window.addCleanup(()=>i?.removeEventListener("click",r)),document.addEventListener("keydown",t),window.addCleanup(()=>document.removeEventListener("keydown",t))}function y(i){for(;i.firstChild;)i.removeChild(i.firstChild)}var h=class{constructor(e,r){this.container=e;this.content=r;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),r=this.onMouseMove.bind(this),t=this.onMouseUp.bind(this),o=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",r),document.addEventListener("mouseup",t),window.addEventListener("resize",o),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",r),()=>document.removeEventListener("mouseup",t),()=>window.removeEventListener("resize",o))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let r=this.createButton("+",()=>this.zoom(.1)),t=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(t),e.appendChild(o),e.appendChild(r),this.container.appendChild(e)}createButton(e,r){let t=document.createElement("button");return t.textContent=e,t.className="mermaid-control-button",t.addEventListener("click",r),window.addCleanup(()=>t.removeEventListener("click",r)),t}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}zoom(e){let r=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),t=this.content.getBoundingClientRect(),o=t.width/2,n=t.height/2,c=r-this.scale;this.currentPan.x-=o*c,this.currentPan.y-=n*c,this.scale=r,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){this.scale=1;let e=this.content.querySelector("svg");this.currentPan={x:e.getBoundingClientRect().width/2,y:e.getBoundingClientRect().height/2},this.updateTransform()}},C=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],E;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;E||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let r=E.default,t=new WeakMap;for(let n of e)t.set(n,n.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let a=t.get(s);a&&(s.innerHTML=a)}let n=C.reduce((s,a)=>(s[a]=window.getComputedStyle(document.documentElement).getPropertyValue(a),s),{}),c=document.documentElement.getAttribute("saved-theme")==="dark";r.initialize({startOnLoad:!1,securityLevel:"loose",theme:c?"dark":"base",themeVariables:{fontFamily:n["--codeFont"],primaryColor:n["--light"],primaryTextColor:n["--darkgray"],primaryBorderColor:n["--tertiary"],lineColor:n["--darkgray"],secondaryColor:n["--secondary"],tertiaryColor:n["--tertiary"],clusterBkg:n["--light"],edgeLabelBackground:n["--highlight"]}}),await r.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let n=0;n<e.length;n++){let v=function(){let g=l.querySelector("#mermaid-space"),m=l.querySelector(".mermaid-content");if(!m)return;y(m);let w=c.querySelector("svg").cloneNode(!0);m.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new h(g,m)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},c=e[n],s=c.parentElement,a=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(a),L=a.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),f(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="../postscript.js?v=dev" type="module"></script></html>

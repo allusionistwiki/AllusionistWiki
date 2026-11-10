@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr"><head><title>index</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="幻想再帰のアリュージョニスト Wiki"/><meta property="og:title" content="index"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="index"/><meta name="twitter:description" content="エピソード（episodes） エピソード/（核心層）：本作を1話ごとに要約・人物・引喩・感想・疑問ノートに分割したページ群。設計は CLAUDE.md（§3 episodes/chNNN.md）。 話区切りの根拠：PDF本文の全角数字タイトル １－X と「幕間 『…』」。詳細は ch001 のヘッダ参照。 話一覧（生成済み） 話数タイトルPDF頁エピソードraw第001話（１－１）無彩色の左手、鎧の右手pp.3–106ch001001第002話（１－２）死者を代弁する者pp.107–169ch002002第003話（幕間）きぐるみの魔女（第003話・幕間）pp.170–182ch003003..."/><meta property="og:description" content="エピソード（episodes） エピソード/（核心層）：本作を1話ごとに要約・人物・引喩・感想・疑問ノートに分割したページ群。設計は CLAUDE.md（§3 episodes/chNNN.md）。 話区切りの根拠：PDF本文の全角数字タイトル １－X と「幕間 『…』」。詳細は ch001 のヘッダ参照。 話一覧（生成済み） 話数タイトルPDF頁エピソードraw第001話（１－１）無彩色の左手、鎧の右手pp.3–106ch001001第002話（１－２）死者を代弁する者pp.107–169ch002002第003話（幕間）きぐるみの魔女（第003話・幕間）pp.170–182ch003003..."/><meta property="og:image:alt" content="エピソード（episodes） エピソード/（核心層）：本作を1話ごとに要約・人物・引喩・感想・疑問ノートに分割したページ群。設計は CLAUDE.md（§3 episodes/chNNN.md）。 話区切りの根拠：PDF本文の全角数字タイトル １－X と「幕間 『…』」。詳細は ch001 のヘッダ参照。 話一覧（生成済み） 話数タイトルPDF頁エピソードraw第001話（１－１）無彩色の左手、鎧の右手pp.3–106ch001001第002話（１－２）死者を代弁する者pp.107–169ch002002第003話（幕間）きぐるみの魔女（第003話・幕間）pp.170–182ch003003..."/><meta property="og:image" content="https://allusionistwiki.github.io/AllusionistWiki/static/og-image.png"/><meta property="og:image:url" content="https://allusionistwiki.github.io/AllusionistWiki/static/og-image.png"/><meta name="twitter:image" content="https://allusionistwiki.github.io/AllusionistWiki/static/og-image.png"/><meta property="og:image:type" content="image/.png"/><meta property="twitter:domain" content="allusionistwiki.github.io/AllusionistWiki"/><meta property="og:url" content="https://allusionistwiki.github.io/AllusionistWiki/episodes/index"/><meta property="twitter:url" content="https://allusionistwiki.github.io/AllusionistWiki/episodes/index"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="エピソード（episodes） エピソード/（核心層）：本作を1話ごとに要約・人物・引喩・感想・疑問ノートに分割したページ群。設計は CLAUDE.md（§3 episodes/chNNN.md）。 話区切りの根拠：PDF本文の全角数字タイトル １－X と「幕間 『…』」。詳細は ch001 のヘッダ参照。 話一覧（生成済み） 話数タイトルPDF頁エピソードraw第001話（１－１）無彩色の左手、鎧の右手pp.3–106ch001001第002話（１－２）死者を代弁する者pp.107–169ch002002第003話（幕間）きぐるみの魔女（第003話・幕間）pp.170–182ch003003..."/><meta name="generator" content="Quartz"/><link href="../index.css?v=dev" rel="stylesheet" type="text/css" spa-preserve/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  padding: 2rem;
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiQzpcXFVzZXJzXFxkNWR4XFxEb3dubG9hZHNcXENvZGVcXEFsbHVzaW9uaXN0V2lraVxccXVhcnR6XFxjb21wb25lbnRzXFxzdHlsZXMiLCJzb3VyY2VzIjpbIm1lcm1haWQuaW5saW5lLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUdGO0VBQ0U7OztBQUtGO0VBQ0U7RUFDQTs7O0FBSUo7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7O0FBR0Y7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTs7QUFHRjtFQUNFO0VBQ0E7O0FBSUo7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFOztBQUdGO0VBQ0U7O0FBSUY7RUFDRTtFQUNBO0VBQ0EiLCJzb3VyY2VzQ29udGVudCI6WyIuZXhwYW5kLWJ1dHRvbiB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxvYXQ6IHJpZ2h0O1xuICBwYWRkaW5nOiAwLjRyZW07XG4gIG1hcmdpbjogMC4zcmVtO1xuICByaWdodDogMDsgLy8gTk9URTogcmlnaHQgd2lsbCBiZSBzZXQgaW4gbWVybWFpZC5pbmxpbmUudHNcbiAgY29sb3I6IHZhcigtLWdyYXkpO1xuICBib3JkZXItY29sb3I6IHZhcigtLWRhcmspO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1saWdodCk7XG4gIGJvcmRlcjogMXB4IHNvbGlkO1xuICBib3JkZXItcmFkaXVzOiA1cHg7XG4gIG9wYWNpdHk6IDA7XG4gIHRyYW5zaXRpb246IDAuMnM7XG5cbiAgJiA+IHN2ZyB7XG4gICAgZmlsbDogdmFyKC0tbGlnaHQpO1xuICAgIGZpbHRlcjogY29udHJhc3QoMC4zKTtcbiAgfVxuXG4gICY6aG92ZXIge1xuICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICBib3JkZXItY29sb3I6IHZhcigtLXNlY29uZGFyeSk7XG4gIH1cblxuICAmOmZvY3VzIHtcbiAgICBvdXRsaW5lOiAwO1xuICB9XG59XG5cbnByZSB7XG4gICY6aG92ZXIgPiAuZXhwYW5kLWJ1dHRvbiB7XG4gICAgb3BhY2l0eTogMTtcbiAgICB0cmFuc2l0aW9uOiAwLjJzO1xuICB9XG59XG5cbiNtZXJtYWlkLWNvbnRhaW5lciB7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgY29udGFpbjogbGF5b3V0O1xuICB6LWluZGV4OiA5OTk7XG4gIGxlZnQ6IDA7XG4gIHRvcDogMDtcbiAgd2lkdGg6IDEwMHZ3O1xuICBoZWlnaHQ6IDEwMHZoO1xuICBvdmVyZmxvdzogaGlkZGVuO1xuICBkaXNwbGF5OiBub25lO1xuICBiYWNrZHJvcC1maWx0ZXI6IGJsdXIoNHB4KTtcbiAgYmFja2dyb3VuZDogcmdiYSgwLCAwLCAwLCAwLjUpO1xuXG4gICYuYWN0aXZlIHtcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIH1cblxuICAmID4gI21lcm1haWQtc3BhY2Uge1xuICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tbGlnaHQpO1xuICAgIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgICBwb3NpdGlvbjogZml4ZWQ7XG4gICAgdG9wOiA1MCU7XG4gICAgbGVmdDogNTAlO1xuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlKC01MCUsIC01MCUpO1xuICAgIGhlaWdodDogODB2aDtcbiAgICB3aWR0aDogODB2dztcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xuXG4gICAgJiA+IC5tZXJtYWlkLWNvbnRlbnQge1xuICAgICAgcGFkZGluZzogMnJlbTtcbiAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgIHRyYW5zZm9ybS1vcmlnaW46IDAgMDtcbiAgICAgIHRyYW5zaXRpb246IHRyYW5zZm9ybSAwLjFzIGVhc2U7XG4gICAgICBvdmVyZmxvdzogdmlzaWJsZTtcbiAgICAgIG1pbi1oZWlnaHQ6IDIwMHB4O1xuICAgICAgbWluLXdpZHRoOiAyMDBweDtcblxuICAgICAgcHJlIHtcbiAgICAgICAgbWFyZ2luOiAwO1xuICAgICAgICBib3JkZXI6IG5vbmU7XG4gICAgICB9XG5cbiAgICAgIHN2ZyB7XG4gICAgICAgIG1heC13aWR0aDogbm9uZTtcbiAgICAgICAgaGVpZ2h0OiBhdXRvO1xuICAgICAgfVxuICAgIH1cblxuICAgICYgPiAubWVybWFpZC1jb250cm9scyB7XG4gICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICBib3R0b206IDIwcHg7XG4gICAgICByaWdodDogMjBweDtcbiAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICBnYXA6IDhweDtcbiAgICAgIHBhZGRpbmc6IDhweDtcbiAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICBib3JkZXItcmFkaXVzOiA2cHg7XG4gICAgICBib3gtc2hhZG93OiAwIDJweCA0cHggcmdiYSgwLCAwLCAwLCAwLjEpO1xuICAgICAgei1pbmRleDogMjtcblxuICAgICAgLm1lcm1haWQtY29udHJvbC1idXR0b24ge1xuICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICAgICAgd2lkdGg6IDMycHg7XG4gICAgICAgIGhlaWdodDogMzJweDtcbiAgICAgICAgcGFkZGluZzogMDtcbiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHQpO1xuICAgICAgICBjb2xvcjogdmFyKC0tZGFyayk7XG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDRweDtcbiAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xuICAgICAgICBmb250LXNpemU6IDE2cHg7XG4gICAgICAgIGZvbnQtZmFtaWx5OiB2YXIoLS1ib2R5Rm9udCk7XG4gICAgICAgIHRyYW5zaXRpb246IGFsbCAwLjJzIGVhc2U7XG5cbiAgICAgICAgJjpob3ZlciB7XG4gICAgICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgICAgfVxuXG4gICAgICAgICY6YWN0aXZlIHtcbiAgICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMXB4KTtcbiAgICAgICAgfVxuXG4gICAgICAgIC8vIFN0eWxlIHRoZSByZXNldCBidXR0b24gZGlmZmVyZW50bHlcbiAgICAgICAgJjpudGgtY2hpbGQoMikge1xuICAgICAgICAgIHdpZHRoOiBhdXRvO1xuICAgICAgICAgIHBhZGRpbmc6IDAgMTJweDtcbiAgICAgICAgICBmb250LXNpemU6IDE0cHg7XG4gICAgICAgIH1cbiAgICAgIH1cbiAgICB9XG4gIH1cbn1cbiJdfQ== */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="../prescript.js?v=dev" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://allusionistwiki.github.io/AllusionistWiki/index.xml"/></head><body data-slug="episodes/index"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">幻想再帰のアリュージョニスト Wiki</a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>検索</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="検索ワードを入力" placeholder="検索ワードを入力"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="ダークモード"><title>ダークモード</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="ライトモード"><title>ライトモード</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>各話</a></div></nav><h1 class="article-title">各話</h1><p class="content-meta"><span class="content-meta-segment"><span>作成 <time datetime="2026-08-21T15:00:00.000Z">2026年8月22日</time></span></span><span class="content-meta-segment"><span>最終更新 <time datetime="2026-09-23T15:00:00.000Z">2026年9月24日</time></span></span><span class="content-meta-segment"><span>40 min read</span></span></p></div></div><div class="popover-hint"><article class><h1 id="エピソードepisodes">エピソード（episodes）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#エピソードepisodes" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<blockquote>
+<p>エピソード/（核心層）：本作を<strong>1話ごと</strong>に要約・人物・引喩・感想・疑問ノートに分割したページ群。設計は <a href=".././../CLAUDE" class="internal alias" data-slug="CLAUDE">CLAUDE.md</a>（§3 episodes/chNNN.md）。</p>
+<p>話区切りの根拠：PDF本文の全角数字タイトル １－X と「幕間　『…』」。詳細は <a href="../episodes/ch001" class="internal" data-slug="episodes/ch001">ch001</a> のヘッダ参照。</p>
+</blockquote>
+<hr/>
+<h2 id="話一覧生成済み">話一覧（生成済み）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#話一覧生成済み" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>話数</th><th>タイトル</th><th>PDF頁</th><th>エピソード</th><th>raw</th></tr></thead><tbody><tr><td>第001話（１－１）</td><td>無彩色の左手、鎧の右手</td><td>pp.3–106</td><td><a href="../episodes/ch001" class="internal" data-slug="episodes/ch001">ch001</a></td><td><a href=".././../raw/001_無彩色の左手、鎧の右手_01" class="internal alias" data-slug="raw/001_無彩色の左手、鎧の右手_01">001</a></td></tr><tr><td>第002話（１－２）</td><td>死者を代弁する者</td><td>pp.107–169</td><td><a href="../episodes/ch002" class="internal" data-slug="episodes/ch002">ch002</a></td><td><a href=".././../raw/002_死者を代弁する者_01" class="internal alias" data-slug="raw/002_死者を代弁する者_01">002</a></td></tr><tr><td>第003話（幕間）</td><td>きぐるみの魔女（第003話・幕間）</td><td>pp.170–182</td><td><a href="../episodes/ch003" class="internal" data-slug="episodes/ch003">ch003</a></td><td><a href=".././../raw/003_きぐるみの魔女_01" class="internal alias" data-slug="raw/003_きぐるみの魔女_01">003</a></td></tr><tr><td>第2-1話（２－１）</td><td>氷血のコルセスカ</td><td>pp.183–232</td><td><a href="../episodes/ch004" class="internal" data-slug="episodes/ch004">ch004</a></td><td><a href=".././../raw/004_氷血のコルセスカ_01" class="internal alias" data-slug="raw/004_氷血のコルセスカ_01">004</a></td></tr><tr><td>第005話（２－２）</td><td>転生者（ゼノグラシア）</td><td>pp.233–304</td><td><a href="../episodes/ch005" class="internal" data-slug="episodes/ch005">ch005</a></td><td><a href=".././../raw/005_転生者ゼノグラシア_01" class="internal alias" data-slug="raw/005_転生者ゼノグラシア_01">005</a></td></tr><tr><td>第006話（幕間）</td><td>悪夢（第006話・幕間）</td><td>pp.305–310</td><td><a href="../episodes/ch006" class="internal" data-slug="episodes/ch006">ch006</a></td><td><a href=".././../raw/006_悪夢_01" class="internal alias" data-slug="raw/006_悪夢_01">006</a></td></tr><tr><td>第007話（２－３）</td><td>魔女と狂犬</td><td>pp.311–356</td><td><a href="../episodes/ch007" class="internal" data-slug="episodes/ch007">ch007</a></td><td><a href=".././../raw/007_魔女と狂犬_01" class="internal alias" data-slug="raw/007_魔女と狂犬_01">007</a></td></tr><tr><td>第008話（２－４）</td><td>六淫操手</td><td>pp.357–397</td><td><a href="../episodes/ch008" class="internal" data-slug="episodes/ch008">ch008</a></td><td><a href=".././../raw/008_六淫操手_01" class="internal alias" data-slug="raw/008_六淫操手_01">008</a></td></tr><tr><td>第009話（２－５）</td><td>王獣カッサリオ</td><td>pp.398–433</td><td><a href="../episodes/ch009" class="internal" data-slug="episodes/ch009">ch009</a></td><td><a href=".././../raw/009_王獣カッサリオ_01" class="internal alias" data-slug="raw/009_王獣カッサリオ_01">009</a></td></tr><tr><td>第010話（２－６）</td><td>がらくたなんかじゃない</td><td>pp.434–471</td><td><a href="../episodes/ch010" class="internal" data-slug="episodes/ch010">ch010</a></td><td><a href=".././../raw/010_がらくたなんかじゃない_01" class="internal alias" data-slug="raw/010_がらくたなんかじゃない_01">010</a></td></tr><tr><td>第011話（２－７）</td><td>炎は黄金を証明する</td><td>pp.472–504</td><td><a href="../episodes/ch011" class="internal" data-slug="episodes/ch011">ch011</a></td><td><a href=".././../raw/011_炎は黄金を証明する_01" class="internal alias" data-slug="raw/011_炎は黄金を証明する_01">011</a></td></tr><tr><td>第012話（２－８・２－９）</td><td>その視座の名はゆらぎの神話</td><td>pp.505–626</td><td><a href="../episodes/ch012" class="internal" data-slug="episodes/ch012">ch012</a></td><td><a href=".././../raw/012_その視座の名はゆらぎの神話_01" class="internal alias" data-slug="raw/012_その視座の名はゆらぎの神話_01">012</a></td></tr><tr><td>第013話（２－１０）</td><td>春の魔女</td><td>pp.627–665</td><td><a href="../episodes/ch013" class="internal" data-slug="episodes/ch013">ch013</a></td><td><a href=".././../raw/013_春の魔女_01" class="internal alias" data-slug="raw/013_春の魔女_01">013</a></td></tr><tr><td>第014話（２－１１）</td><td>欠落と渇望</td><td>pp.666–716</td><td><a href="../episodes/ch014" class="internal" data-slug="episodes/ch014">ch014</a></td><td><a href=".././../raw/014_欠落と渇望_01" class="internal alias" data-slug="raw/014_欠落と渇望_01">014</a></td></tr><tr><td>第015話（幕間）</td><td>前夜（第015話・幕間）</td><td>pp.717–745</td><td><a href="../episodes/ch015" class="internal" data-slug="episodes/ch015">ch015</a></td><td><a href=".././../raw/015_前夜_01" class="internal alias" data-slug="raw/015_前夜_01">015</a></td></tr><tr><td>第016話（２－１２）</td><td>リーナ・ゾラ・クロウサーより</td><td>pp.746–768</td><td><a href="../episodes/ch016" class="internal" data-slug="episodes/ch016">ch016</a></td><td><a href=".././../raw/016_リーナ・ゾラ・クロウサーより_01" class="internal alias" data-slug="raw/016_リーナ・ゾラ・クロウサーより_01">016</a></td></tr><tr><td>第017話（２－１３）</td><td>メクセトの神滅具</td><td>pp.769–828</td><td><a href="../episodes/ch017" class="internal" data-slug="episodes/ch017">ch017</a></td><td><a href=".././../raw/017_メクセトの神滅具_01" class="internal alias" data-slug="raw/017_メクセトの神滅具_01">017</a></td></tr><tr><td>第018話（２－１４）</td><td>転生者殺し</td><td>pp.829–873</td><td><a href="../episodes/ch018" class="internal" data-slug="episodes/ch018">ch018</a></td><td><a href=".././../raw/018_転生者殺し_01" class="internal alias" data-slug="raw/018_転生者殺し_01">018</a></td></tr><tr><td>第019話（幕間）</td><td>涙の価値（第019話・幕間）</td><td>pp.874–920</td><td><a href="../episodes/ch019" class="internal" data-slug="episodes/ch019">ch019</a></td><td><a href=".././../raw/019_涙の価値_01" class="internal alias" data-slug="raw/019_涙の価値_01">019</a></td></tr><tr><td>第020話（２－１５）</td><td>そんなことよりゲームをしよう</td><td>pp.921–974</td><td><a href="../episodes/ch020" class="internal" data-slug="episodes/ch020">ch020</a></td><td><a href=".././../raw/020_そんなことよりゲームをしよう_01" class="internal alias" data-slug="raw/020_そんなことよりゲームをしよう_01">020</a></td></tr><tr><td>第021話（２－１６）</td><td>鏡（ミラージュ）</td><td>pp.975–1026</td><td><a href="../episodes/ch021" class="internal" data-slug="episodes/ch021">ch021</a></td><td><a href=".././../raw/021_鏡ミラージュ_01" class="internal alias" data-slug="raw/021_鏡ミラージュ_01">021</a></td></tr><tr><td>幕間『棒（ワンド）』</td><td>棒（ワンド）</td><td>pp.1027–1082</td><td><a href="../episodes/ch022" class="internal" data-slug="episodes/ch022">ch022</a></td><td><a href=".././../raw/022_棒ワンド_01" class="internal alias" data-slug="raw/022_棒ワンド_01">022</a></td></tr><tr><td>第023話（２－１７）</td><td>レジンキャストエピゴーネン</td><td>pp.1083–1134</td><td><a href="../episodes/ch023" class="internal" data-slug="episodes/ch023">ch023</a></td><td><a href=".././../raw/023_レジンキャストエピゴーネン_01" class="internal alias" data-slug="raw/023_レジンキャストエピゴーネン_01">023</a></td></tr><tr><td>第024話（２－１８）</td><td>ｎｕｌｌ参照のアリュージョン</td><td>pp.1135–1161</td><td><a href="../episodes/ch024" class="internal" data-slug="episodes/ch024">ch024</a></td><td><a href=".././../raw/024_ｎｕｌｌ参照のアリュージョン_01" class="internal alias" data-slug="raw/024_ｎｕｌｌ参照のアリュージョン_01">024</a></td></tr><tr><td>第025話（２－１９）</td><td>サイバネティクスとオカルティズムの幸福なマリアージュ</td><td>pp.1162–1209</td><td><a href="../episodes/ch025" class="internal" data-slug="episodes/ch025">ch025</a></td><td><a href=".././../raw/025_９_サイバーネティクスとオカルティズムの幸福なマリアージュ_01" class="internal alias" data-slug="raw/025_９_サイバーネティクスとオカルティズムの幸福なマリアージュ_01">025</a></td></tr><tr><td>第026話（２－２０）</td><td>その名はアズーリア</td><td>pp.1210–1229</td><td><a href="../episodes/ch026" class="internal" data-slug="episodes/ch026">ch026</a></td><td><a href=".././../raw/026_その名はアズーリア_01" class="internal alias" data-slug="raw/026_その名はアズーリア_01">026</a></td></tr><tr><td>第027話（幕間）</td><td>もし狂犬が戦国乱世に転生したら（第027話・幕間）</td><td>pp.1230–1239</td><td><a href="../episodes/ch027" class="internal" data-slug="episodes/ch027">ch027</a></td><td><a href=".././../raw/027_もし狂犬が戦国乱世に転生したら_01" class="internal alias" data-slug="raw/027_もし狂犬が戦国乱世に転生したら_01">027</a></td></tr><tr><td>第028話（３－０）</td><td>どうして空は青いの？</td><td>pp.1240–1264</td><td><a href="../episodes/ch028" class="internal" data-slug="episodes/ch028">ch028</a></td><td><a href=".././../raw/028_どうして空は青いの？_01" class="internal alias" data-slug="raw/028_どうして空は青いの？_01">028</a></td></tr><tr><td>第029話（３－１）</td><td>未来回想、あるいはこれからのあらすじ</td><td>pp.1265–1280</td><td><a href="../episodes/ch029" class="internal" data-slug="episodes/ch029">ch029</a></td><td><a href=".././../raw/029_未来回想、あるいはこれからのあらすじ_01" class="internal alias" data-slug="raw/029_未来回想、あるいはこれからのあらすじ_01">029</a></td></tr><tr><td>第030話（幕間）</td><td>もうひとつの左手（第030話・幕間）</td><td>pp.1281–1306</td><td><a href="../episodes/ch030" class="internal" data-slug="episodes/ch030">ch030</a></td><td><a href=".././../raw/030_もうひとつの左手_01" class="internal alias" data-slug="raw/030_もうひとつの左手_01">030</a></td></tr><tr><td>第031話（幕間）</td><td>もうひとつの悪夢（第031話・幕間）</td><td>pp.1307–1324</td><td><a href="../episodes/ch031" class="internal" data-slug="episodes/ch031">ch031</a></td><td><a href=".././../raw/031_もうひとつの悪夢_01" class="internal alias" data-slug="raw/031_もうひとつの悪夢_01">031</a></td></tr><tr><td>第032話（３－２）</td><td>言の葉遣いは躊躇わない</td><td>pp.1325–1377</td><td><a href="../episodes/ch032" class="internal" data-slug="episodes/ch032">ch032</a></td><td><a href=".././../raw/032_言の葉遣いは躊躇わない_01" class="internal alias" data-slug="raw/032_言の葉遣いは躊躇わない_01">032</a></td></tr><tr><td>第033話（３－３）</td><td>半熟英雄</td><td>pp.1378–1420</td><td><a href="../episodes/ch033" class="internal" data-slug="episodes/ch033">ch033</a></td><td><a href=".././../raw/033_半熟英雄_01" class="internal alias" data-slug="raw/033_半熟英雄_01">033</a></td></tr><tr><td>第034話（３－４）</td><td>天の鴉と月の兎</td><td>pp.1421–1493</td><td><a href="../episodes/ch034" class="internal" data-slug="episodes/ch034">ch034</a></td><td><a href=".././../raw/034_天の鴉と月の兎_01" class="internal alias" data-slug="raw/034_天の鴉と月の兎_01">034</a></td></tr><tr><td>第035話（３－５）</td><td>言語魔術師の弟子（前編）</td><td>pp.1494–1522</td><td><a href="../episodes/ch035" class="internal" data-slug="episodes/ch035">ch035</a></td><td><a href=".././../raw/035_言語魔術師の弟子前編_01" class="internal alias" data-slug="raw/035_言語魔術師の弟子前編_01">035</a></td></tr><tr><td>第036話（３－６）</td><td>魔女と英雄</td><td>pp.1523–1592</td><td><a href="../episodes/ch036" class="internal" data-slug="episodes/ch036">ch036</a></td><td><a href=".././../raw/036_魔女と英雄_01" class="internal alias" data-slug="raw/036_魔女と英雄_01">036</a></td></tr><tr><td>第037話（３－７）</td><td>言理の妖精語りて曰く</td><td>pp.1593–1732</td><td><a href="../episodes/ch037" class="internal" data-slug="episodes/ch037">ch037</a></td><td><a href=".././../raw/037_言理の妖精語りて曰く_01" class="internal alias" data-slug="raw/037_言理の妖精語りて曰く_01">037</a></td></tr><tr><td>第038話（幕間）</td><td>幻想再起のイリュージョニスト（第038話・幕間）</td><td>pp.1733–1780</td><td><a href="../episodes/ch038" class="internal" data-slug="episodes/ch038">ch038</a></td><td><a href=".././../raw/038_幻想再起のイリュージョニスト_01" class="internal alias" data-slug="raw/038_幻想再起のイリュージョニスト_01">038</a></td></tr><tr><td>第039話（幕間）</td><td>松明の騎士（第039話・幕間）</td><td>pp.1781–1817</td><td><a href="../episodes/ch039" class="internal" data-slug="episodes/ch039">ch039</a></td><td><a href=".././../raw/039_松明の騎士_01" class="internal alias" data-slug="raw/039_松明の騎士_01">039</a></td></tr><tr><td>第040話（３－８・３－９）</td><td>再びの未来回想、そして来るべき次回予告</td><td>pp.1818–1858</td><td><a href="../episodes/ch040" class="internal" data-slug="episodes/ch040">ch040</a></td><td><a href=".././../raw/040_再びの未来回想、そして来るべき次回予告_01" class="internal alias" data-slug="raw/040_再びの未来回想、そして来るべき次回予告_01">040</a></td></tr><tr><td>第041話（３－１０）</td><td>青の空、黒の空白</td><td>pp.1859–1878</td><td><a href="../episodes/ch041" class="internal" data-slug="episodes/ch041">ch041</a></td><td><a href=".././../raw/041_青の空、黒の空白_01" class="internal alias" data-slug="raw/041_青の空、黒の空白_01">041</a></td></tr><tr><td>第042話（３－１１）</td><td>チョコレートリリー</td><td>pp.1879–1904</td><td><a href="../episodes/ch042" class="internal" data-slug="episodes/ch042">ch042</a></td><td><a href=".././../raw/042_チョコレートリリー_01" class="internal alias" data-slug="raw/042_チョコレートリリー_01">042</a></td></tr><tr><td>第043話（３－１２）</td><td>隠れた変数（オクルトゥム）</td><td>pp.1905–1939</td><td><a href="../episodes/ch043" class="internal" data-slug="episodes/ch043">ch043</a></td><td><a href=".././../raw/043_隠れた変数オクルトゥム_01" class="internal alias" data-slug="raw/043_隠れた変数オクルトゥム_01">043</a></td></tr><tr><td>第044話（３－１３・０－３）</td><td>この戦いが終わったら</td><td>pp.1940–1975</td><td><a href="../episodes/ch044" class="internal" data-slug="episodes/ch044">ch044</a></td><td><a href=".././../raw/044_この戦いが終わったら_01" class="internal alias" data-slug="raw/044_この戦いが終わったら_01">044</a></td></tr><tr><td>第045話（３－１４）</td><td>パレルノ山六千人殺し</td><td>pp.1976–2002</td><td><a href="../episodes/ch045" class="internal" data-slug="episodes/ch045">ch045</a></td><td><a href=".././../raw/045_パレルノ山六千人殺し_01" class="internal alias" data-slug="raw/045_パレルノ山六千人殺し_01">045</a></td></tr><tr><td>第046話（幕間）</td><td>静謐なる多弁（第046話・幕間）</td><td>pp.2003–2018</td><td><a href="../episodes/ch046" class="internal" data-slug="episodes/ch046">ch046</a></td><td><a href=".././../raw/046_静謐なる多弁_01" class="internal alias" data-slug="raw/046_静謐なる多弁_01">046</a></td></tr><tr><td>第047話（３－１５）</td><td>【死の囀り】カタルマリーナ</td><td>pp.2019–2055</td><td><a href="../episodes/ch047" class="internal" data-slug="episodes/ch047">ch047</a></td><td><a href=".././../raw/047_死の囀りカタルマリーナ_01" class="internal alias" data-slug="raw/047_死の囀りカタルマリーナ_01">047</a></td></tr><tr><td>第048話（３－１６）</td><td>黒いアネモネの花言葉</td><td>pp.2056–2072</td><td><a href="../episodes/ch048" class="internal" data-slug="episodes/ch048">ch048</a></td><td><a href=".././../raw/048_黒いアネモネの花言葉_01" class="internal alias" data-slug="raw/048_黒いアネモネの花言葉_01">048</a></td></tr><tr><td>第049話（３－１７・０－４）</td><td>無造作な死</td><td>pp.2073–2140</td><td><a href="../episodes/ch049" class="internal" data-slug="episodes/ch049">ch049</a></td><td><a href=".././../raw/049_無造作な死_01" class="internal alias" data-slug="raw/049_無造作な死_01">049</a></td></tr><tr><td>第050話（幕間）</td><td>言震（ワードクェイク）</td><td>pp.2141–2169</td><td><a href="../episodes/ch050" class="internal" data-slug="episodes/ch050">ch050</a></td><td><a href=".././../raw/050_言震ワードクェイク_01" class="internal alias" data-slug="raw/050_言震ワードクェイク_01">050</a></td></tr><tr><td>第051話（３－１８・０－５）</td><td>激光（レイジ）</td><td>pp.2170–2218</td><td><a href="../episodes/ch051" class="internal" data-slug="episodes/ch051">ch051</a></td><td><a href=".././../raw/051_激光レイジ_01" class="internal alias" data-slug="raw/051_激光レイジ_01">051</a></td></tr><tr><td>第052話（３－１９）</td><td>夢幻の果て</td><td>pp.2219–2246</td><td><a href="../episodes/ch052" class="internal" data-slug="episodes/ch052">ch052</a></td><td><a href=".././../raw/052_９_夢幻の果て_01" class="internal alias" data-slug="raw/052_９_夢幻の果て_01">052</a></td></tr><tr><td>第053話（３－２０）</td><td>言語魔術師の弟子（後編）</td><td>pp.2247–2282</td><td><a href="../episodes/ch053" class="internal" data-slug="episodes/ch053">ch053</a></td><td><a href=".././../raw/053_言語魔術師の弟子後編_01" class="internal alias" data-slug="raw/053_言語魔術師の弟子後編_01">053</a></td></tr><tr><td>第054話（３－２１）</td><td>第五階層より第一階層へ</td><td>pp.2283–2300</td><td><a href="../episodes/ch054" class="internal" data-slug="episodes/ch054">ch054</a></td><td><a href=".././../raw/054_第五階層より第一階層へ_01" class="internal alias" data-slug="raw/054_第五階層より第一階層へ_01">054</a></td></tr><tr><td>第055話（３－２２）</td><td>シナモリ・アキラより</td><td>pp.2301–2333</td><td><a href="../episodes/ch055" class="internal" data-slug="episodes/ch055">ch055</a></td><td><a href=".././../raw/055_シナモリ・アキラより_01" class="internal alias" data-slug="raw/055_シナモリ・アキラより_01">055</a></td></tr><tr><td>第056話（３－２３）</td><td>睥睨するエクリーオベレッカ</td><td>pp.2335–2365</td><td><a href="../episodes/ch056" class="internal" data-slug="episodes/ch056">ch056</a></td><td><a href=".././../raw/056_睥睨するエクリーオベレッカ_01" class="internal alias" data-slug="raw/056_睥睨するエクリーオベレッカ_01">056</a></td></tr><tr><td>第057話（３－２４）</td><td>十三階段</td><td>pp.2366–2411</td><td><a href="../episodes/ch057" class="internal" data-slug="episodes/ch057">ch057</a></td><td><a href=".././../raw/057_十三階段_01" class="internal alias" data-slug="raw/057_十三階段_01">057</a></td></tr><tr><td>第058話（３－２５）</td><td>オンステージ</td><td>pp.2412–2453</td><td><a href="../episodes/ch058" class="internal" data-slug="episodes/ch058">ch058</a></td><td><a href=".././../raw/058_オンステージ_01" class="internal alias" data-slug="raw/058_オンステージ_01">058</a></td></tr><tr><td>第059話（３－２６）</td><td>奈落に飲まれ、闇に包まれる</td><td>pp.2455–2489</td><td><a href="../episodes/ch059" class="internal" data-slug="episodes/ch059">ch059</a></td><td><a href=".././../raw/059_奈落に飲まれ、闇に包まれる_01" class="internal alias" data-slug="raw/059_奈落に飲まれ、闇に包まれる_01">059</a></td></tr><tr><td>第060話（３－２７）</td><td>影に沈み、振り返らずに去っていく</td><td>pp.2491–2531</td><td><a href="../episodes/ch060" class="internal" data-slug="episodes/ch060">ch060</a></td><td><a href=".././../raw/060_影に沈み、振り返らずに去っていく_01" class="internal alias" data-slug="raw/060_影に沈み、振り返らずに去っていく_01">060</a></td></tr><tr><td>第061話（３－２８）</td><td>言葉は断ち切られ、絶望は感染する。そして――</td><td>pp.2532–2555</td><td><a href="../episodes/ch061" class="internal" data-slug="episodes/ch061">ch061</a></td><td><a href=".././../raw/061_言葉は断ち切られ、絶望は感染する。そして――_01" class="internal alias" data-slug="raw/061_言葉は断ち切られ、絶望は感染する。そして――_01">061</a></td></tr><tr><td>幕間『この夜が明けるまであと百万の祈り』</td><td>この夜が明けるまであと百万の祈り（第062話・幕間）</td><td>pp.2556–2579</td><td><a href="../episodes/ch062" class="internal" data-slug="episodes/ch062">ch062</a></td><td><a href=".././../raw/062_この夜が明けるまであと百万の祈り_01" class="internal alias" data-slug="raw/062_この夜が明けるまであと百万の祈り_01">062</a></td></tr><tr><td>第063話（３－２９）</td><td>黒百合の子供たち</td><td>pp.2581–2625</td><td><a href="../episodes/ch063" class="internal" data-slug="episodes/ch063">ch063</a></td><td><a href=".././../raw/063_９_黒百合の子供たち_01" class="internal alias" data-slug="raw/063_９_黒百合の子供たち_01">063</a></td></tr><tr><td>第064話（３－３０）</td><td>その名はサイバーカラテ</td><td>pp.2627–2661</td><td><a href="../episodes/ch064" class="internal" data-slug="episodes/ch064">ch064</a></td><td><a href=".././../raw/064_その名はサイバーカラテ_01" class="internal alias" data-slug="raw/064_その名はサイバーカラテ_01">064</a></td></tr><tr><td>第065話（３－３１）</td><td>それは、世界がこんなにも光に満ち溢れているから</td><td>pp.2662–2708</td><td><a href="../episodes/ch065" class="internal" data-slug="episodes/ch065">ch065</a></td><td><a href=".././../raw/065_それは、世界がこんなにも光に満ち溢れているから_01" class="internal alias" data-slug="raw/065_それは、世界がこんなにも光に満ち溢れているから_01">065</a></td></tr><tr><td>第066話（３－３２）</td><td>澄明なる青空に</td><td>pp.2709–2777</td><td><a href="../episodes/ch066" class="internal" data-slug="episodes/ch066">ch066</a></td><td><a href=".././../raw/066_澄明なる青空に_01" class="internal alias" data-slug="raw/066_澄明なる青空に_01">066</a></td></tr><tr><td>第067話（幕間＋０－６）</td><td>特権者の英雄症候群、さもなくば――</td><td>pp.2778–2852</td><td><a href="../episodes/ch067" class="internal" data-slug="episodes/ch067">ch067</a></td><td><a href=".././../raw/067_特権者の英雄症候群、さもなくば――_01" class="internal alias" data-slug="raw/067_特権者の英雄症候群、さもなくば――_01">067</a></td></tr><tr><td>第068話（３－３３）</td><td>黒血のハルベルト</td><td>pp.2853–2871</td><td><a href="../episodes/ch068" class="internal" data-slug="episodes/ch068">ch068</a></td><td><a href=".././../raw/068_黒血のハルベルト_01" class="internal alias" data-slug="raw/068_黒血のハルベルト_01">068</a></td></tr><tr><td>第069話（４－０）</td><td>死人の森</td><td>pp.2872–2901</td><td><a href="../episodes/ch069" class="internal" data-slug="episodes/ch069">ch069</a></td><td><a href=".././../raw/069_死人の森_01" class="internal alias" data-slug="raw/069_死人の森_01">069</a></td></tr><tr><td>第070話（４－１）</td><td>道場</td><td>pp.2903–2912</td><td><a href="../episodes/ch070" class="internal" data-slug="episodes/ch070">ch070</a></td><td><a href=".././../raw/070_道場_01" class="internal alias" data-slug="raw/070_道場_01">070</a></td></tr><tr><td>第071話（４－２）</td><td>風の吹く丘</td><td>pp.2913–2933</td><td><a href="../episodes/ch071" class="internal" data-slug="episodes/ch071">ch071</a></td><td><a href=".././../raw/071_風の吹く丘_01" class="internal alias" data-slug="raw/071_風の吹く丘_01">071</a></td></tr><tr><td>第072話（４－３）</td><td>王国</td><td>pp.2934–2955</td><td><a href="../episodes/ch072" class="internal" data-slug="episodes/ch072">ch072</a></td><td><a href=".././../raw/072_王国_01" class="internal alias" data-slug="raw/072_王国_01">072</a></td></tr><tr><td>第073話（４－４）</td><td>ダモクレスの剣</td><td>pp.2956–2992</td><td><a href="../episodes/ch073" class="internal" data-slug="episodes/ch073">ch073</a></td><td><a href=".././../raw/073_ダモクレスの剣_01" class="internal alias" data-slug="raw/073_ダモクレスの剣_01">073</a></td></tr><tr><td>第074話（４－５）</td><td>工場</td><td>pp.2993–3031</td><td><a href="../episodes/ch074" class="internal" data-slug="episodes/ch074">ch074</a></td><td><a href=".././../raw/074_工場_01" class="internal alias" data-slug="raw/074_工場_01">074</a></td></tr><tr><td>第075話（４－６）</td><td>白骨迷宮</td><td>pp.3032–3074</td><td><a href="../episodes/ch075" class="internal" data-slug="episodes/ch075">ch075</a></td><td><a href=".././../raw/075_白骨迷宮_01" class="internal alias" data-slug="raw/075_白骨迷宮_01">075</a></td></tr><tr><td>第076話（４－７）</td><td>花街</td><td>pp.3076–3095</td><td><a href="../episodes/ch076" class="internal" data-slug="episodes/ch076">ch076</a></td><td><a href=".././../raw/076_花街_01" class="internal alias" data-slug="raw/076_花街_01">076</a></td></tr><tr><td>第077話（４－８＋４－９）</td><td>黒百合館／ステュクス</td><td>pp.3097–3201</td><td><a href="../episodes/ch077" class="internal" data-slug="episodes/ch077">ch077</a></td><td><a href=".././../raw/077_黒百合館_01" class="internal alias" data-slug="raw/077_黒百合館_01">077</a></td></tr><tr><td>第078話（幕間＋４－１０前書き）</td><td>空の玉座</td><td>pp.3203–3226</td><td><a href="../episodes/ch078" class="internal" data-slug="episodes/ch078">ch078</a></td><td><a href=".././../raw/078_空の玉座_01" class="internal alias" data-slug="raw/078_空の玉座_01">078</a></td></tr><tr><td>第079話（４－１０）</td><td>二人の距離</td><td>pp.3228–3253</td><td><a href="../episodes/ch079" class="internal" data-slug="episodes/ch079">ch079</a></td><td><a href=".././../raw/079_二人の距離_01" class="internal alias" data-slug="raw/079_二人の距離_01">079</a></td></tr><tr><td>第080話（４－１１）</td><td>星見の塔トーナメント（前編）</td><td>pp.3255–3316</td><td><a href="../episodes/ch080" class="internal" data-slug="episodes/ch080">ch080</a></td><td><a href=".././../raw/080_星見の塔トーナメント前編_01" class="internal alias" data-slug="raw/080_星見の塔トーナメント前編_01">080</a></td></tr><tr><td>第081話（４－１２）</td><td>Ｔｏｕｒｎａｍｅｄ　Ｃｅｌｅｓｔｉａｌ　Ｇａｚｅ（ｔｈｅ　ｓｅｃｏｎｄ　ｖｏｌｕｍｅ）</td><td>pp.3317–3422</td><td><a href="../episodes/ch081" class="internal" data-slug="episodes/ch081">ch081</a></td><td><a href=".././../raw/081_Ｔｏｕｒｎａｍｅｄ_Ｃｅｌｅｓｔｉａｌ_Ｇａｚｅｔｈｅ_ｓｅｃｏｎｄ_ｖｏｌｕｍｅ_01" class="internal alias" data-slug="raw/081_Ｔｏｕｒｎａｍｅｄ_Ｃｅｌｅｓｔｉａｌ_Ｇａｚｅｔｈｅ_ｓｅｃｏｎｄ_ｖｏｌｕｍｅ_01">081</a></td></tr><tr><td>第088話（４－１３）</td><td>星見の塔の大比武（さいごの戦い）</td><td>pp.4163–4283</td><td><a href="../episodes/ch088" class="internal" data-slug="episodes/ch088">ch088</a></td><td><a href=".././../raw/088_星見の塔の大比武さいごの戦い_01" class="internal alias" data-slug="raw/088_星見の塔の大比武さいごの戦い_01">088</a></td></tr><tr><td>第090話（４－１４）</td><td>一時の平穏</td><td>pp.4309–4344</td><td><a href="../episodes/ch090" class="internal" data-slug="episodes/ch090">ch090</a></td><td><a href=".././../raw/090_一時の平穏_01" class="internal alias" data-slug="raw/090_一時の平穏_01">090</a></td></tr><tr><td>第091話（４－１５）</td><td>悪夢の饗宴</td><td>pp.4345–4359</td><td><a href="../episodes/ch091" class="internal" data-slug="episodes/ch091">ch091</a></td><td><a href=".././../raw/091_悪夢の饗宴_01" class="internal alias" data-slug="raw/091_悪夢の饗宴_01">091</a></td></tr><tr><td>第092話（４－１６）</td><td>六人の王さま</td><td>pp.4360–4379</td><td><a href="../episodes/ch092" class="internal" data-slug="episodes/ch092">ch092</a></td><td><a href=".././../raw/092_六人の王さま_01" class="internal alias" data-slug="raw/092_六人の王さま_01">092</a></td></tr><tr><td>第093話（４－１７）</td><td>未来の過失</td><td>pp.4380–4392</td><td><a href="../episodes/ch093" class="internal" data-slug="episodes/ch093">ch093</a></td><td><a href=".././../raw/093_未来の過失_01" class="internal alias" data-slug="raw/093_未来の過失_01">093</a></td></tr><tr><td>第094話（４－１８）</td><td>ガイノイドの魔女</td><td>pp.4394–4434</td><td><a href="../episodes/ch094" class="internal" data-slug="episodes/ch094">ch094</a></td><td><a href=".././../raw/094_ガイノイドの魔女_01" class="internal alias" data-slug="raw/094_ガイノイドの魔女_01">094</a></td></tr><tr><td>第095話（４－１９）</td><td>予兆</td><td>pp.4435–4454</td><td><a href="../episodes/ch095" class="internal" data-slug="episodes/ch095">ch095</a></td><td><a href=".././../raw/095_９_予兆_01" class="internal alias" data-slug="raw/095_９_予兆_01">095</a></td></tr><tr><td>第096話（４－２０）</td><td>脆弱性、あるいは仕様</td><td>pp.4456–4483</td><td><a href="../episodes/ch096" class="internal" data-slug="episodes/ch096">ch096</a></td><td><a href=".././../raw/096_脆弱性、あるいは仕様_01" class="internal alias" data-slug="raw/096_脆弱性、あるいは仕様_01">096</a></td></tr><tr><td>第097話（４－２１）</td><td>皆殺しのデーデェイア</td><td>pp.4484–4521</td><td><a href="../episodes/ch097" class="internal" data-slug="episodes/ch097">ch097</a></td><td><a href=".././../raw/097_皆殺しのデーデェイア_01" class="internal alias" data-slug="raw/097_皆殺しのデーデェイア_01">097</a></td></tr><tr><td>第098話（４－２２）</td><td>異界転生</td><td>pp.4522–4555</td><td><a href="../episodes/ch098" class="internal" data-slug="episodes/ch098">ch098</a></td><td><a href=".././../raw/098_異界転生_01" class="internal alias" data-slug="raw/098_異界転生_01">098</a></td></tr><tr><td>第099話（４－２３）</td><td>欲望の在処</td><td>pp.4556–4578</td><td><a href="../episodes/ch099" class="internal" data-slug="episodes/ch099">ch099</a></td><td><a href=".././../raw/099_欲望の在処_01" class="internal alias" data-slug="raw/099_欲望の在処_01">099</a></td></tr><tr><td>第100話（幕間）</td><td>囚われの氷晶姫</td><td>pp.4579–4601</td><td><a href="../episodes/ch100" class="internal" data-slug="episodes/ch100">ch100</a></td><td><a href=".././../raw/100_囚われの氷晶姫_01" class="internal alias" data-slug="raw/100_囚われの氷晶姫_01">100</a></td></tr><tr><td>第101話（４－２４）</td><td>二人で</td><td>pp.4602–4627</td><td><a href="../episodes/ch101" class="internal" data-slug="episodes/ch101">ch101</a></td><td><a href=".././../raw/101_二人で_01" class="internal alias" data-slug="raw/101_二人で_01">101</a></td></tr><tr><td>第102話（４－２５）</td><td>ゲームスタート</td><td>pp.4629–4654</td><td><a href="../episodes/ch102" class="internal" data-slug="episodes/ch102">ch102</a></td><td><a href=".././../raw/102_ゲームスタート_01" class="internal alias" data-slug="raw/102_ゲームスタート_01">102</a></td></tr><tr><td>第103話（幕間）</td><td>左右一対の邪眼姫</td><td>pp.4656–4686</td><td><a href="../episodes/ch103" class="internal" data-slug="episodes/ch103">ch103</a></td><td><a href=".././../raw/103_左右一対の邪眼姫_01" class="internal alias" data-slug="raw/103_左右一対の邪眼姫_01">103</a></td></tr><tr><td>第104話（４－２６）</td><td>嵐の前</td><td>pp.4688–4702</td><td><a href="../episodes/ch104" class="internal" data-slug="episodes/ch104">ch104</a></td><td><a href=".././../raw/104_嵐の前_01" class="internal alias" data-slug="raw/104_嵐の前_01">104</a></td></tr><tr><td>第105話（４－２７）</td><td>ラフディボール（前半）</td><td>pp.4703–4726</td><td><a href="../episodes/ch105" class="internal" data-slug="episodes/ch105">ch105</a></td><td><a href=".././../raw/105_ラフディボール前半_01" class="internal alias" data-slug="raw/105_ラフディボール前半_01">105</a></td></tr><tr><td>第106話（４－２８）</td><td>ラフディボール（後半）</td><td>pp.4727–4750</td><td><a href="../episodes/ch106" class="internal" data-slug="episodes/ch106">ch106</a></td><td><a href=".././../raw/106_ラフディボール後半_01" class="internal alias" data-slug="raw/106_ラフディボール後半_01">106</a></td></tr><tr><td>第107話（幕間）</td><td>騒乱</td><td>pp.4751–4778</td><td><a href="../episodes/ch107" class="internal" data-slug="episodes/ch107">ch107</a></td><td><a href=".././../raw/107_騒乱_01" class="internal alias" data-slug="raw/107_騒乱_01">107</a></td></tr><tr><td>第108話（４－２９）</td><td>醜い野獣</td><td>pp.4778–4822</td><td><a href="../episodes/ch108" class="internal" data-slug="episodes/ch108">ch108</a></td><td><a href=".././../raw/108_９_醜い野獣_01" class="internal alias" data-slug="raw/108_９_醜い野獣_01">108</a></td></tr><tr><td>第109話（４－３０）</td><td>業</td><td>pp.4823–4848</td><td><a href="../episodes/ch109" class="internal" data-slug="episodes/ch109">ch109</a></td><td><a href=".././../raw/109_業_01" class="internal alias" data-slug="raw/109_業_01">109</a></td></tr><tr><td>第110話（４－３１）</td><td>王と物乞い</td><td>pp.4849–4896</td><td><a href="../episodes/ch110" class="internal" data-slug="episodes/ch110">ch110</a></td><td><a href=".././../raw/110_王と物乞い_01" class="internal alias" data-slug="raw/110_王と物乞い_01">110</a></td></tr><tr><td>第111話（４－３２）</td><td>祈りは流星に似て</td><td>pp.4897–4935</td><td><a href="../episodes/ch111" class="internal" data-slug="episodes/ch111">ch111</a></td><td><a href=".././../raw/111_祈りは流星に似て_01" class="internal alias" data-slug="raw/111_祈りは流星に似て_01">111</a></td></tr><tr><td>第112話（４－３３）</td><td>ガロアンディアンの真竜王</td><td>pp.4897–4993</td><td><a href="../episodes/ch112" class="internal" data-slug="episodes/ch112">ch112</a></td><td><a href=".././../raw/112_ガロアンディアンの真竜王_01" class="internal alias" data-slug="raw/112_ガロアンディアンの真竜王_01">112</a></td></tr><tr><td>第113話（幕間）</td><td>死人の森の父</td><td>pp.4994–5036</td><td><a href="../episodes/ch113" class="internal" data-slug="episodes/ch113">ch113</a></td><td><a href=".././../raw/113_死人の森の父_01" class="internal alias" data-slug="raw/113_死人の森の父_01">113</a></td></tr><tr><td>第114話（４－３４）</td><td>オルヴァ王と十二人のシナモリアキラ１</td><td>pp.5037–5051</td><td><a href="../episodes/ch114" class="internal" data-slug="episodes/ch114">ch114</a></td><td><a href=".././../raw/114_オルヴァ王と十二人のシナモリアキラ１_01" class="internal alias" data-slug="raw/114_オルヴァ王と十二人のシナモリアキラ１_01">114</a></td></tr><tr><td>第115話（４－３５）</td><td>オルヴァ王と十二人のシナモリアキラ２</td><td>pp.5052–5081</td><td><a href="../episodes/ch115" class="internal" data-slug="episodes/ch115">ch115</a></td><td><a href=".././../raw/115_オルヴァ王と十二人のシナモリアキラ２_01" class="internal alias" data-slug="raw/115_オルヴァ王と十二人のシナモリアキラ２_01">115</a></td></tr><tr><td>第116話（４－３６）</td><td>オルヴァ王と十二人のシナモリアキラ３</td><td>pp.5083–5112</td><td><a href="../episodes/ch116" class="internal" data-slug="episodes/ch116">ch116</a></td><td><a href=".././../raw/116_オルヴァ王と十二人のシナモリアキラ３_01" class="internal alias" data-slug="raw/116_オルヴァ王と十二人のシナモリアキラ３_01">116</a></td></tr><tr><td>第117話（４－３７）</td><td>オルヴァ王と十二人のシナモリアキラ４</td><td>pp.5114–5134</td><td><a href="../episodes/ch117" class="internal" data-slug="episodes/ch117">ch117</a></td><td><a href=".././../raw/117_オルヴァ王と十二人のシナモリアキラ４_01" class="internal alias" data-slug="raw/117_オルヴァ王と十二人のシナモリアキラ４_01">117</a></td></tr><tr><td>第118話（４－３８）</td><td>オルヴァ王と十二人のシナモリアキラ５</td><td>pp.5136–5170</td><td><a href="../episodes/ch118" class="internal" data-slug="episodes/ch118">ch118</a></td><td><a href=".././../raw/118_オルヴァ王と十二人のシナモリアキラ５_01" class="internal alias" data-slug="raw/118_オルヴァ王と十二人のシナモリアキラ５_01">118</a></td></tr><tr><td>第119話（４－３９）</td><td>オルヴァ王と十二人のシナモリアキラ６</td><td>pp.5172–5229</td><td><a href="../episodes/ch119" class="internal" data-slug="episodes/ch119">ch119</a></td><td><a href=".././../raw/119_９_オルヴァ王と十二人のシナモリアキラ６_01" class="internal alias" data-slug="raw/119_９_オルヴァ王と十二人のシナモリアキラ６_01">119</a></td></tr><tr><td>第120話（４－４０）</td><td>オルヴァ王と十二人のシナモリアキラ７</td><td>pp.5231–5258</td><td><a href="../episodes/ch120" class="internal" data-slug="episodes/ch120">ch120</a></td><td><a href=".././../raw/120_オルヴァ王と十二人のシナモリアキラ７_01" class="internal alias" data-slug="raw/120_オルヴァ王と十二人のシナモリアキラ７_01">120</a></td></tr><tr><td>第121話（４－４１）</td><td>オルヴァ王と十二人のシナモリアキラ８</td><td>pp.5259–5283</td><td><a href="../episodes/ch121" class="internal" data-slug="episodes/ch121">ch121</a></td><td><a href=".././../raw/121_オルヴァ王と十二人のシナモリアキラ８_01" class="internal alias" data-slug="raw/121_オルヴァ王と十二人のシナモリアキラ８_01">121</a></td></tr><tr><td>第122話（４－４２）</td><td>オルヴァ王と十二人のシナモリアキラ９</td><td>pp.5284–5303</td><td><a href="../episodes/ch122" class="internal" data-slug="episodes/ch122">ch122</a></td><td><a href=".././../raw/122_オルヴァ王と十二人のシナモリアキラ９_01" class="internal alias" data-slug="raw/122_オルヴァ王と十二人のシナモリアキラ９_01">122</a></td></tr><tr><td>第123話（４－４３）</td><td>オルヴァ王と十二人のシナモリアキラ１０</td><td>pp.5304–5336</td><td><a href="../episodes/ch123" class="internal" data-slug="episodes/ch123">ch123</a></td><td><a href=".././../raw/123_オルヴァ王と十二人のシナモリアキラ１０_01" class="internal alias" data-slug="raw/123_オルヴァ王と十二人のシナモリアキラ１０_01">123</a></td></tr><tr><td>第124話（４－４４）</td><td>オルヴァ王と十二人のシナモリアキラ１１</td><td>pp.5337–5386</td><td><a href="../episodes/ch124" class="internal" data-slug="episodes/ch124">ch124</a></td><td><a href=".././../raw/124_オルヴァ王と十二人のシナモリアキラ１１_01" class="internal alias" data-slug="raw/124_オルヴァ王と十二人のシナモリアキラ１１_01">124</a></td></tr><tr><td>第125話（４－４５）</td><td>オルヴァ王と十二人のシナモリアキラ１２</td><td>pp.5388–5427</td><td><a href="../episodes/ch125" class="internal" data-slug="episodes/ch125">ch125</a></td><td><a href=".././../raw/125_オルヴァ王と十二人のシナモリアキラ１２_01" class="internal alias" data-slug="raw/125_オルヴァ王と十二人のシナモリアキラ１２_01">125</a></td></tr><tr><td>第126話（４－４６）</td><td>オルヴァ王と十二人のシナモリアキラ０</td><td>pp.5429–5457</td><td><a href="../episodes/ch126" class="internal" data-slug="episodes/ch126">ch126</a></td><td><a href=".././../raw/126_オルヴァ王と十二人のシナモリアキラ０_01" class="internal alias" data-slug="raw/126_オルヴァ王と十二人のシナモリアキラ０_01">126</a></td></tr><tr><td>第127話（４－４７）</td><td>狂姫乱舞</td><td>pp.5459–5474</td><td><a href="../episodes/ch127" class="internal" data-slug="episodes/ch127">ch127</a></td><td><a href=".././../raw/127_狂姫乱舞_01" class="internal alias" data-slug="raw/127_狂姫乱舞_01">127</a></td></tr><tr><td>第128話（４－４８）</td><td>カクリ世の宴</td><td>pp.5475–5494</td><td><a href="../episodes/ch128" class="internal" data-slug="episodes/ch128">ch128</a></td><td><a href=".././../raw/128_カクリ世の宴_01" class="internal alias" data-slug="raw/128_カクリ世の宴_01">128</a></td></tr><tr><td>第129話（４－４９）</td><td>檻の感触だきしめて</td><td>pp.5495–5525</td><td><a href="../episodes/ch129" class="internal" data-slug="episodes/ch129">ch129</a></td><td><a href=".././../raw/129_９_檻の感触だきしめて_01" class="internal alias" data-slug="raw/129_９_檻の感触だきしめて_01">129</a></td></tr><tr><td>第130話（幕間）</td><td>悪夢の継承者</td><td>pp.5526–5546</td><td><a href="../episodes/ch130" class="internal" data-slug="episodes/ch130">ch130</a></td><td><a href=".././../raw/130_悪夢の継承者_01" class="internal alias" data-slug="raw/130_悪夢の継承者_01">130</a></td></tr><tr><td>第131話（４－５０）</td><td>あなたのアイは独りよがり</td><td>pp.5547–5567</td><td><a href="../episodes/ch131" class="internal" data-slug="episodes/ch131">ch131</a></td><td><a href=".././../raw/131_あなたのアイは独りよがり_01" class="internal alias" data-slug="raw/131_あなたのアイは独りよがり_01">131</a></td></tr><tr><td>第132話（４－５１）</td><td>純な炎を胸に燃やして</td><td>pp.5568–5584</td><td><a href="../episodes/ch132" class="internal" data-slug="episodes/ch132">ch132</a></td><td><a href=".././../raw/132_純な炎を胸に燃やして_01" class="internal alias" data-slug="raw/132_純な炎を胸に燃やして_01">132</a></td></tr><tr><td>第133話（４－５２）</td><td>血も凍りつく眠りの中で</td><td>pp.5585–5610</td><td><a href="../episodes/ch133" class="internal" data-slug="episodes/ch133">ch133</a></td><td><a href=".././../raw/133_血も凍りつく眠りの中で_01" class="internal alias" data-slug="raw/133_血も凍りつく眠りの中で_01">133</a></td></tr><tr><td>第134話（４－５３）</td><td>燃え上がる夢の終わりに</td><td>pp.5611–5633</td><td><a href="../episodes/ch134" class="internal" data-slug="episodes/ch134">ch134</a></td><td><a href=".././../raw/134_燃え上がる夢の終わりに_01" class="internal alias" data-slug="raw/134_燃え上がる夢の終わりに_01">134</a></td></tr><tr><td>第135話（４－５４）</td><td>目指すは奈落、一直線に</td><td>pp.5634–5649</td><td><a href="../episodes/ch135" class="internal" data-slug="episodes/ch135">ch135</a></td><td><a href=".././../raw/135_目指すは奈落、一直線に_01" class="internal alias" data-slug="raw/135_目指すは奈落、一直線に_01">135</a></td></tr><tr><td>第136話（４－５５）</td><td>栄えある女王の凱旋</td><td>pp.5651–5684</td><td><a href="../episodes/ch136" class="internal" data-slug="episodes/ch136">ch136</a></td><td><a href=".././../raw/136_栄えある女王の凱旋_01" class="internal alias" data-slug="raw/136_栄えある女王の凱旋_01">136</a></td></tr><tr><td>第137話（幕間）</td><td>甘い果実は腐り堕ちて</td><td>pp.5686–5706</td><td><a href="../episodes/ch137" class="internal" data-slug="episodes/ch137">ch137</a></td><td><a href=".././../raw/137_甘い果実は腐り堕ちて_01" class="internal alias" data-slug="raw/137_甘い果実は腐り堕ちて_01">137</a></td></tr><tr><td>第138話（４－５６）</td><td>メスブタノパン／ブタノマンジュウ</td><td>pp.5708–5737</td><td><a href="../episodes/ch138" class="internal" data-slug="episodes/ch138">ch138</a></td><td><a href=".././../raw/138_メスブタノパン／ブタノマンジュウ_01" class="internal alias" data-slug="raw/138_メスブタノパン／ブタノマンジュウ_01">138</a></td></tr><tr><td>第139話（４－５７）</td><td>裸の自分、服を着た誰か</td><td>pp.5739–5768</td><td><a href="../episodes/ch139" class="internal" data-slug="episodes/ch139">ch139</a></td><td><a href=".././../raw/139_裸の自分、服を着た誰か_01" class="internal alias" data-slug="raw/139_裸の自分、服を着た誰か_01">139</a></td></tr><tr><td>第140話（４－５８）</td><td>あなたは理想の王子さま、私の素敵な王子さま</td><td>pp.5770–5790</td><td><a href="../episodes/ch140" class="internal" data-slug="episodes/ch140">ch140</a></td><td><a href=".././../raw/140_あなたは理想の王子さま、私の素敵な王子さま_01" class="internal alias" data-slug="raw/140_あなたは理想の王子さま、私の素敵な王子さま_01">140</a></td></tr><tr><td>第141話（４－５９）</td><td>『私たち』を始めましょう</td><td>pp.5792–5843</td><td><a href="../episodes/ch141" class="internal" data-slug="episodes/ch141">ch141</a></td><td><a href=".././../raw/141_９_私たちを始めましょう_01" class="internal alias" data-slug="raw/141_９_私たちを始めましょう_01">141</a></td></tr><tr><td>第142話（４－６０）</td><td>Ｃａｌｌｉｎｇ</td><td>pp.5843–5905</td><td><a href="../episodes/ch142" class="internal" data-slug="episodes/ch142">ch142</a></td><td><a href=".././../raw/142_Ｃａｌｌｉｎｇ_01" class="internal alias" data-slug="raw/142_Ｃａｌｌｉｎｇ_01">142</a></td></tr><tr><td>第143話（幕間）</td><td>罪貨の略奪者＋４－６１ 狂姫と狂犬（前書き）</td><td>pp.5906–5926</td><td><a href="../episodes/ch143" class="internal" data-slug="episodes/ch143">ch143</a></td><td><a href=".././../raw/143_罪貨の略奪者_01" class="internal alias" data-slug="raw/143_罪貨の略奪者_01">143</a></td></tr><tr><td>第144話（４－６１）</td><td>狂姫と狂犬</td><td>pp.5927–5949</td><td><a href="../episodes/ch144" class="internal" data-slug="episodes/ch144">ch144</a></td><td><a href=".././../raw/144_狂姫と狂犬_01" class="internal alias" data-slug="raw/144_狂姫と狂犬_01">144</a></td></tr><tr><td>第145話（４－６２）</td><td>夢に向かって</td><td>pp.5950–5990</td><td><a href="../episodes/ch145" class="internal" data-slug="episodes/ch145">ch145</a></td><td><a href=".././../raw/145_夢に向かって_01" class="internal alias" data-slug="raw/145_夢に向かって_01">145</a></td></tr><tr><td>第146話（４－６３）</td><td>女王の器</td><td>pp.5991–6025</td><td><a href="../episodes/ch146" class="internal" data-slug="episodes/ch146">ch146</a></td><td><a href=".././../raw/146_女王の器_01" class="internal alias" data-slug="raw/146_女王の器_01">146</a></td></tr><tr><td>第147話（幕間）</td><td>チェンジリング・ケット・シー</td><td>pp.6026–6053</td><td><a href="../episodes/ch147" class="internal" data-slug="episodes/ch147">ch147</a></td><td><a href=".././../raw/147_チェンジリング・ケット・シー_01" class="internal alias" data-slug="raw/147_チェンジリング・ケット・シー_01">147</a></td></tr><tr><td>第148話（４－６４）</td><td>愛の切っ先</td><td>pp.6054–6085</td><td><a href="../episodes/ch148" class="internal" data-slug="episodes/ch148">ch148</a></td><td><a href=".././../raw/148_愛の切っ先_01" class="internal alias" data-slug="raw/148_愛の切っ先_01">148</a></td></tr><tr><td>第149話（４－６５）</td><td>第五階層のシナモリアキラ</td><td>pp.6086–6133</td><td><a href="../episodes/ch149" class="internal" data-slug="episodes/ch149">ch149</a></td><td><a href=".././../raw/149_第五階層のシナモリアキラ_01" class="internal alias" data-slug="raw/149_第五階層のシナモリアキラ_01">149</a></td></tr><tr><td>断章3-1</td><td>畏怖</td><td>pp.3752–3773</td><td><a href="../episodes/断章3-1" class="internal alias" data-slug="episodes/断章3-1">断章3-1</a></td><td><a href=".././../raw/断章_死人の森の断章３－１_畏怖_01" class="internal alias" data-slug="raw/断章_死人の森の断章３－１_畏怖_01">断章3-1</a></td></tr><tr><td>断章9-1</td><td>冥道の幼姫</td><td>pp.3434–3452</td><td><a href="../episodes/断章9-1" class="internal alias" data-slug="episodes/断章9-1">断章9-1</a></td><td><a href=".././../raw/断章_死人の森の断章９－１_冥道の幼姫_01" class="internal alias" data-slug="raw/断章_死人の森の断章９－１_冥道の幼姫_01">断章9-1</a></td></tr><tr><td>断章8-1</td><td>妄想妖精のプロンプター</td><td>pp.3453–3473</td><td><a href="../episodes/断章8-1" class="internal alias" data-slug="episodes/断章8-1">断章8-1</a></td><td><a href=".././../raw/断章_死人の森の断章８－１_妄想妖精のプロンプター_01" class="internal alias" data-slug="raw/断章_死人の森の断章８－１_妄想妖精のプロンプター_01">断章8-1</a></td></tr><tr><td>断章8-2</td><td>境界に立つ者</td><td>pp.3474–3485</td><td><a href="../episodes/断章8-2" class="internal alias" data-slug="episodes/断章8-2">断章8-2</a></td><td><a href=".././../raw/断章_死人の森の断章８－２_境界に立つ者_01" class="internal alias" data-slug="raw/断章_死人の森の断章８－２_境界に立つ者_01">断章8-2</a></td></tr><tr><td>断章8-3</td><td>過去から過去へ、劇から劇へ</td><td>pp.3486–3500</td><td><a href="../episodes/断章8-3" class="internal alias" data-slug="episodes/断章8-3">断章8-3</a></td><td><a href=".././../raw/断章_死人の森の断章８－３_過去から過去へ、劇から劇へ_01" class="internal alias" data-slug="raw/断章_死人の森の断章８－３_過去から過去へ、劇から劇へ_01">断章8-3</a></td></tr><tr><td>断章6-1</td><td>病的グランギニョル</td><td>pp.3501–3543</td><td><a href="../episodes/断章6-1" class="internal alias" data-slug="episodes/断章6-1">断章6-1</a></td><td><a href=".././../raw/断章_死人の森の断章６－１_病的グランギニョル_01" class="internal alias" data-slug="raw/断章_死人の森の断章６－１_病的グランギニョル_01">断章6-1</a></td></tr><tr><td>断章6-2</td><td>微睡む太陽と月のパペットリー</td><td>pp.3545–3585</td><td><a href="../episodes/断章6-2" class="internal alias" data-slug="episodes/断章6-2">断章6-2</a></td><td><a href=".././../raw/断章_死人の森の断章６－２_微睡む太陽と月のパペットリー_01" class="internal alias" data-slug="raw/断章_死人の森の断章６－２_微睡む太陽と月のパペットリー_01">断章6-2</a></td></tr><tr><td>断章5-1</td><td>正邪の双竜王</td><td>pp.3597–3615</td><td><a href="../episodes/断章5-1" class="internal alias" data-slug="episodes/断章5-1">断章5-1</a></td><td><a href=".././../raw/断章_死人の森の断章５－１_正邪の双竜王_01" class="internal alias" data-slug="raw/断章_死人の森の断章５－１_正邪の双竜王_01">断章5-1</a></td></tr><tr><td>断章5-2</td><td>外なる法</td><td>pp.3615–3642</td><td><a href="../episodes/断章5-2" class="internal alias" data-slug="episodes/断章5-2">断章5-2</a></td><td><a href=".././../raw/断章_死人の森の断章５－２_外なる法_01" class="internal alias" data-slug="raw/断章_死人の森の断章５－２_外なる法_01">断章5-2</a></td></tr><tr><td>断章4-1</td><td>冥道の番犬</td><td>pp.3664–3685</td><td><a href="../episodes/断章4-1" class="internal alias" data-slug="episodes/断章4-1">断章4-1</a></td><td><a href=".././../raw/断章_死人の森の断章４－１_冥道の番犬_01" class="internal alias" data-slug="raw/断章_死人の森の断章４－１_冥道の番犬_01">断章4-1</a></td></tr><tr><td>断章4-2</td><td>禁忌と罰</td><td>pp.3686–3704</td><td><a href="../episodes/断章4-2" class="internal alias" data-slug="episodes/断章4-2">断章4-2</a></td><td><a href=".././../raw/断章_死人の森の断章４－２_禁忌と罰_01" class="internal alias" data-slug="raw/断章_死人の森の断章４－２_禁忌と罰_01">断章4-2</a></td></tr><tr><td>断章4-3</td><td>栄光の手</td><td>pp.3705–3730</td><td><a href="../episodes/断章4-3" class="internal alias" data-slug="episodes/断章4-3">断章4-3</a></td><td><a href=".././../raw/断章_死人の森の断章４－３_栄光の手_01" class="internal alias" data-slug="raw/断章_死人の森の断章４－３_栄光の手_01">断章4-3</a></td></tr><tr><td>断章2-1</td><td>睥睨する藍色</td><td>pp.3835–3866</td><td><a href="../episodes/断章2-1" class="internal alias" data-slug="episodes/断章2-1">断章2-1</a></td><td><a href=".././../raw/断章_死人の森の断章２－１_睥睨する藍色_01" class="internal alias" data-slug="raw/断章_死人の森の断章２－１_睥睨する藍色_01">断章2-1</a></td></tr><tr><td>断章2-2</td><td>冗長性ファントムペイン</td><td>pp.3867–3887</td><td><a href="../episodes/断章2-2" class="internal alias" data-slug="episodes/断章2-2">断章2-2</a></td><td><a href=".././../raw/断章_死人の森の断章２－２_冗長性ファントムペイン_01" class="internal alias" data-slug="raw/断章_死人の森の断章２－２_冗長性ファントムペイン_01">断章2-2</a></td></tr><tr><td>断章2-3</td><td>暗がりの中へ</td><td>pp.3888–3929</td><td><a href="../episodes/断章2-3" class="internal alias" data-slug="episodes/断章2-3">断章2-3</a></td><td><a href=".././../raw/断章_死人の森の断章２－３_暗がりの中へ_01" class="internal alias" data-slug="raw/断章_死人の森の断章２－３_暗がりの中へ_01">断章2-3</a></td></tr></tbody></table></div>
+<h2 id="アーク_volume別分類">アーク・_volume別分類<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#アーク_volume別分類" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<h3 id="volume-1１x">Volume 1（１－X）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#volume-1１x" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>第001話</strong>〔１－１〕無彩色の左手、鎧の右手 — pp.3–106 → <a href="../episodes/ch001" class="internal" data-slug="episodes/ch001">ch001</a></li>
+<li><strong>第002話</strong>〔１－２〕死者を代弁する者 — pp.107–169 → <a href="../episodes/ch002" class="internal" data-slug="episodes/ch002">ch002</a></li>
+</ul>
+<h3 id="幕間きぐるみの魔女">幕間（『きぐるみの魔女』）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#幕間きぐるみの魔女" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>第003話</strong>〔幕間〕きぐるみの魔女 — pp.170–182 → <a href="../episodes/ch003" class="internal" data-slug="episodes/ch003">ch003</a>　（第三勢力の会合・エスフェイル死因・第五階層自由市場／闇市場の起源）</li>
+<li><strong>第006話</strong>〔幕間〕悪夢 — pp.305–310 → <a href="../episodes/ch006" class="internal" data-slug="episodes/ch006">ch006</a>　（アキラの明晰夢・死の反復・渇望と動機の不全）</li>
+</ul>
+<h3 id="volume-2２x">Volume 2（２－X）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#volume-2２x" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>第2-1話</strong>〔２－１〕氷血のコルセスカ — pp.183–232 → <a href="../episodes/ch004" class="internal" data-slug="episodes/ch004">ch004</a></li>
+<li><strong>第005話</strong>〔２－２〕転生者（ゼノグラシア） — pp.233–304 → <a href="../episodes/ch005" class="internal" data-slug="episodes/ch005">ch005</a></li>
+<li><strong>第007話</strong>〔２－３〕魔女と狂犬 — pp.311–356 → <a href="../episodes/ch007" class="internal" data-slug="episodes/ch007">ch007</a></li>
+<li><strong>第008話</strong>〔２－４〕六淫操手 — pp.357–397 → <a href="../episodes/ch008" class="internal" data-slug="episodes/ch008">ch008</a>　（三報会・ロウ・カーイン再戦・六淫/内功・ちびシューラと呪術四系統）</li>
+<li><strong>第009話</strong>〔２－５〕王獣カッサリオ — pp.398–433 → <a href="../episodes/ch009" class="internal" data-slug="episodes/ch009">ch009</a>　（王獣カッサリオ・複合種・融血呪・ヴァレリアンヌ装着・カーイン再臨・コルセスカ不死身）</li>
+<li><strong>第010話</strong>〔２－６〕がらくたなんかじゃない — pp.434–471 → <a href="../episodes/ch010" class="internal" data-slug="episodes/ch010">ch010</a>　（『泉』安全地帯・トライデント正体・六淫操手による治療・融合体戦・カッサリオ殲滅・新融合体 Cliffhanger）</li>
+<li><strong>第011話</strong>〔２－７〕炎は黄金を証明する — pp.472–504 → <a href="../episodes/ch011" class="internal" data-slug="episodes/ch011">ch011</a>　（融合体戦・転生保険・Ｅ－Ｅ・「炎は黄金を証明する」）</li>
+<li><strong>第012話</strong>〔２－８・２－９〕その視座の名はゆらぎの神話 — pp.505–626 → <a href="../episodes/ch012" class="internal" data-slug="episodes/ch012">ch012</a>　（ゆらぎの神話・病院船呪術医院への移住計画・トリシューラの社会破壊構想）</li>
+<li><strong>第013話</strong>〔２－１０〕春の魔女 — pp.627–665 → <a href="../episodes/ch013" class="internal" data-slug="episodes/ch013">ch013</a>　（巡槍艦ノアズアーク帰還・第五階層破壊計画・聖婚儀式『ヒエロス・ガモス』）</li>
+<li><strong>第014話</strong>〔２－１１〕欠落と渇望 — pp.666–716 → <a href="../episodes/ch014" class="internal" data-slug="episodes/ch014">ch014</a>　（道場の宣伝炎上・公社の紙幣・キロンの誘い・レオの善性）</li>
+<li><strong>第015話</strong>〔幕間〕前夜 — pp.717–745 → <a href="../episodes/ch015" class="internal" data-slug="episodes/ch015">ch015</a>　（幕間・公社内部・キロンの同盟提案・カーイン襲撃）</li>
+<li><strong>第016話</strong>〔２－１２〕リーナ・ゾラ・クロウサーより — pp.746–768 → <a href="../episodes/ch016" class="internal" data-slug="episodes/ch016">ch016</a>　（公社への侵入戦・リーナ・ゾラ・クロウサーとのメール交信）</li>
+<li><strong>第017話</strong>〔２－１３〕メクセトの神滅具 — pp.769–828 → <a href="../episodes/ch017" class="internal" data-slug="episodes/ch017">ch017</a>　（【松明の騎士団】偽装帰順・迷宮化戦・コルセスカと再共闘）</li>
+<li><strong>第018話</strong>〔２－１４〕転生者殺し — pp.829–873 → <a href="../episodes/ch018" class="internal" data-slug="episodes/ch018">ch018</a>　（キロン＝「転生者殺し」の真実・時間停止戦・トリシューラ再戦）</li>
+<li><strong>第019話</strong>〔幕間〕涙の価値 — pp.874–920 → <a href="../episodes/ch019" class="internal" data-slug="episodes/ch019">ch019</a>　（幕間・トリシューラとコルセスカ決別・アキラの絶望・竜メルトバーズ）</li>
+<li><strong>第020話</strong>〔２－１５〕そんなことよりゲームをしよう — pp.921–974 → <a href="../episodes/ch020" class="internal" data-slug="episodes/ch020">ch020</a>　（コルセスカとトリシューラの決着・共通の使い魔・深海侵入と決闘）</li>
+<li><strong>第021話</strong>〔２－１６〕鏡（ミラージュ） — pp.975–1026 → <a href="../episodes/ch021" class="internal" data-slug="episodes/ch021">ch021</a>　（トリシューラの完全な起源開示・使い魔選択理論・相互再帰のイマジナリーフレンド）</li>
+<li><strong>第023話</strong>〔２－１７〕レジンキャストエピゴーネン — pp.1083–1134 → <a href="../episodes/ch023" class="internal" data-slug="episodes/ch023">ch023</a>　（キロン戦決着・ウィッチオーダー七十一の手数・呪的化勁・キロン融合復活【廉施者】）</li>
+<li><strong>第024話</strong>〔２－１８〕ｎｕｌｌ参照のアリュージョン — pp.1135–1161 → <a href="../episodes/ch024" class="internal" data-slug="episodes/ch024">ch024</a>　（キロン蹂躙・無知は力・パラドキシカルトリアージ・ミエスリヴァの紙幣・歌姫Ｓｐｅａｒ降臨【偶像】）</li>
+<li><strong>第025話</strong>〔２－１９〕サイバネティクスとオカルティズムの幸福なマリアージュ — pp.1162–1209 → <a href="../episodes/ch025" class="internal" data-slug="episodes/ch025">ch025</a>　（キロン介錯・合一聖婚・車輪の女王ヘリステラ・ベアトリーチェ登場）</li>
+<li><strong>第026話</strong>〔２－２０〕その名はアズーリア — pp.1210–1229 → <a href="../episodes/ch026" class="internal" data-slug="episodes/ch026">ch026</a>　（後日談・キュトス神話の真実・王国構想・アズーリアの地上の物語）</li>
+<li><strong>第027話</strong>〔幕間〕もし狂犬が戦国乱世に転生したら — pp.1230–1239 → <a href="../episodes/ch027" class="internal" data-slug="episodes/ch027">ch027</a>　（現代日本の転生保険会社・【沼女】造井玲の登場）</li>
+<li><strong>第028話</strong>〔３－０〕どうして空は青いの？ — pp.1240–1264 → <a href="../episodes/ch028" class="internal" data-slug="episodes/ch028">ch028</a>　（アズーリア視点・アストラル界・ハルベルトとの出会い）</li>
+<li><strong>第029話</strong>〔３－１〕未来回想、あるいはこれからのあらすじ — pp.1265–1280 → <a href="../episodes/ch029" class="internal" data-slug="episodes/ch029">ch029</a>　（聖女クナータの未来予知・アキラとの再会の予言）</li>
+<li><strong>第030話</strong>〔幕間〕もうひとつの左手 — pp.1281–1306 → <a href="../episodes/ch030" class="internal" data-slug="episodes/ch030">ch030</a>　（ラーゼフ・フィリスの正体・アズーリアの妹の救出）</li>
+<li><strong>第031話</strong>〔幕間〕もうひとつの悪夢 — pp.1307–1324 → <a href="../episodes/ch031" class="internal" data-slug="episodes/ch031">ch031</a>　（アズーリアの悪夢・ベアトリーチェの過去・フィリスの役割）</li>
+<li><strong>第032話</strong>〔３－２〕言の葉遣いは躊躇わない — pp.1325–1377 → <a href="../episodes/ch032" class="internal" data-slug="episodes/ch032">ch032</a>　（迷宮都市エルネトモラン・コルセスカとの出会い・ハルベルトの師弟関係）</li>
+<li><strong>第033話</strong>〔３－３〕半熟英雄 — pp.1378–1420 → <a href="../episodes/ch033" class="internal" data-slug="episodes/ch033">ch033</a>　（ハルベルトの実地訓練・パレルノ山の金箒花採取勝負）</li>
+<li><strong>第034話</strong>〔３－４〕天の鴉と月の兎 — pp.1421–1493 → <a href="../episodes/ch034" class="internal" data-slug="episodes/ch034">ch034</a>　（呪文指導・ナトの鴉撃退・単眼巨人戦・ハルベルトの秘密）</li>
+<li><strong>第035話</strong>〔３－５〕言語魔術師の弟子（前編） — pp.1494–1522 → <a href="../episodes/ch035" class="internal" data-slug="episodes/ch035">ch035</a>　（崖下の療養・ハルベルトの正体告白・最後の魔女の選定・プリエステラ登場）</li>
+<li><strong>第036話</strong>〔３－６〕魔女と英雄 — pp.1523–1592 → <a href="../episodes/ch036" class="internal" data-slug="episodes/ch036">ch036</a>　（ティリビナの隠れ里・舌獣イキュー討伐・ミルーニャ＝白のメートリアンの衝撃）</li>
+<li><strong>第037話</strong>〔３－７〕言理の妖精語りて曰く — pp.1593–1732 → <a href="../episodes/ch037" class="internal" data-slug="episodes/ch037">ch037</a>　（メートリアンとの死闘・ミルーニャの過去と祝福解除・ペレケテンヌル撃退・和解）</li>
+<li><strong>第038話</strong>〔幕間〕幻想再起のイリュージョニスト — pp.1733–1780 → <a href="../episodes/ch038" class="internal" data-slug="episodes/ch038">ch038</a>　（ハルベルトの記録改竄・黒百合宮の過去・アズーリア＝マリー・スー・ヘレゼクシュ）</li>
+<li><strong>第039話</strong>〔幕間〕松明の騎士 — pp.1781–1817 → <a href="../episodes/ch039" class="internal" data-slug="episodes/ch039">ch039</a>　（アズーリアの回想・竜骨の森でソルダ・アーニスタと出会う・大機竜オルガンローデ戦・獅子の少年）</li>
+<li><strong>第040話</strong>〔３－８・３－９〕再びの未来回想、そして来るべき次回予告 — pp.1818–1858 → <a href="../episodes/ch040" class="internal" data-slug="episodes/ch040">ch040</a>　（大神院の昼食会・聖女クナータの死の託宣・ソルダの常在型神働術・ハルベルトの「世界の歪み」への恐怖）</li>
+<li><strong>第041話</strong>〔３－１０〕青の空、黒の空白 — pp.1859–1878 → <a href="../episodes/ch041" class="internal" data-slug="episodes/ch041">ch041</a>　（第一区でトライデントの使い魔ガルズ・マウザ・クロウサーと遭遇・【浄界】・リーナが青空を取り戻す）</li>
+<li><strong>第042話</strong>〔３－１１〕チョコレートリリー — pp.1879–1904 → <a href="../episodes/ch042" class="internal" data-slug="episodes/ch042">ch042</a>　（ガルズの十三人殺しの捜査・リーナの告白・ティリビナの民の護送計画・六人分隊【チョコレートリリー】の結成）</li>
+<li><strong>第043話</strong>〔３－１２〕隠れた変数（オクルトゥム） — pp.1905–1939 → <a href="../episodes/ch043" class="internal" data-slug="episodes/ch043">ch043</a>　（アルマ・サリアの協力・二重スリット実験・四魔女の目的・ハルベルト＝歌姫Ｓｐｅａｒの正体）</li>
+<li><strong>第044話</strong>〔３－１３・０－３〕この戦いが終わったら — pp.1940–1975 → <a href="../episodes/ch044" class="internal" data-slug="episodes/ch044">ch044</a>　（ハルベルト＝歌姫Ｓｐｅａｒの正体・二人目の犠牲者・プリエステラの過去『砂漠の花』）</li>
+<li><strong>第045話</strong>〔３－１４〕パレルノ山六千人殺し — pp.1976–2002 → <a href="../episodes/ch045" class="internal" data-slug="episodes/ch045">ch045</a>　（ティリビナの民の護送・悪魔の九姉の残響・全滅・「遡って、フィリス」）</li>
+<li><strong>第046話</strong>〔幕間〕静謐なる多弁 — pp.2003–2018 → <a href="../episodes/ch046" class="internal" data-slug="episodes/ch046">ch046</a>　（アズーリア＝レルプレアの依巫・時間遡行の真相・ガルズ・マリーへの協力要請）</li>
+<li><strong>第047話</strong>〔３－１５〕【死の囀り】カタルマリーナ — pp.2019–2055 → <a href="../episodes/ch047" class="internal" data-slug="episodes/ch047">ch047</a>　（ガルズ・マリーの捕縛・悪魔の九姉との決戦・アズーリアの固有種の真の姿）</li>
+<li><strong>第048話</strong>〔３－１６〕黒いアネモネの花言葉 — pp.2056–2072 → <a href="../episodes/ch048" class="internal" data-slug="episodes/ch048">ch048</a>　（ガルズの動機の告白・マリーの正体（哲学的ゾンビ）・アズーリアの自己省察）</li>
+<li><strong>第049話</strong>〔３－１７・０－４〕無造作な死 — pp.2073–2140 → <a href="../episodes/ch049" class="internal" data-slug="episodes/ch049">ch049</a>　（トライデントの構造・ガルズの反逆・アズーリアの解体／０－４『祈りの価値』マリーの過去・黒百合の子供たち・ヴァージリア）</li>
+<li><strong>第050話</strong>〔幕間〕言震（ワードクェイク） — pp.2141–2169 → <a href="../episodes/ch050" class="internal" data-slug="episodes/ch050">ch050</a>　（サリアの帰還→マロゾロンドの顕現→ミルーニャの決意→ハルベルト＝ヴァージリアの禁呪【創造の光よ】→北ドラトリアの言語崩壊）</li>
+<li><strong>第051話</strong>〔３－１８・０－５〕激光（レイジ） — pp.2170–2218 → <a href="../episodes/ch051" class="internal" data-slug="episodes/ch051">ch051</a>　（黒百合の子供たち再会→アズーリアの昏睡→ハルベルトの計画→十三人殺し続行→リーナの『青空』思い出話）</li>
+<li><strong>第052話</strong>〔３－１９〕夢幻の果て — pp.2219–2246 → <a href="../episodes/ch052" class="internal" data-slug="episodes/ch052">ch052</a>　（ハルベルトの潜行→母と師の呪いの由来→アズーリアの悪夢・心の核→ハルベルトの決闘の提案）</li>
+<li><strong>第053話</strong>〔３－２０〕言語魔術師の弟子（後編） — pp.2247–2282 → <a href="../episodes/ch053" class="internal" data-slug="episodes/ch053">ch053</a>　（ハルベルトとアズーリアの決闘→フィリス事件回想→アズーリアの目覚め→ゲルシェネスナでマロゾロンド撃退）</li>
+<li><strong>第054話</strong>〔３－２１〕第五階層より第一階層へ — pp.2283–2300 → <a href="../episodes/ch054" class="internal" data-slug="episodes/ch054">ch054</a>　（アズーリアの準備→リールエルバと通信・死人の森の断章・十三階段→アキラの発見）</li>
+<li><strong>第055話</strong>〔３－２２〕シナモリ・アキラより — pp.2301–2333 → <a href="../episodes/ch055" class="internal" data-slug="episodes/ch055">ch055</a>　（アキラとの接触検討→第五階層の勢力図→リーナとの空中散歩→ハルベルトの処刑）</li>
+<li><strong>第056話</strong>〔３－２３〕睥睨するエクリーオベレッカ — pp.2335–2365 → <a href="../episodes/ch056" class="internal" data-slug="episodes/ch056">ch056</a>　（セリアック＝ニアの到着→葬送式典→貴賓席でサイリウスと対峙→第四階層侵攻→マリーの襲撃・姫Spear登場）</li>
+<li><strong>第057話</strong>〔３－２４〕十三階段 — pp.2366–2411 → <a href="../episodes/ch057" class="internal" data-slug="episodes/ch057">ch057</a>　（叙述悪戯でマリーを受容→ガルズの死人の蜘蛛化・融血呪→サイリウスの質量操作呪術・巨人化→十三番目の生贄でガルズ復活→十二の魔将復活・言理の魔女覚醒）</li>
+<li><strong>第058話</strong>〔３－２５〕オンステージ — pp.2412–2453 → <a href="../episodes/ch058" class="internal" data-slug="episodes/ch058">ch058</a>　（ズタークスタークの殺戮→魔将二派閥（レストロオセ派／セレクティ派）の対立とコキュートスの封印計算→守護の九槍との交戦→聖火楽団による浄界隔離→終末の四行詩）</li>
+<li><strong>第059話</strong>〔３－２６〕奈落に飲まれ、闇に包まれる — pp.2455–2489 → <a href="../episodes/ch059" class="internal" data-slug="episodes/ch059">ch059</a>　（火蜂による暗殺の無効化→サイザクタートの『夢』→ダエモデクの肉の分与と屍亜竜→マリキアン・リトの妻子→サジェリミーナの浄界【創生の闇】）</li>
+<li><strong>第060話</strong>〔３－２７〕影に沈み、振り返らずに去っていく — pp.2491–2531 → <a href="../episodes/ch060" class="internal" data-slug="episodes/ch060">ch060</a>　（エスフェイルとセリアック＝ニアの決闘→【大物食い】で賢者イヴァ＝ダストを撃破→半妖精開示と長弓部隊の離反→ベフォニスの勧誘とプリエステラの決断）</li>
+<li><strong>第061話</strong>〔３－２８〕言葉は断ち切られ、絶望は感染する。そして―― — pp.2532–2555 → <a href="../episodes/ch061" class="internal" data-slug="episodes/ch061">ch061</a>　（第十一魔将ユネクティアとの影の中の決闘→歌姫Ｓｐｅａｒ・タマ・セリアック＝ニア・リールエルバ・アズーリアの相次ぐ死→エスフェイルの地上側完全勝利）</li>
+<li><strong>第062話</strong>〔幕間〕この夜が明けるまであと百万の祈り — pp.2556–2579 → <a href="../episodes/ch062" class="internal" data-slug="episodes/ch062">ch062</a>　（アキラの「筋書き」論→幕間内幕間『舌（スペル）』ハルベルトとアズーリアの契約・四十六位ヴァイドゥーリヤ→エルネトモラン崩壊の群像→三つの呪術儀式【過去】の歌起動）</li>
+<li><strong>第063話</strong>〔３－２９〕黒百合の子供たち — pp.2581–2625 → <a href="../episodes/ch063" class="internal" data-slug="episodes/ch063">ch063</a>　（草の民の機動救出と「別種の死人」の出現→メイファーラの隔世覚醒【ユディーア】と凍視／生命吸収→リーナ＆ミルーニャ対第五魔将サジェリミーナの宇宙戦（世界観批判という名の呪文・十七万六千倍加速）→第零の位階の威圧による魔将平伏→サイバーカラテ道場強制配信＝新神話樹立）</li>
+<li><strong>第064話</strong>〔３－３０〕その名はサイバーカラテ — pp.2627–2661 → <a href="../episodes/ch064" class="internal" data-slug="episodes/ch064">ch064</a>　（歌姫復活＝【過去】の頌歌と不死論→黒血呪発動・【死の囀り】改竄→サイバーカラテ心技体の呪術的再建と集合知強化→ペリュトン降臨・魔女と使い魔→射影即興喜劇・黒玉飛翔＝三人目の英雄）</li>
+<li><strong>第065話</strong>〔３－３１〕それは、世界がこんなにも光に満ち溢れているから — pp.2662–2708 → <a href="../episodes/ch065" class="internal" data-slug="episodes/ch065">ch065</a>　（フィリスのブリコラージュ＝射影即興喜劇八連発・金鎖二〜八破砕→魔将九討（森と花／来歴掌握／夢の自己認識崩壊／パルプ・フィクション／吸血雲／ナーグストール）→リールエルバ「見せかけの死」種明かしとヴァンパイアロード→【死人の森の断章】掌握・エクリーオベレッカ召喚と世界法則改変→五人の修道騎士（故人）参戦→宣名「永続者アズーリア・ヘレゼクシュ」）</li>
+<li><strong>第066話</strong>〔３－３２〕澄明なる青空に — pp.2709–2777 → <a href="../episodes/ch066" class="internal" data-slug="episodes/ch066">ch066</a>　（リーナ「クロウサー家当主になることを宣言する！」→聖女クナータ暗殺と沼女現象・アリス／ザドーナの介入と管理宣言→闇の静謐と連関合成・レッドレッデル→色無しマリー／マリー・スーと浄界定義→マリー内化と「語りて曰く」全世界開示→万色彩星・キール隊最期・鎧のような右腕と瑠璃彩星→御霊送り（葬送式典完了）→エスフェイル最期と告白、アズーリアの起源開示「仮想使い魔・情報の影や煙」）</li>
+<li><strong>第067話</strong>〔幕間＋０－６〕特権者の英雄症候群、さもなくば―― — pp.2778–2852 → <a href="../episodes/ch067" class="internal" data-slug="episodes/ch067">ch067</a>　（幕間：ハルベルト審問口上と【風説】によるユネクティア殺し→トライデント細胞序列開示（脊髄／神経／天眼号灰／子宮号紫）→テッシトゥーラの「予約」→始祖クロウサー顕在化とガルズの死・リーナ邪視獲得→ヲルヲーラ処刑と聖婚宣言／後書き：幻想韻雷ペリドット定着→０－６『第九魔将』：九十九戦とカーインとの別れ→虹のホルケナウ・ポルガー命名→ルーシメア「運べ」・ディスペータ誓願→「真の第九魔将」）</li>
+<li><strong>第068話</strong>〔３－３３〕黒血のハルベルト — pp.2853–2871 → <a href="../episodes/ch068" class="internal" data-slug="episodes/ch068">ch068</a>　（第三章最終話：サリアとの買い物とマロゾロンド加護の禁忌→人工魔女論（ミュトス／レトリック／アンドロイド＋第四の問い）→「害虫駆除」嫉妬奔流→食用奉仕種族の処遇と『食葬』→語りて曰くの日常化→二重スリット実験の未記述→ヴァージリア前日譚（『アクス』失敗と最初のファンレター））</li>
+<li><strong>第069話</strong>〔４－０〕死人の森 — pp.2872–2901 → <a href="../episodes/ch069" class="internal" data-slug="episodes/ch069">ch069</a>　（第四章開幕：加虐恋の独白と「逆襲の意思」→力士ゾーイ・アキラ＆幻像ケイトの「残った」殺法→ガロアンディアン／公社／【猟犬】／猫の取り替え子＝第五階層再編→旧公社＝呪侠の江湖史→地下娼館ウィクトーリア（光妖精）の胎内死人の森で男が最期）</li>
+<li><strong>第070話</strong>〔４－１〕道場 — pp.2903–2912 → <a href="../episodes/ch070" class="internal" data-slug="episodes/ch070">ch070</a>　（アキラ主語の日常回：ロウ・カーインとの何度目もの手合わせ（天眼石の三つ編み・情報的牽制）→ファル勝利確率12%→マラコーダ（ミアスカ流脚撃術）→「俺はあいつの使い魔だからな」→道場破り＝宣伝、「俺が、『使い魔』になってから三ヶ月」）</li>
+<li><strong>第071話</strong>〔４－２〕風の吹く丘 — pp.2913–2933 → <a href="../episodes/ch071" class="internal" data-slug="episodes/ch071">ch071</a>　（アキラ主語：夜勤シアナとサイバーカラテ・ブーム商品群→リーナ街頭インタビュー＋密メール→【風の吹く丘】でドローン模擬戦争＝「機械が死ぬ戦争」→ゼド同盟／ベアトリーチェ休戦、サリアの殺意→日課の報告儀式とトリシューラの嫉妬暴走→松明の騎士団暗殺部隊襲来→ラズリ・ジャッフハリム【天与の王権】ワリバーヤで全滅）</li>
+<li><strong>第072話</strong>〔４－３〕王国 — pp.2934–2955 → <a href="../episodes/ch072" class="internal" data-slug="episodes/ch072">ch072</a>　（ラズリのレゴン貸与と「姉」→吸血鬼王族リールエルバ登場・ドラトリア承認＝「承認が呪力」の国家論→暗殺内幕（親キロン派）・【鬼火】派遣→言語魔術師試験で太陰行き、「カタルマリーナ派」との最終敵対予告・【マレブランケ】開示→【死人の森】＝旧王国の正統性問題（風の王撃破の回想）、グレンデルヒ警告→ドッグフード劇と三本足、コルセスカ乱入で幕）</li>
+<li><strong>第073話</strong>〔４－４〕ダモクレスの剣 — pp.2956–2992 → <a href="../episodes/ch073" class="internal" data-slug="episodes/ch073">ch073</a>　（ファル＝ファルファレロ／【マレブランケ】判明とセージへの恋の相談→夜警団再編・文化＝呪力発電の店で六王伝承オルクス＝ハイ→暗部で【ダモクレスの剣】が僣主殺しを選定（クレイら三人）→公社本社ビル前襲撃・白眉のイアテム宣名（【変異の三手】副長・セージの師）→連携クラッキングからの逆転（中傷者クリミナトレス＋射影三昧耶形十四番）、アバター脱出＝宣戦布告）</li>
+<li><strong>第074話</strong>〔４－５〕工場 — pp.2993–3031 → <a href="../episodes/ch074" class="internal" data-slug="episodes/ch074">ch074</a>　（工場街視察＝「王国の形をした祭壇」定義・日本語暗号化・プロゲーマー防衛→【鬼火】バル警備、地下の骨の迷宮＝死人の森軍勢→【変異の三手】内部（女の勘・ダモクレス剣がクレイ選定）→ロドウィの『牧場』（人間家畜・赤子生産）と同胞虐殺→肉体言語魔術師対決（クレイ＝ライニンサル宣名）、ロドウィ蛙化（ジヌイービ）・崩落で幕）</li>
+<li><strong>第075話</strong>〔４－６〕白骨迷宮 — pp.3032–3074 → <a href="../episodes/ch075" class="internal" data-slug="episodes/ch075">ch075</a>　（介錯と父の死：カルカブリーナ救出・告白→ロドウィ、【賢刃】ヴィヴィ＝イヴロスによる介錯とハザーリャ詠唱、「おお、アニス――私の娘よ」→第十六魔将【歪な荘厳】イェレイド（端末体）との交戦→バル拷問重傷・首分離攻撃→クレイの剣詩舞と【誓約】「女王」認定→章末、灰色の瞳の女性の「ママ」の赦しで幕）</li>
+<li><strong>第076話</strong>〔４－７〕花街 — pp.3076–3095 → <a href="../episodes/ch076" class="internal" data-slug="episodes/ch076">ch076</a>　（言語魔術師試験当日の朝：すっぴん・咬痕ラブコメと「振る舞いによるクラッキング」→トリシューラ約一週間不在、マーキング宣言→リールエルバ三警告（言震リスク世界トップ／グレンデルヒの日本語参照／ラクルラール派二人の入国）、アキラが発生源として標的化→花街＝公娼の国家産業化（ポルノスター＝発電機）と人工乳房喜劇→探索者たちの『城』で四英雄・【盗賊王】ゼド「俺の王は俺だけだ」と落ち合いで幕）</li>
+<li><strong>第077話</strong>〔４－８＋４－９〕黒百合館／ステュクス — pp.3097–3201 → <a href="../episodes/ch077" class="internal" data-slug="episodes/ch077">ch077</a>　（ゼドがニセアキラ情報と地下の霊薬・死人の娼館噂を提示、紀神キュトス講義（旧第五位＝生と死の姉妹ディスペータの存在抹消）→コルセスカ合流（サリアの狂気の副作用）→黒百合館へ女装潜入、本館は死人の娼館→【死人の森の女王】ディスマーテル・ウィクトーリア宣名（【変異の三手】左副肢・未来転生者・絶対遵守の呪い）、第一浄界【ステュクス】と紀元槍アクセス→人工乳房による内功で逆転、陽動だったと判明（王宮ではちびシューラ襲撃を撃退）→コルセスカの「男性遍歴」＝ゲーム開陳と「大人になる振り」の依頼で幕）</li>
+<li><strong>第078話</strong>〔幕間＋４－１０前書き〕空の玉座 — pp.3203–3226 → <a href="../episodes/ch078" class="internal" data-slug="episodes/ch078">ch078</a>　（月の首都海岸＝情報の海。リーナとミルーニャ、王宮襲撃で二次試験延期→トリシューラ合流・通信拒否（リールエルバ不審）→【チョコレートリリー】集合→情報の海の底で偽トリシューラの正体判明（アレッテ・イヴニル＝フォービットデーモンナンバーエイト・紅紫、石版掌握、「私たちはみんな人形なんだわ」）→本物は囚われの身（看守＝ネドラド、骨の手足＝セルラテリス＋ハザーリャ多重加護、【ダモクレスの剣】は軍勢の一部でも発動）→「空の玉座を狙う者たち」「三手を束ねる男」）</li>
+<li><strong>第079話</strong>〔４－１０〕二人の距離 — pp.3228–3253 → <a href="../episodes/ch079" class="internal" data-slug="episodes/ch079">ch079</a>　（徹夜明け。コルセスカの第五階層拡大論／対ヴィク対策としての伝承RPG／【銀の森】の対抗伝承と「名も知られぬ悪魔」→アキラ体調崩壊・カーイン診察（寒邪）→自責と独占欲の告白、ディスマーテル・ウィクトーリアとの顔立ちの相似→「全部受け入れる」「コルセスカがいないと、生きていけない」→【星見の塔トーナメント】提案）</li>
+<li><strong>第080話</strong>〔４－１１〕星見の塔トーナメント（前編） — pp.3255–3316 → <a href="../episodes/ch080" class="internal" data-slug="episodes/ch080">ch080</a>　（名声値をかけた全国中継興行、開催目的＝三手への挑戦状＋アキラ治療（陰陽二部ルール）→偽行司シューラの違和感、カル初戦敗北・黒衣棄権→カニャッツォ／グラッフィアカーネ（合気）・レオの辛辣「そのうち捨てちゃうから」→チリアット（牙猪・恐怖の邪視・主観時間加速）暴走をカーインが親指貫手で制圧、黒衣＝クレイ露見→コルセスカ vs ラズリ（占地術・禹歩・パーシーイー、ゲーム参照覚醒・歴代ゴースト）両者失格→マラコーダ（蠍尻尾・藍）登場、黒衣二人＝イアテム／死人の森の女王判明→力士ゾーイ・アキラ宣名「問題」を「解決」しに来た、章末「今度こそ死ぬかもしれん」）</li>
+<li><strong>第081話</strong>〔４－１２〕Ｔｏｕｒｎａｍｅｄ Ｃｅｌｅｓｔｉａｌ Ｇａｚｅ（ｔｈｅ ｓｅｃｏｎｄ ｖｏｌｕｍｅ） — pp.3317–3422 → <a href="../episodes/ch081" class="internal" data-slug="episodes/ch081">ch081</a>　（感染呪術講義「関係性の拡張である以前に、身体性の拡張」・マラコーダの呪毒→偽行司露見＝ケイト、トリシューラ解体映像と予備機体封じ→ちびセスカ参照同化（鏡で切断）、「君は重複転生者だ」→【静謐】「言理の妖精語りて曰く、なんてね」、力士ゾーイとの決着（不死性＝ドローン／ＹＯＫＯＺＵＮＡ／思考ロック解除）→ニケ→カロン→フェブルウス宣名、四英雄筆頭グレンデルヒ露見＝「表層人格アキラを演じていた深層人格」→ステマ認定・【陰謀論】【炎上】と名声値（年齢と性別の父権社会論）、「浄罪者フェブルウス＝コルセスカ」宣名、チリアット殺害＋生命吸収、「赦します」→後書き：ヘリステラ「私の妹たちを、よろしくお願いね」、幕間劇『不在の二人』ヴィヴィ＝イヴロスの浄界【世界劇場】・演劇＝過去干渉、「俺は、チリアットの寄生異獣になっているのか」）</li>
+</ul>
+<h3 id="幕間棒ワンド">幕間（『棒（ワンド）』）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#幕間棒ワンド" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>第022話</strong>〔幕間〕棒（ワンド） — pp.1027–1082 → <a href="../episodes/ch022" class="internal" data-slug="episodes/ch022">ch022</a>　（トリシューラとアキラの機械/人・欲望の非対称性議論・内部構造開示・呪力注入で前世記憶を奪いこの世界の人間化・キロン再臨）</li>
+</ul>
+<h3 id="幕間不在の二人">幕間（『不在の二人』）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#幕間不在の二人" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>第082話</strong>〔幕間〕不在の二人 — pp.3423–3434 → <a href="../episodes/ch082" class="internal" data-slug="episodes/ch082">ch082</a>　（死人の森の女王フェブルウス＝コルセスカの屈辱と造反の芽、ネドラド連絡不通→ゼド【愴銃】乱入「俺はまだ、お前から答えを聞いていないぞ」、グレンデルヒ簒奪・競争原理演説「そして私を楽しませろ！」→後書き：ヴァレリアンヌ（ハイパーリンカー）の失態と折檻部屋、スキリシア落下の外世界人二人と瘴気・黒衣の人物、仮想的な糸＝人形劇の了解、「ここはドラトリア……カーティスと言う」暗転）</li>
+<li><strong>第083話</strong>〔幕間〕昔々あるところに — pp.3586–3595 → <a href="../episodes/ch083" class="internal" data-slug="episodes/ch083">ch083</a>　（浄界【世界劇場】破綻後の問答——ヴィヴィ＝イヴロス「知っていたよ」、転生の多重化／消滅／統合、ラクルラール＝球神ドルネスタンルフの神造遺物、「役」と「役者」の演劇遊戯、次の舞台＝竜王国ガロアンディアン、虐殺王マラードと人狼『問題を解決』、過去の王六人・カーティス一世、『鍵』＝『断章』奪還課題→チリアットの縁（ダエモデク・四方の王・アルト半身）、「昔々、あるところに」で過去への扉）</li>
+<li><strong>第084話</strong>〔幕間〕雷が鳴っている間は — pp.3644–3663 → <a href="../episodes/ch084" class="internal" data-slug="episodes/ch084">ch084</a>　（竜王国劇の破綻を「不条理」と総括→チリアットの贖罪自覚とアキラの分析（交換不可能価値の貶降）、「値札を張り直す」プロンプティング＝杖の洗脳との自覚的共犯→グレンデルヒ同盟提案「論外だな」、次舞台主役＝太陰の王子ヴァージル→レオ来訪・主役志願、百二十八人の宣名と発動せぬ二名、クレイ再生者化・姓変遷（ライニンサル→ドーレスタ→ダーカンシェル）・手だけ無傷→グラ加入、「俺という役」の左腕譲渡、ちびアキラ仮面）</li>
+<li><strong>第085話</strong>〔幕間〕食い千切られた左腕 — pp.3732–3751 → <a href="../episodes/ch085" class="internal" data-slug="episodes/ch085">ch085</a>　（スタンドアロンシューラ＝左腕内部のバックアップ初明かし→グラへの予防殺害と「ガロアンディアンには『法』が足りない」→左腕を食い千切ったのはトリシューラ自白・雛鳥の刷り込み→「捏造された過去は六つくらいはいくらでも『良し』」→ヴィヴィ＝イヴロス＝ラクルラール派（アップリカ派閥）告発→死人の森との一時共闘方針→『断章』＝【王国】の祭具・建国の鍵、九つの大罪＝権力の基盤、第九＝生存（オルクス）</li>
+<li><strong>第086話</strong>〔幕間〕不似合いな結びつき — pp.3804–3834 → <a href="../episodes/ch086" class="internal" data-slug="episodes/ch086">ch086</a>　（オルヴァ・スマダルツォンの断頭と『生存説』→隠者ウォレスとの入れ替わり＝冥道の幼姫が置いた布石、「未来への道筋は作られている」→予防殺害の倫理の一般化「未だ為されていない罪を問う事は、正しいのか？」→右腕クレイ＝スマダルツォン来訪・【召集】で鮮血呪の転生と再現性の不死を統一→即席同盟（仮想のちびシューラ＋架空の俺＋手刀の人）、「次はさしずめクレイ・ガレニス・クロウサー」→レオがカーインを召来し、地獄＝四十四士／地上＝クロウサー家守護者の二つの伝承を接合した新解釈上演を決める</li>
+<li><strong>第087話</strong>〔幕間〕トリシューラ・カムバック — pp.4092–4122 → <a href="../episodes/ch087" class="internal" data-slug="episodes/ch087">ch087</a>　（浄界ネドラド来訪・「お前の怒りは正義の皮を被った私怨」→ネドラドの来歴と【神焔返還】（ラッダイト注記）→九姉によるトリシューラ生誕の秘密開示・「足りない」→クレアノーズ選定詞とトリシル＝エルネアーズ／トリシル計画→月の偽トリシューラ（敵はトライデント）→射影即興喜劇で金鎖一つ破砕、真紅玉髄・真翠玉・鮮血石→嫌いから好きへの転回・決まり文句→ファルファレロ、【挑発】の激突で幕</li>
+<li><strong>第089話</strong>〔幕間〕To Hurt — pp.4284–4308 → <a href="../episodes/ch089" class="internal" data-slug="episodes/ch089">ch089</a>　（球体関節人形の広告動画「青い絆」→マゼンタの少女とレッテ（第七断章【富】・グランギニョル予告）→ゼドの非正規探索者（サイバーカラテ非ユーザー）→グラッフィアカーネの怒り（マレブランケ不発）→魔教（カシュラム人）の儀式（オルヴァ・スマダルツォン＝第一位・十三階段）→ネドラドの敗北後（アズーリアと痛み分け）→カーイン（幻姿霊）の夜「パーン」→聖マローズ教団の宣名（ラリスキャニア・囚われの少女・大カーティスの魂要求）→白骨迷宮の下水道（ハザーリャ）→グレンデルヒの遺体未発見→少女人形の独白「私の、トリシューラ」）</li>
+<li><strong>第090話</strong>〔４－１４〕一時の平穏 — pp.4309–4344 → <a href="../episodes/ch090" class="internal" data-slug="episodes/ch090">ch090</a>　（「アキラくん」PVとテセウスの船型サイボーグ→ルウテトの爆弾発言（未来転生者・前世＝コルセスカ・転生の矢印図）→ゼドの呪符盗み→最大の敵ラクルラール（人形師の二流派・魔戦人形師団・アレッテ・イヴニル）→一時同盟の提案→六王の騒がしい登場（マラードの散髪・オルヴァ・ヴァージル・アルト・パーン・カーティス）→レオの姓（ウィーナー）とパーンvsレオ→戦勝祝賀会と「頑張ったで賞」→ラズリ（ブルー）の旅立ち→マラコーダ（【尻尾】→忠誠・最上位細胞【心臓】の予言）→アルマの動画（リールエルバ誘拐・セリアック＝ニアの無惨な姿・カーティスと人質交換要求）→聖マローズ教団の出現→後書き：槍神教の弱まり・守護の九槍一位＝コルセスカの運命の恋人）</li>
+</ul>
+<hr/>
+<h2 id="進捗">進捗<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#進捗" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li>生成済み：<strong>113話</strong>（ch001〜ch113）</li>
+<li>raw抽出済みのち生成待ち：
+raw/ に <strong>241ファイル（220話＋21断章）</strong>（第005話「転生者ゼノグラシア」以降＋多数 断章）が残る。</li>
+<li>次タスク：第108話（raw/108、leaf 4779〜）以降を1話ずつ生成し、本ページ・<a href="../status" class="internal" data-slug="status">status</a>・<a href="../log" class="internal" data-slug="log">log</a> を更新。</li>
+</ul></article><div class="page-listing"><p>165件のページ</p><div><ul class="section-ul"><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-23T15:00:00.000Z">2026年9月24日</time></p><div class="desc"><h3><a href="../episodes/ch109" class="internal">ch109</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-23T15:00:00.000Z">2026年9月24日</time></p><div class="desc"><h3><a href="../episodes/断章2-1" class="internal">断章2-1</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-23T15:00:00.000Z">2026年9月24日</time></p><div class="desc"><h3><a href="../episodes/断章2-2" class="internal">断章2-2</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-23T15:00:00.000Z">2026年9月24日</time></p><div class="desc"><h3><a href="../episodes/断章2-3" class="internal">断章2-3</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-23T15:00:00.000Z">2026年9月24日</time></p><div class="desc"><h3><a href="../episodes/断章4-1" class="internal">断章4-1</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-23T15:00:00.000Z">2026年9月24日</time></p><div class="desc"><h3><a href="../episodes/断章4-2" class="internal">断章4-2</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-23T15:00:00.000Z">2026年9月24日</time></p><div class="desc"><h3><a href="../episodes/断章4-3" class="internal">断章4-3</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-23T15:00:00.000Z">2026年9月24日</time></p><div class="desc"><h3><a href="../episodes/断章5-1" class="internal">断章5-1</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-23T15:00:00.000Z">2026年9月24日</time></p><div class="desc"><h3><a href="../episodes/断章5-2" class="internal">断章5-2</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-22T15:00:00.000Z">2026年9月23日</time></p><div class="desc"><h3><a href="../episodes/ch149" class="internal">ch149</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-21T15:00:00.000Z">2026年9月22日</time></p><div class="desc"><h3><a href="../episodes/ch100" class="internal">ch100</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-21T15:00:00.000Z">2026年9月22日</time></p><div class="desc"><h3><a href="../episodes/ch102" class="internal">ch102</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-21T15:00:00.000Z">2026年9月22日</time></p><div class="desc"><h3><a href="../episodes/ch103" class="internal">ch103</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-21T15:00:00.000Z">2026年9月22日</time></p><div class="desc"><h3><a href="../episodes/ch105" class="internal">ch105</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-21T15:00:00.000Z">2026年9月22日</time></p><div class="desc"><h3><a href="../episodes/ch106" class="internal">ch106</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-21T15:00:00.000Z">2026年9月22日</time></p><div class="desc"><h3><a href="../episodes/ch107" class="internal">ch107</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-21T15:00:00.000Z">2026年9月22日</time></p><div class="desc"><h3><a href="../episodes/ch108" class="internal">ch108</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-21T15:00:00.000Z">2026年9月22日</time></p><div class="desc"><h3><a href="../episodes/ch110" class="internal">ch110</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-21T15:00:00.000Z">2026年9月22日</time></p><div class="desc"><h3><a href="../episodes/ch146" class="internal">ch146</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-21T15:00:00.000Z">2026年9月22日</time></p><div class="desc"><h3><a href="../episodes/ch147" class="internal">ch147</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-21T15:00:00.000Z">2026年9月22日</time></p><div class="desc"><h3><a href="../episodes/ch148" class="internal">ch148</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-20T15:00:00.000Z">2026年9月21日</time></p><div class="desc"><h3><a href="../episodes/ch145" class="internal">ch145</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-15T15:00:00.000Z">2026年9月16日</time></p><div class="desc"><h3><a href="../episodes/ch144" class="internal">ch144</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-15T15:00:00.000Z">2026年9月16日</time></p><div class="desc"><h3><a href="../episodes/断章3-1" class="internal">断章3-1</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-15T15:00:00.000Z">2026年9月16日</time></p><div class="desc"><h3><a href="../episodes/断章3-2" class="internal">断章3-2</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-15T15:00:00.000Z">2026年9月16日</time></p><div class="desc"><h3><a href="../episodes/断章6-1" class="internal">断章6-1</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-15T15:00:00.000Z">2026年9月16日</time></p><div class="desc"><h3><a href="../episodes/断章6-2" class="internal">断章6-2</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-15T15:00:00.000Z">2026年9月16日</time></p><div class="desc"><h3><a href="../episodes/断章8-1" class="internal">断章8-1</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-15T15:00:00.000Z">2026年9月16日</time></p><div class="desc"><h3><a href="../episodes/断章8-2" class="internal">断章8-2</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-15T15:00:00.000Z">2026年9月16日</time></p><div class="desc"><h3><a href="../episodes/断章8-3" class="internal">断章8-3</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-15T15:00:00.000Z">2026年9月16日</time></p><div class="desc"><h3><a href="../episodes/断章9-1" class="internal">断章9-1</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-14T15:00:00.000Z">2026年9月15日</time></p><div class="desc"><h3><a href="../episodes/ch111" class="internal">ch111</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-14T15:00:00.000Z">2026年9月15日</time></p><div class="desc"><h3><a href="../episodes/ch112" class="internal">ch112</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-14T15:00:00.000Z">2026年9月15日</time></p><div class="desc"><h3><a href="../episodes/ch113" class="internal">ch113</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-14T15:00:00.000Z">2026年9月15日</time></p><div class="desc"><h3><a href="../episodes/ch114" class="internal">ch114</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-14T15:00:00.000Z">2026年9月15日</time></p><div class="desc"><h3><a href="../episodes/ch115" class="internal">ch115</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-14T15:00:00.000Z">2026年9月15日</time></p><div class="desc"><h3><a href="../episodes/ch116" class="internal">ch116</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-14T15:00:00.000Z">2026年9月15日</time></p><div class="desc"><h3><a href="../episodes/ch117" class="internal">ch117</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-14T15:00:00.000Z">2026年9月15日</time></p><div class="desc"><h3><a href="../episodes/ch118" class="internal">ch118</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-14T15:00:00.000Z">2026年9月15日</time></p><div class="desc"><h3><a href="../episodes/ch119" class="internal">ch119</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-14T15:00:00.000Z">2026年9月15日</time></p><div class="desc"><h3><a href="../episodes/ch120" class="internal">ch120</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-14T15:00:00.000Z">2026年9月15日</time></p><div class="desc"><h3><a href="../episodes/ch121" class="internal">ch121</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-14T15:00:00.000Z">2026年9月15日</time></p><div class="desc"><h3><a href="../episodes/ch122" class="internal">ch122</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-14T15:00:00.000Z">2026年9月15日</time></p><div class="desc"><h3><a href="../episodes/ch123" class="internal">ch123</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-14T15:00:00.000Z">2026年9月15日</time></p><div class="desc"><h3><a href="../episodes/ch124" class="internal">ch124</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-14T15:00:00.000Z">2026年9月15日</time></p><div class="desc"><h3><a href="../episodes/ch125" class="internal">ch125</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-14T15:00:00.000Z">2026年9月15日</time></p><div class="desc"><h3><a href="../episodes/ch126" class="internal">ch126</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-14T15:00:00.000Z">2026年9月15日</time></p><div class="desc"><h3><a href="../episodes/ch127" class="internal">ch127</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-14T15:00:00.000Z">2026年9月15日</time></p><div class="desc"><h3><a href="../episodes/ch128" class="internal">ch128</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-14T15:00:00.000Z">2026年9月15日</time></p><div class="desc"><h3><a href="../episodes/ch129" class="internal">ch129</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-14T15:00:00.000Z">2026年9月15日</time></p><div class="desc"><h3><a href="../episodes/ch130" class="internal">ch130</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-14T15:00:00.000Z">2026年9月15日</time></p><div class="desc"><h3><a href="../episodes/ch131" class="internal">ch131</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-14T15:00:00.000Z">2026年9月15日</time></p><div class="desc"><h3><a href="../episodes/ch132" class="internal">ch132</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-14T15:00:00.000Z">2026年9月15日</time></p><div class="desc"><h3><a href="../episodes/ch133" class="internal">ch133</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-14T15:00:00.000Z">2026年9月15日</time></p><div class="desc"><h3><a href="../episodes/ch134" class="internal">ch134</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-14T15:00:00.000Z">2026年9月15日</time></p><div class="desc"><h3><a href="../episodes/ch135" class="internal">ch135</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-14T15:00:00.000Z">2026年9月15日</time></p><div class="desc"><h3><a href="../episodes/ch136" class="internal">ch136</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-14T15:00:00.000Z">2026年9月15日</time></p><div class="desc"><h3><a href="../episodes/ch137" class="internal">ch137</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-14T15:00:00.000Z">2026年9月15日</time></p><div class="desc"><h3><a href="../episodes/ch138" class="internal">ch138</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-14T15:00:00.000Z">2026年9月15日</time></p><div class="desc"><h3><a href="../episodes/ch139" class="internal">ch139</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-14T15:00:00.000Z">2026年9月15日</time></p><div class="desc"><h3><a href="../episodes/ch140" class="internal">ch140</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-14T15:00:00.000Z">2026年9月15日</time></p><div class="desc"><h3><a href="../episodes/ch141" class="internal">ch141</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-14T15:00:00.000Z">2026年9月15日</time></p><div class="desc"><h3><a href="../episodes/ch142" class="internal">ch142</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-14T15:00:00.000Z">2026年9月15日</time></p><div class="desc"><h3><a href="../episodes/ch143" class="internal">ch143</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-13T15:00:00.000Z">2026年9月14日</time></p><div class="desc"><h3><a href="../episodes/ch032" class="internal">ch032</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-13T15:00:00.000Z">2026年9月14日</time></p><div class="desc"><h3><a href="../episodes/ch034" class="internal">ch034</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-13T15:00:00.000Z">2026年9月14日</time></p><div class="desc"><h3><a href="../episodes/ch035" class="internal">ch035</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-13T15:00:00.000Z">2026年9月14日</time></p><div class="desc"><h3><a href="../episodes/ch036" class="internal">ch036</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-13T15:00:00.000Z">2026年9月14日</time></p><div class="desc"><h3><a href="../episodes/ch037" class="internal">ch037</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-13T15:00:00.000Z">2026年9月14日</time></p><div class="desc"><h3><a href="../episodes/ch038" class="internal">ch038</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-13T15:00:00.000Z">2026年9月14日</time></p><div class="desc"><h3><a href="../episodes/ch039" class="internal">ch039</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-13T15:00:00.000Z">2026年9月14日</time></p><div class="desc"><h3><a href="../episodes/ch040" class="internal">ch040</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-13T15:00:00.000Z">2026年9月14日</time></p><div class="desc"><h3><a href="../episodes/ch041" class="internal">ch041</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-13T15:00:00.000Z">2026年9月14日</time></p><div class="desc"><h3><a href="../episodes/ch042" class="internal">ch042</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-13T15:00:00.000Z">2026年9月14日</time></p><div class="desc"><h3><a href="../episodes/ch043" class="internal">ch043</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-13T15:00:00.000Z">2026年9月14日</time></p><div class="desc"><h3><a href="../episodes/ch044" class="internal">ch044</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-13T15:00:00.000Z">2026年9月14日</time></p><div class="desc"><h3><a href="../episodes/ch048" class="internal">ch048</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-13T15:00:00.000Z">2026年9月14日</time></p><div class="desc"><h3><a href="../episodes/ch049" class="internal">ch049</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-13T15:00:00.000Z">2026年9月14日</time></p><div class="desc"><h3><a href="../episodes/ch050" class="internal">ch050</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-13T15:00:00.000Z">2026年9月14日</time></p><div class="desc"><h3><a href="../episodes/ch054" class="internal">ch054</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-13T15:00:00.000Z">2026年9月14日</time></p><div class="desc"><h3><a href="../episodes/ch056" class="internal">ch056</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-13T15:00:00.000Z">2026年9月14日</time></p><div class="desc"><h3><a href="../episodes/ch057" class="internal">ch057</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-13T15:00:00.000Z">2026年9月14日</time></p><div class="desc"><h3><a href="../episodes/ch058" class="internal">ch058</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-13T15:00:00.000Z">2026年9月14日</time></p><div class="desc"><h3><a href="../episodes/ch088" class="internal">ch088</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-13T15:00:00.000Z">2026年9月14日</time></p><div class="desc"><h3><a href="../episodes/ch089" class="internal">ch089</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-13T15:00:00.000Z">2026年9月14日</time></p><div class="desc"><h3><a href="../episodes/ch090" class="internal">ch090</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-13T15:00:00.000Z">2026年9月14日</time></p><div class="desc"><h3><a href="../episodes/ch092" class="internal">ch092</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-13T15:00:00.000Z">2026年9月14日</time></p><div class="desc"><h3><a href="../episodes/ch094" class="internal">ch094</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-13T15:00:00.000Z">2026年9月14日</time></p><div class="desc"><h3><a href="../episodes/ch095" class="internal">ch095</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-13T15:00:00.000Z">2026年9月14日</time></p><div class="desc"><h3><a href="../episodes/ch096" class="internal">ch096</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-13T15:00:00.000Z">2026年9月14日</time></p><div class="desc"><h3><a href="../episodes/ch097" class="internal">ch097</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-13T15:00:00.000Z">2026年9月14日</time></p><div class="desc"><h3><a href="../episodes/ch098" class="internal">ch098</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-13T15:00:00.000Z">2026年9月14日</time></p><div class="desc"><h3><a href="../episodes/ch099" class="internal">ch099</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-12T15:00:00.000Z">2026年9月13日</time></p><div class="desc"><h3><a href="../episodes/ch001" class="internal">ch001</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-12T15:00:00.000Z">2026年9月13日</time></p><div class="desc"><h3><a href="../episodes/ch002" class="internal">ch002</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-12T15:00:00.000Z">2026年9月13日</time></p><div class="desc"><h3><a href="../episodes/ch003" class="internal">ch003</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-12T15:00:00.000Z">2026年9月13日</time></p><div class="desc"><h3><a href="../episodes/ch004" class="internal">ch004</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-12T15:00:00.000Z">2026年9月13日</time></p><div class="desc"><h3><a href="../episodes/ch005" class="internal">ch005</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-12T15:00:00.000Z">2026年9月13日</time></p><div class="desc"><h3><a href="../episodes/ch006" class="internal">ch006</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-12T15:00:00.000Z">2026年9月13日</time></p><div class="desc"><h3><a href="../episodes/ch007" class="internal">ch007</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-12T15:00:00.000Z">2026年9月13日</time></p><div class="desc"><h3><a href="../episodes/ch008" class="internal">ch008</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-12T15:00:00.000Z">2026年9月13日</time></p><div class="desc"><h3><a href="../episodes/ch009" class="internal">ch009</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-12T15:00:00.000Z">2026年9月13日</time></p><div class="desc"><h3><a href="../episodes/ch010" class="internal">ch010</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-12T15:00:00.000Z">2026年9月13日</time></p><div class="desc"><h3><a href="../episodes/ch011" class="internal">ch011</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-12T15:00:00.000Z">2026年9月13日</time></p><div class="desc"><h3><a href="../episodes/ch012" class="internal">ch012</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-12T15:00:00.000Z">2026年9月13日</time></p><div class="desc"><h3><a href="../episodes/ch013" class="internal">ch013</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-12T15:00:00.000Z">2026年9月13日</time></p><div class="desc"><h3><a href="../episodes/ch014" class="internal">ch014</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-12T15:00:00.000Z">2026年9月13日</time></p><div class="desc"><h3><a href="../episodes/ch015" class="internal">ch015</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-12T15:00:00.000Z">2026年9月13日</time></p><div class="desc"><h3><a href="../episodes/ch016" class="internal">ch016</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-12T15:00:00.000Z">2026年9月13日</time></p><div class="desc"><h3><a href="../episodes/ch017" class="internal">ch017</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-12T15:00:00.000Z">2026年9月13日</time></p><div class="desc"><h3><a href="../episodes/ch018" class="internal">ch018</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-12T15:00:00.000Z">2026年9月13日</time></p><div class="desc"><h3><a href="../episodes/ch019" class="internal">ch019</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-12T15:00:00.000Z">2026年9月13日</time></p><div class="desc"><h3><a href="../episodes/ch020" class="internal">ch020</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-12T15:00:00.000Z">2026年9月13日</time></p><div class="desc"><h3><a href="../episodes/ch021" class="internal">ch021</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-12T15:00:00.000Z">2026年9月13日</time></p><div class="desc"><h3><a href="../episodes/ch022" class="internal">ch022</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-12T15:00:00.000Z">2026年9月13日</time></p><div class="desc"><h3><a href="../episodes/ch023" class="internal">ch023</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-12T15:00:00.000Z">2026年9月13日</time></p><div class="desc"><h3><a href="../episodes/ch024" class="internal">ch024</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-12T15:00:00.000Z">2026年9月13日</time></p><div class="desc"><h3><a href="../episodes/ch025" class="internal">ch025</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-12T15:00:00.000Z">2026年9月13日</time></p><div class="desc"><h3><a href="../episodes/ch026" class="internal">ch026</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-12T15:00:00.000Z">2026年9月13日</time></p><div class="desc"><h3><a href="../episodes/ch027" class="internal">ch027</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-12T15:00:00.000Z">2026年9月13日</time></p><div class="desc"><h3><a href="../episodes/ch028" class="internal">ch028</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-12T15:00:00.000Z">2026年9月13日</time></p><div class="desc"><h3><a href="../episodes/ch029" class="internal">ch029</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-12T15:00:00.000Z">2026年9月13日</time></p><div class="desc"><h3><a href="../episodes/ch030" class="internal">ch030</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-12T15:00:00.000Z">2026年9月13日</time></p><div class="desc"><h3><a href="../episodes/ch101" class="internal">ch101</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-12T15:00:00.000Z">2026年9月13日</time></p><div class="desc"><h3><a href="../episodes/ch104" class="internal">ch104</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-11T15:00:00.000Z">2026年9月12日</time></p><div class="desc"><h3><a href="../episodes/ch091" class="internal">ch091</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-11T15:00:00.000Z">2026年9月12日</time></p><div class="desc"><h3><a href="../episodes/ch093" class="internal">ch093</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-01T15:00:00.000Z">2026年9月02日</time></p><div class="desc"><h3><a href="../episodes/ch078" class="internal">ch078</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-01T15:00:00.000Z">2026年9月02日</time></p><div class="desc"><h3><a href="../episodes/ch079" class="internal">ch079</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-01T15:00:00.000Z">2026年9月02日</time></p><div class="desc"><h3><a href="../episodes/ch080" class="internal">ch080</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-01T15:00:00.000Z">2026年9月02日</time></p><div class="desc"><h3><a href="../episodes/ch081" class="internal">ch081</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-01T15:00:00.000Z">2026年9月02日</time></p><div class="desc"><h3><a href="../episodes/ch082" class="internal">ch082</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-01T15:00:00.000Z">2026年9月02日</time></p><div class="desc"><h3><a href="../episodes/ch083" class="internal">ch083</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-01T15:00:00.000Z">2026年9月02日</time></p><div class="desc"><h3><a href="../episodes/ch084" class="internal">ch084</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-01T15:00:00.000Z">2026年9月02日</time></p><div class="desc"><h3><a href="../episodes/ch085" class="internal">ch085</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-01T15:00:00.000Z">2026年9月02日</time></p><div class="desc"><h3><a href="../episodes/ch086" class="internal">ch086</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-09-01T15:00:00.000Z">2026年9月02日</time></p><div class="desc"><h3><a href="../episodes/ch087" class="internal">ch087</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-08-31T15:00:00.000Z">2026年9月01日</time></p><div class="desc"><h3><a href="../episodes/ch063" class="internal">ch063</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-08-31T15:00:00.000Z">2026年9月01日</time></p><div class="desc"><h3><a href="../episodes/ch064" class="internal">ch064</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-08-31T15:00:00.000Z">2026年9月01日</time></p><div class="desc"><h3><a href="../episodes/ch065" class="internal">ch065</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-08-31T15:00:00.000Z">2026年9月01日</time></p><div class="desc"><h3><a href="../episodes/ch066" class="internal">ch066</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-08-31T15:00:00.000Z">2026年9月01日</time></p><div class="desc"><h3><a href="../episodes/ch067" class="internal">ch067</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-08-31T15:00:00.000Z">2026年9月01日</time></p><div class="desc"><h3><a href="../episodes/ch068" class="internal">ch068</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-08-31T15:00:00.000Z">2026年9月01日</time></p><div class="desc"><h3><a href="../episodes/ch069" class="internal">ch069</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-08-31T15:00:00.000Z">2026年9月01日</time></p><div class="desc"><h3><a href="../episodes/ch070" class="internal">ch070</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-08-31T15:00:00.000Z">2026年9月01日</time></p><div class="desc"><h3><a href="../episodes/ch071" class="internal">ch071</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-08-31T15:00:00.000Z">2026年9月01日</time></p><div class="desc"><h3><a href="../episodes/ch072" class="internal">ch072</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-08-31T15:00:00.000Z">2026年9月01日</time></p><div class="desc"><h3><a href="../episodes/ch073" class="internal">ch073</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-08-31T15:00:00.000Z">2026年9月01日</time></p><div class="desc"><h3><a href="../episodes/ch074" class="internal">ch074</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-08-31T15:00:00.000Z">2026年9月01日</time></p><div class="desc"><h3><a href="../episodes/ch075" class="internal">ch075</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-08-31T15:00:00.000Z">2026年9月01日</time></p><div class="desc"><h3><a href="../episodes/ch076" class="internal">ch076</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-08-31T15:00:00.000Z">2026年9月01日</time></p><div class="desc"><h3><a href="../episodes/ch077" class="internal">ch077</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-08-29T15:00:00.000Z">2026年8月30日</time></p><div class="desc"><h3><a href="../episodes/ch061" class="internal">ch061</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-08-29T15:00:00.000Z">2026年8月30日</time></p><div class="desc"><h3><a href="../episodes/ch062" class="internal">ch062</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-08-28T15:00:00.000Z">2026年8月29日</time></p><div class="desc"><h3><a href="../episodes/ch059" class="internal">ch059</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-08-28T15:00:00.000Z">2026年8月29日</time></p><div class="desc"><h3><a href="../episodes/ch060" class="internal">ch060</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-08-26T15:00:00.000Z">2026年8月27日</time></p><div class="desc"><h3><a href="../episodes/ch055" class="internal">ch055</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-08-25T15:00:00.000Z">2026年8月26日</time></p><div class="desc"><h3><a href="../episodes/ch031" class="internal">ch031</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-08-25T15:00:00.000Z">2026年8月26日</time></p><div class="desc"><h3><a href="../episodes/ch033" class="internal">ch033</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-08-25T15:00:00.000Z">2026年8月26日</time></p><div class="desc"><h3><a href="../episodes/ch045" class="internal">ch045</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-08-25T15:00:00.000Z">2026年8月26日</time></p><div class="desc"><h3><a href="../episodes/ch046" class="internal">ch046</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-08-25T15:00:00.000Z">2026年8月26日</time></p><div class="desc"><h3><a href="../episodes/ch047" class="internal">ch047</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-08-25T15:00:00.000Z">2026年8月26日</time></p><div class="desc"><h3><a href="../episodes/ch051" class="internal">ch051</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-08-25T15:00:00.000Z">2026年8月26日</time></p><div class="desc"><h3><a href="../episodes/ch052" class="internal">ch052</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-08-25T15:00:00.000Z">2026年8月26日</time></p><div class="desc"><h3><a href="../episodes/ch053" class="internal">ch053</a></h3></div><ul class="tags"></ul></div></li></ul></div></div></div><hr/><div class="page-footer"></div></div><div class="right sidebar"></div><footer class><p>作成 <a href="https://quartz.jzhao.xyz/">Quartz v4.5.2</a> © 2026</p><ul><li><a href="https://github.com/allusionistwiki/AllusionistWiki_obsidian">Obsidian vault（ソース）</a></li><li><a href="https://github.com/allusionistwiki/AllusionistWiki">Quartz プロジェクト</a></li></ul></footer></div></div></body><script type="application/javascript">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module">function f(i,e){if(!i)return;function r(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function t(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}i?.addEventListener("click",r),window.addCleanup(()=>i?.removeEventListener("click",r)),document.addEventListener("keydown",t),window.addCleanup(()=>document.removeEventListener("keydown",t))}function y(i){for(;i.firstChild;)i.removeChild(i.firstChild)}var h=class{constructor(e,r){this.container=e;this.content=r;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),r=this.onMouseMove.bind(this),t=this.onMouseUp.bind(this),o=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",r),document.addEventListener("mouseup",t),window.addEventListener("resize",o),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",r),()=>document.removeEventListener("mouseup",t),()=>window.removeEventListener("resize",o))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let r=this.createButton("+",()=>this.zoom(.1)),t=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(t),e.appendChild(o),e.appendChild(r),this.container.appendChild(e)}createButton(e,r){let t=document.createElement("button");return t.textContent=e,t.className="mermaid-control-button",t.addEventListener("click",r),window.addCleanup(()=>t.removeEventListener("click",r)),t}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}zoom(e){let r=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),t=this.content.getBoundingClientRect(),o=t.width/2,n=t.height/2,c=r-this.scale;this.currentPan.x-=o*c,this.currentPan.y-=n*c,this.scale=r,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){this.scale=1;let e=this.content.querySelector("svg");this.currentPan={x:e.getBoundingClientRect().width/2,y:e.getBoundingClientRect().height/2},this.updateTransform()}},C=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],E;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;E||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let r=E.default,t=new WeakMap;for(let n of e)t.set(n,n.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let a=t.get(s);a&&(s.innerHTML=a)}let n=C.reduce((s,a)=>(s[a]=window.getComputedStyle(document.documentElement).getPropertyValue(a),s),{}),c=document.documentElement.getAttribute("saved-theme")==="dark";r.initialize({startOnLoad:!1,securityLevel:"loose",theme:c?"dark":"base",themeVariables:{fontFamily:n["--codeFont"],primaryColor:n["--light"],primaryTextColor:n["--darkgray"],primaryBorderColor:n["--tertiary"],lineColor:n["--darkgray"],secondaryColor:n["--secondary"],tertiaryColor:n["--tertiary"],clusterBkg:n["--light"],edgeLabelBackground:n["--highlight"]}}),await r.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let n=0;n<e.length;n++){let v=function(){let g=l.querySelector("#mermaid-space"),m=l.querySelector(".mermaid-content");if(!m)return;y(m);let w=c.querySelector("svg").cloneNode(!0);m.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new h(g,m)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},c=e[n],s=c.parentElement,a=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(a),L=a.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),f(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="../postscript.js?v=dev" type="module"></script></html>

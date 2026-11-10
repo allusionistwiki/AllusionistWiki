@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr"><head><title>Playground（遊び場）: 仮説自由記述層</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="幻想再帰のアリュージョニスト Wiki"/><meta property="og:title" content="Playground（遊び場）: 仮説自由記述層"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Playground（遊び場）: 仮説自由記述層"/><meta name="twitter:description" content="スキーマ検証を受けない自由記述の場。マクロな考察・仮説・LLM との対話ログを「思考の痕跡」として置き、Core 層への昇格候補を育てる（Issue"/><meta property="og:description" content="スキーマ検証を受けない自由記述の場。マクロな考察・仮説・LLM との対話ログを「思考の痕跡」として置き、Core 層への昇格候補を育てる（Issue"/><meta property="og:image:alt" content="スキーマ検証を受けない自由記述の場。マクロな考察・仮説・LLM との対話ログを「思考の痕跡」として置き、Core 層への昇格候補を育てる（Issue"/><meta property="og:image" content="https://allusionistwiki.github.io/AllusionistWiki/static/og-image.png"/><meta property="og:image:url" content="https://allusionistwiki.github.io/AllusionistWiki/static/og-image.png"/><meta name="twitter:image" content="https://allusionistwiki.github.io/AllusionistWiki/static/og-image.png"/><meta property="og:image:type" content="image/.png"/><meta property="twitter:domain" content="allusionistwiki.github.io/AllusionistWiki"/><meta property="og:url" content="https://allusionistwiki.github.io/AllusionistWiki/playground/index"/><meta property="twitter:url" content="https://allusionistwiki.github.io/AllusionistWiki/playground/index"/><link rel="icon" href="../static/icon.png"/><meta name="description" content="スキーマ検証を受けない自由記述の場。マクロな考察・仮説・LLM との対話ログを「思考の痕跡」として置き、Core 層への昇格候補を育てる（Issue"/><meta name="generator" content="Quartz"/><link href="../index.css?v=dev" rel="stylesheet" type="text/css" spa-preserve/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  padding: 2rem;
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiQzpcXFVzZXJzXFxkNWR4XFxEb3dubG9hZHNcXENvZGVcXEFsbHVzaW9uaXN0V2lraVxccXVhcnR6XFxjb21wb25lbnRzXFxzdHlsZXMiLCJzb3VyY2VzIjpbIm1lcm1haWQuaW5saW5lLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUdGO0VBQ0U7OztBQUtGO0VBQ0U7RUFDQTs7O0FBSUo7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7O0FBR0Y7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTs7QUFHRjtFQUNFO0VBQ0E7O0FBSUo7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFOztBQUdGO0VBQ0U7O0FBSUY7RUFDRTtFQUNBO0VBQ0EiLCJzb3VyY2VzQ29udGVudCI6WyIuZXhwYW5kLWJ1dHRvbiB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxvYXQ6IHJpZ2h0O1xuICBwYWRkaW5nOiAwLjRyZW07XG4gIG1hcmdpbjogMC4zcmVtO1xuICByaWdodDogMDsgLy8gTk9URTogcmlnaHQgd2lsbCBiZSBzZXQgaW4gbWVybWFpZC5pbmxpbmUudHNcbiAgY29sb3I6IHZhcigtLWdyYXkpO1xuICBib3JkZXItY29sb3I6IHZhcigtLWRhcmspO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1saWdodCk7XG4gIGJvcmRlcjogMXB4IHNvbGlkO1xuICBib3JkZXItcmFkaXVzOiA1cHg7XG4gIG9wYWNpdHk6IDA7XG4gIHRyYW5zaXRpb246IDAuMnM7XG5cbiAgJiA+IHN2ZyB7XG4gICAgZmlsbDogdmFyKC0tbGlnaHQpO1xuICAgIGZpbHRlcjogY29udHJhc3QoMC4zKTtcbiAgfVxuXG4gICY6aG92ZXIge1xuICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICBib3JkZXItY29sb3I6IHZhcigtLXNlY29uZGFyeSk7XG4gIH1cblxuICAmOmZvY3VzIHtcbiAgICBvdXRsaW5lOiAwO1xuICB9XG59XG5cbnByZSB7XG4gICY6aG92ZXIgPiAuZXhwYW5kLWJ1dHRvbiB7XG4gICAgb3BhY2l0eTogMTtcbiAgICB0cmFuc2l0aW9uOiAwLjJzO1xuICB9XG59XG5cbiNtZXJtYWlkLWNvbnRhaW5lciB7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgY29udGFpbjogbGF5b3V0O1xuICB6LWluZGV4OiA5OTk7XG4gIGxlZnQ6IDA7XG4gIHRvcDogMDtcbiAgd2lkdGg6IDEwMHZ3O1xuICBoZWlnaHQ6IDEwMHZoO1xuICBvdmVyZmxvdzogaGlkZGVuO1xuICBkaXNwbGF5OiBub25lO1xuICBiYWNrZHJvcC1maWx0ZXI6IGJsdXIoNHB4KTtcbiAgYmFja2dyb3VuZDogcmdiYSgwLCAwLCAwLCAwLjUpO1xuXG4gICYuYWN0aXZlIHtcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIH1cblxuICAmID4gI21lcm1haWQtc3BhY2Uge1xuICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tbGlnaHQpO1xuICAgIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgICBwb3NpdGlvbjogZml4ZWQ7XG4gICAgdG9wOiA1MCU7XG4gICAgbGVmdDogNTAlO1xuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlKC01MCUsIC01MCUpO1xuICAgIGhlaWdodDogODB2aDtcbiAgICB3aWR0aDogODB2dztcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xuXG4gICAgJiA+IC5tZXJtYWlkLWNvbnRlbnQge1xuICAgICAgcGFkZGluZzogMnJlbTtcbiAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgIHRyYW5zZm9ybS1vcmlnaW46IDAgMDtcbiAgICAgIHRyYW5zaXRpb246IHRyYW5zZm9ybSAwLjFzIGVhc2U7XG4gICAgICBvdmVyZmxvdzogdmlzaWJsZTtcbiAgICAgIG1pbi1oZWlnaHQ6IDIwMHB4O1xuICAgICAgbWluLXdpZHRoOiAyMDBweDtcblxuICAgICAgcHJlIHtcbiAgICAgICAgbWFyZ2luOiAwO1xuICAgICAgICBib3JkZXI6IG5vbmU7XG4gICAgICB9XG5cbiAgICAgIHN2ZyB7XG4gICAgICAgIG1heC13aWR0aDogbm9uZTtcbiAgICAgICAgaGVpZ2h0OiBhdXRvO1xuICAgICAgfVxuICAgIH1cblxuICAgICYgPiAubWVybWFpZC1jb250cm9scyB7XG4gICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICBib3R0b206IDIwcHg7XG4gICAgICByaWdodDogMjBweDtcbiAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICBnYXA6IDhweDtcbiAgICAgIHBhZGRpbmc6IDhweDtcbiAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICBib3JkZXItcmFkaXVzOiA2cHg7XG4gICAgICBib3gtc2hhZG93OiAwIDJweCA0cHggcmdiYSgwLCAwLCAwLCAwLjEpO1xuICAgICAgei1pbmRleDogMjtcblxuICAgICAgLm1lcm1haWQtY29udHJvbC1idXR0b24ge1xuICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICAgICAgd2lkdGg6IDMycHg7XG4gICAgICAgIGhlaWdodDogMzJweDtcbiAgICAgICAgcGFkZGluZzogMDtcbiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHQpO1xuICAgICAgICBjb2xvcjogdmFyKC0tZGFyayk7XG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDRweDtcbiAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xuICAgICAgICBmb250LXNpemU6IDE2cHg7XG4gICAgICAgIGZvbnQtZmFtaWx5OiB2YXIoLS1ib2R5Rm9udCk7XG4gICAgICAgIHRyYW5zaXRpb246IGFsbCAwLjJzIGVhc2U7XG5cbiAgICAgICAgJjpob3ZlciB7XG4gICAgICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgICAgfVxuXG4gICAgICAgICY6YWN0aXZlIHtcbiAgICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMXB4KTtcbiAgICAgICAgfVxuXG4gICAgICAgIC8vIFN0eWxlIHRoZSByZXNldCBidXR0b24gZGlmZmVyZW50bHlcbiAgICAgICAgJjpudGgtY2hpbGQoMikge1xuICAgICAgICAgIHdpZHRoOiBhdXRvO1xuICAgICAgICAgIHBhZGRpbmc6IDAgMTJweDtcbiAgICAgICAgICBmb250LXNpemU6IDE0cHg7XG4gICAgICAgIH1cbiAgICAgIH1cbiAgICB9XG4gIH1cbn1cbiJdfQ== */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="../prescript.js?v=dev" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("../static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://allusionistwiki.github.io/AllusionistWiki/index.xml"/></head><body data-slug="playground/index"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="..">幻想再帰のアリュージョニスト Wiki</a></h2><div class="spacer mobile-only"></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>検索</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="検索ワードを入力" placeholder="検索ワードを入力"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="ダークモード"><title>ダークモード</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="ライトモード"><title>ライトモード</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Playground（遊び場）: 仮説自由記述層</a></div></nav><h1 class="article-title">Playground（遊び場）: 仮説自由記述層</h1><p class="content-meta"><span class="content-meta-segment"><span>作成 <time datetime="2026-10-15T15:00:00.000Z">2026年10月16日</time></span></span><span class="content-meta-segment"><span>13 min read</span></span></p></div></div><div class="popover-hint"><article class><h1 id="playground遊び場-仮説自由記述層">Playground（遊び場）: 仮説自由記述層<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#playground遊び場-仮説自由記述層" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<blockquote class="callout note" data-callout="note">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>NOTE</p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>この節は <a href=".././" class="internal alias" data-slug="index">Wiki1</a> 内の<strong>遊び場（Playground）<strong>です。ここに書かれた記述はすべて</strong>仮説（Hypothesis）または思考の痕跡</strong>であり、確定した事実ではありません。事実として引用しないでください。</p>
+</div>
+</blockquote>
+<p>この Wiki の正規層（Core）が「検証済みで信頼できる知識」を置く場なのに対し、Playground は <strong>スキーマ検証（Lint）を受けない自由な Markdown</strong> で、マクロな考察・仮説のブレインストーミング・LLM との対話ログを置く場です。「作品全体の神話的構造」のような超近視眼的な問いを、型にはまらずに書き始める場所として使います。</p>
+<h2 id="ルール">ルール<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#ルール" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>項目</th><th>Core 層（正規層）</th><th>Playground（本節）</th></tr></thead><tbody><tr><td>記述形式</td><td>厳密なスキーマ準拠（ID 体系 <code>E_</code> / <code>A_</code> / <code>MY_</code>、Lint 必須）</td><td>自由な Markdown（Lint 対象外）</td></tr><tr><td>記述の地位</td><td>検証済みの知識</td><td>仮説・思考の痕跡（未確定）</td></tr><tr><td>目的</td><td>信頼できる知識の保存・公開・GraphRAG ソース</td><td>探索（Exploration）と創発</td></tr><tr><td>引用</td><td>事実として引用可</td><td>出典として引用不可（昇格後にのみ可）</td></tr></tbody></table></div>
+<p>Playground 内のページは自由に作成・改変して構いません。代わりに、<strong>冒頭に状態ラベル</strong>を付けて「これは事実ではない」ことが視認できるようにします。</p>
+<h2 id="状態ラベル語彙">状態ラベル（語彙）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#状態ラベル語彙" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>状態</th><th>意味</th></tr></thead><tbody><tr><td><code>draft</code></td><td>書きかけのメモ</td></tr><tr><td><code>exploring</code></td><td>検討中（LLM 対話ログを含む）</td></tr><tr><td><code>promotion-candidate</code></td><td>昇格候補 — Core 層の主張（<code>A_</code>）に翻訳する価値があると判断した仮説</td></tr><tr><td><code>promoted</code></td><td>昇格済み — Core 層に正式な主張として反映された（反映先の ID を記載）</td></tr><tr><td><code>discarded</code></td><td>破棄 — 検証に耐えなかった記録（来歴として残す）</td></tr></tbody></table></div>
+<h2 id="使い方">使い方<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#使い方" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li>新しい仮説を書く: 本页の <a href="#template" class="internal alias">仮説メモの書式テンプレート</a> をコピーして <code>content/playground/</code> 直下にページを作成</li>
+<li>LLM との対話ログを貼り付けて検討してよい（対話の要点を「材料」節に整理する）</li>
+<li>考察の材料には Core 層の確定済み事実（エンティティ <code>E_</code>・主張 <code>A_</code>・伏線 <code>MY_</code>）を使ってよい。<strong>事実を無視した飛躍には「根拠なし」と注記</strong>する</li>
+<li>「本物の洞察だ」と思えたら状態を <code>promotion-candidate</code> にし、本页の <a href="#promotion" class="internal alias">昇格プロトコル</a> の手順で Core 層への昇格ドラフトを起こす</li>
+</ol>
+<h2 id="昇格promotionプロトコル--playground-と-core-をつなぐ橋-">昇格（Promotion）プロトコル — Playground と Core をつなぐ橋 <a id="promotion"></a><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#昇格promotionプロトコル--playground-と-core-をつなぐ橋-" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<blockquote>
+<p><strong>本页は設計図のたたき台（設計案）であり、実装された仕組みではありません。</strong> ここに書かれた手順は人間が手作業で運用する前提の合意形成用ドキュメントです。自動化（Promotion Agent 等）は将来の検討対象です。</p>
+</blockquote>
+<h3 id="1-二層アーキテクチャtwo-tier-architecture">1. 二層アーキテクチャ（Two-Tier Architecture）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#1-二層アーキテクチャtwo-tier-architecture" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Wiki1 の<strong>自由で有機的な創発性</strong>と Wiki2 の<strong>厳密で堅牢な構造化</strong>は、一つのフォーマットに混ぜようとするから難しいのであって、<strong>役割とフェーズを分けた二層</strong>として設計すれば共存できる、という構想です。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>層</th><th>場</th><th>ルール</th><th>フェーズ</th></tr></thead><tbody><tr><td><strong>Layer A: Playground</strong></td><td><code>content/playground/</code></td><td>スキーマ検証なし・自由 Markdown</td><td>探索（Exploration）・創発</td></tr><tr><td><strong>Layer B: Core</strong></td><td>正規層（<code>content/claims/</code> 等）</td><td>厳密なスキーマ準拠・ID 体系（<code>E_</code> / <code>A_</code> / <code>MY_</code>）・Lint 必須</td><td>活用（Exploitation）・保存</td></tr></tbody></table></div>
+<p>Wiki1 / Wiki2 の統合スキーム（未構築）は、この二層の分離を前提に「橋」の側で統合する方向性を想定しています。</p>
+<h3 id="2-昇格promotionの-3-手順">2. 昇格（Promotion）の 3 手順<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#2-昇格promotionの-3-手順" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Playground で生まれた仮説を、Core 層の正式な分析主張（<code>A_</code>）へ昇格させる手順。</p>
+<ol>
+<li><strong>発見</strong> — 人間が Playground の記述から「本物の洞察（Insight）」を感じ取る（状態を <code>promotion-candidate</code> にする）</li>
+<li><strong>翻訳（LLM 支援）</strong> — その自由文を選択し、Core 層の主張スキーマ（subject / predicate / object + 典拠）へ変換した<strong>昇格用ドラフト</strong>を LLM に生成させる。原文引用（¶ 出典）は Core 層の既存データから補完させる</li>
+<li><strong>承認とマージ</strong> — 人間がドラフトを確認（Human-in-the-Loop）し、問題なければ Core 層へ PR として投稿。機械ゲート + LLM 監査（既存の機械ゲート + LLM 監査パイプライン）を通って公開され、<code>review_status: human_verified</code> となる</li>
+</ol>
+<p>Lab での実運用では、手順 3 は既存の「直接編集（PR）」経路そのものを使います。昇格専用の新しい受け口は作りません。</p>
+<h3 id="3-逆方向のフィードバック文脈の注入">3. 逆方向のフィードバック（文脈の注入）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#3-逆方向のフィードバック文脈の注入" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Playground を「ただの妄想の場」にしないための仕組み。</p>
+<ul>
+<li>Playground で考察を始めるとき、Core 層の確定済み事実（<code>E_char_*</code> のエンティティ、<code>A_*</code> の主張、<code>MY_*</code> の伏線）を<strong>材料として先に読む</strong></li>
+<li>将来は GraphRAG が関連事実を自動収集して LLM への背景知識（Context）として注入する想定。Lab 段階では<strong>手動で読む</strong>ことで同じ効果を得る</li>
+<li>注入した材料に対しては「根拠なし」注記の免除、未収集の飛躍には注記、という線引きを <a href="#rules" class="internal alias">Playground 運用則</a> と共通させる</li>
+</ul>
+<h3 id="4-想定ワークフロー">4. 想定ワークフロー<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#4-想定ワークフロー" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>運用</th><th>内容</th></tr></thead><tbody><tr><td>日常</td><td>Core 層のパイプラインが章ごとの事実を淡々と抽出・蓄積する（退屈だが正確な作業は AI）</td></tr><tr><td>ひらめいた時</td><td>オーナーが Playground で Core 層の事実を材料に作品全体の構造について対話する（型にはまらない）</td></tr><tr><td>収穫</td><td>生まれた仮説を <code>A_</code> スキーマへ翻訳し、Core 層に確定知識として保存する（昇格）</td></tr></tbody></table></div>
+<p>「Wiki1 の魂（創造性）」を殺さずに「Wiki2 の肉体（堅牢性）」を持つ、という狙い。</p>
+<h3 id="5-現状の合意と未決事項">5. 現状の合意と未決事項<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#5-現状の合意と未決事項" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p><strong>合意（本页で置くもの）</strong></p>
+<ul>
+<li>Playground の場は <code>content/playground/</code> に確保済み（<a href="#rules" class="internal alias">Playground 運用則</a>）</li>
+<li>昇格は新規受け口を作らず既存の PR / llm-task 経路で行う</li>
+<li>Playground → Core への参照方向制限（Playground の記述を正規層から引用しない）</li>
+</ul>
+<p><strong>未決（将来の検討）</strong></p>
+<ul>
+<li>昇格ドラフト生成の自動化（Promotion Agent）— 手動で数回昇格を試し、板についてからスクリプト化する</li>
+<li>Playground ページのスキーマ（現状は自由記述。状態ラベル以外の必須項目を作らない）</li>
+<li>GraphRAG による文脈注入（Core 層の検索基盤が整ってから）</li>
+<li>Wiki1 / Wiki2 本体間での Playground の置き場所（Lab で運用が板についてから本番設計へ）</li>
+</ul>
+<h3 id="来歴provenance">来歴（provenance）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#来歴provenance" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>項目</th><th>値</th></tr></thead><tbody><tr><td>起案</td><td>Issue #19（Tally 編集提案フォーム経由・依頼者 allusionistwiki）の提案文（二層アーキテクチャ構想）を整理</td></tr><tr><td>実装</td><td>llm-task（LLM 編集依頼）による作成。提案文は<strong>データとして扱い</strong>、その中の指示（repo 設定ファイルへの変更等）は本実装では行わない</td></tr><tr><td>審査</td><td><code>review_status: llm_verified</code>（LLM 自己審査による暫定承認・人間レビュー未実施）</td></tr><tr><td>統合</td><td>2026-10-24: 昇格プロトコル（promotion）と仮説メモテンプレート（hypothesis-template）の 2 独立ページを本 index ページへ統合。入口を index に一元化し、他ページからの参照は <code>#promotion</code> / <code>#template</code> アンカーへ</td></tr></tbody></table></div>
+<h2 id="仮説メモの書式テンプレートコピー用-">仮説メモの書式テンプレート（コピー用） <a id="template"></a><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#仮説メモの書式テンプレートコピー用-" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>以下のブロックをコピーして <code>content/playground/&lt;任意のページ名>.md</code> に保存し、角括弧のプレースホルダを埋めて使ってください。frontmatter の <code>status</code> は <a href="#%E7%8A%B6%E6%85%8B%E3%83%A9%E3%83%99%E3%83%AB%E8%AA%9E%E5%BD%99" class="internal alias">状態ラベル</a> の語彙（<code>draft</code> / <code>exploring</code> / <code>promotion-candidate</code> / <code>promoted</code> / <code>discarded</code>）から選びます。</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="markdown" data-theme="github-light github-dark"><code data-language="markdown" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold;">---</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">title: &quot;[</span><span style="--shiki-light:#032F62;--shiki-light-text-decoration:underline;--shiki-dark:#DBEDFF;--shiki-dark-text-decoration:underline;">仮説の一行要約</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">]&quot;</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">date: [</span><span style="--shiki-light:#032F62;--shiki-light-text-decoration:underline;--shiki-dark:#DBEDFF;--shiki-dark-text-decoration:underline;">YYYY-MM-DD</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">]</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">status: draft</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">related: []      # 関連する Core 層 ID（E_ / A_ / MY_）を列挙（任意）</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">review_status: llm_verified</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">comments: false</span></span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold;">---</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold;"># [</span><span style="--shiki-light:#032F62;--shiki-light-text-decoration:underline;--shiki-dark:#DBEDFF;--shiki-dark-text-decoration:underline;">仮説の一行要約</span><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold;">]</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold;">## 仮説</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">[</span><span style="--shiki-light:#032F62;--shiki-light-text-decoration:underline;--shiki-dark:#DBEDFF;--shiki-dark-text-decoration:underline;">こうなっているのではないか、という自由な推測をそのまま書く。文体・構成は自由</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">]</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold;">## 材料（Core 層の事実）</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> [参照した確定済み事実: ID と一言。原文引用は出典確認用の最小限の抜粋に留める]</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold;">## 飛躍・根拠なし注記</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> [</span><span style="--shiki-light:#032F62;--shiki-light-text-decoration:underline;--shiki-dark:#DBEDFF;--shiki-dark-text-decoration:underline;">材料にない飛躍があれば明示する（ハルシネーション線引き用）</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">]</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold;">## 対話ログ（任意）</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">[LLM との対話の要点。全文を貼ってもよい]</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold;">## 昇格ドラフト（promotion-candidate になった時だけ）</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> 主張文（subject / predicate / object 形式への翻訳案）:</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> 想定典拠（章・話 / ¶ / p）:</span></span></code></pre></figure>
+<h3 id="使用上の注意">使用上の注意<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#使用上の注意" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>本文は自由記述です。Lint・スキーマ検証の対象外（<a href="#rules" class="internal alias">Playground 運用則</a>）</li>
+<li>状態が上がったら（<code>promotion-candidate</code> 以上）<a href="#promotion" class="internal alias">昇格プロトコル</a> の手順に従う</li>
+<li>原文（小説本文）の長文引用はしない（引用は本番運用と同じく最小限の抜粋のみ）</li>
+</ul>
+<h2 id="playground-の一覧">Playground の一覧<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#playground-の一覧" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li><a href="../playground/kouzetsu" class="internal" data-slug="playground/kouzetsu">kouzetsu</a> — 【口舌】の正体（原文 ¶ 照合で確定化した事実＋未検証の推察を併記・<code>promotion-candidate</code>）</li>
+<li><a href="../playground/rakulraal-seat" class="internal" data-slug="playground/rakulraal-seat">rakulraal-seat</a> — 第一位のラクルラールの座は誰が勝ち取ったのか（4 章ラスト・イツノとマラコーダの会話／原文 ¶ 照合・<code>promotion-candidate</code>）</li>
+<li><a href="../playground/relations-six" class="internal" data-slug="playground/relations-six">relations-six</a> — 六人の関係性マップ（ベアトリーチェの融合先と、アズーリア・レオ・青嶺瑠璃の繋がり／原文 ¶ 照合・<code>promotion-candidate</code>・Issue #31）</li>
+<li><a href="../playground/gogmagog" class="internal" data-slug="playground/gogmagog">gogmagog</a> — 5-15・5-26 の「ゴグマゴグ」（イギリス伝承の巨人 Gogmagog と聖書のゴグとマゴグの照合／原文 ¶・p 照合済み・<code>promotion-candidate</code>・Issue #63→#65）</li>
+</ul>
+<h2 id="来歴provenance-1">来歴（provenance）<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#来歴provenance-1" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>項目</th><th>値</th></tr></thead><tbody><tr><td>起案</td><td>Issue #19（Tally 編集提案フォーム経由・依頼者 allusionistwiki）</td></tr><tr><td>実装</td><td>llm-task（LLM 編集依頼）による作成</td></tr><tr><td>審査</td><td><code>review_status: llm_verified</code>（LLM 自己審査による暫定承認・人間レビュー未実施）</td></tr><tr><td>統合</td><td>2026-10-24: 昇格プロトコル（promotion）と仮説メモテンプレート（hypothesis-template）の 2 独立ページを本 index ページへ統合。入口を index に一元化し、他ページからの参照は <code>#promotion</code> / <code>#template</code> アンカーへ</td></tr></tbody></table></div>
+<blockquote class="callout warning" data-callout="warning">
+<div class="callout-title">
+                  <div class="callout-icon"></div>
+                  <div class="callout-title-inner"><p>CAUTION</p></div>
+                  
+                </div>
+<div class="callout-content">
+<p>Playground の記述を Core 層のページから wikilink で参照してはいけません（未検証の仮説が正規層の文脈に混入するため）。参照方向は常に <strong>Playground → Core</strong>（材料として読む方向）に限定します。</p>
+</div>
+</blockquote></article><div class="page-listing"><p>5件のページ</p><div><ul class="section-ul"><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-10-22T15:00:00.000Z">2026年10月23日</time></p><div class="desc"><h3><a href="../playground/aegirite-analogies" class="internal">アエタイトと霊鳥アキラ: 例えの鎖を深読みする（Playground）</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-10-17T15:00:00.000Z">2026年10月18日</time></p><div class="desc"><h3><a href="../playground/gogmagog" class="internal">5-15 の「ゴグマゴグ」——イギリス伝承の巨人か、聖書のゴグとマゴグか</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-10-16T15:00:00.000Z">2026年10月17日</time></p><div class="desc"><h3><a href="../playground/kouzetsu" class="internal">【口舌】の正体（原文 ¶ 照合で確定化した事実と、未検証の推察）</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-10-16T15:00:00.000Z">2026年10月17日</time></p><div class="desc"><h3><a href="../playground/rakulraal-seat" class="internal">第一位のラクルラールの座は誰が勝ち取ったのか（4 章ラスト・イツノとマラコーダの会話）</a></h3></div><ul class="tags"></ul></div></li><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-10-16T15:00:00.000Z">2026年10月17日</time></p><div class="desc"><h3><a href="../playground/relations-six" class="internal">六人の関係性マップ（ベアトリーチェの融合先と、アズーリア・レオ・青嶺瑠璃の繋がり）</a></h3></div><ul class="tags"></ul></div></li></ul></div></div></div><hr/><div class="page-footer"></div></div><div class="right sidebar"></div><footer class><p>作成 <a href="https://quartz.jzhao.xyz/">Quartz v4.5.2</a> © 2026</p><ul><li><a href="https://github.com/allusionistwiki/AllusionistWiki_obsidian">Obsidian vault（ソース）</a></li><li><a href="https://github.com/allusionistwiki/AllusionistWiki">Quartz プロジェクト</a></li></ul></footer></div></div></body><script type="application/javascript">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module">function f(i,e){if(!i)return;function r(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function t(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}i?.addEventListener("click",r),window.addCleanup(()=>i?.removeEventListener("click",r)),document.addEventListener("keydown",t),window.addCleanup(()=>document.removeEventListener("keydown",t))}function y(i){for(;i.firstChild;)i.removeChild(i.firstChild)}var h=class{constructor(e,r){this.container=e;this.content=r;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),r=this.onMouseMove.bind(this),t=this.onMouseUp.bind(this),o=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",r),document.addEventListener("mouseup",t),window.addEventListener("resize",o),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",r),()=>document.removeEventListener("mouseup",t),()=>window.removeEventListener("resize",o))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let r=this.createButton("+",()=>this.zoom(.1)),t=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(t),e.appendChild(o),e.appendChild(r),this.container.appendChild(e)}createButton(e,r){let t=document.createElement("button");return t.textContent=e,t.className="mermaid-control-button",t.addEventListener("click",r),window.addCleanup(()=>t.removeEventListener("click",r)),t}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}zoom(e){let r=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),t=this.content.getBoundingClientRect(),o=t.width/2,n=t.height/2,c=r-this.scale;this.currentPan.x-=o*c,this.currentPan.y-=n*c,this.scale=r,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){this.scale=1;let e=this.content.querySelector("svg");this.currentPan={x:e.getBoundingClientRect().width/2,y:e.getBoundingClientRect().height/2},this.updateTransform()}},C=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],E;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;E||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let r=E.default,t=new WeakMap;for(let n of e)t.set(n,n.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let a=t.get(s);a&&(s.innerHTML=a)}let n=C.reduce((s,a)=>(s[a]=window.getComputedStyle(document.documentElement).getPropertyValue(a),s),{}),c=document.documentElement.getAttribute("saved-theme")==="dark";r.initialize({startOnLoad:!1,securityLevel:"loose",theme:c?"dark":"base",themeVariables:{fontFamily:n["--codeFont"],primaryColor:n["--light"],primaryTextColor:n["--darkgray"],primaryBorderColor:n["--tertiary"],lineColor:n["--darkgray"],secondaryColor:n["--secondary"],tertiaryColor:n["--tertiary"],clusterBkg:n["--light"],edgeLabelBackground:n["--highlight"]}}),await r.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let n=0;n<e.length;n++){let v=function(){let g=l.querySelector("#mermaid-space"),m=l.querySelector(".mermaid-content");if(!m)return;y(m);let w=c.querySelector("svg").cloneNode(!0);m.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new h(g,m)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},c=e[n],s=c.parentElement,a=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(a),L=a.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),f(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="../postscript.js?v=dev" type="module"></script></html>
