@@ -72,11 +72,8 @@ jobs:
         if: steps.flag.outputs.deploy == 'true'
         run: |
           git clone --depth 1 https://github.com/allusionistwiki/AllusionistLLMWiki2_Obsidian.git /tmp/l1
-          python3 scripts/gen_l1_redirects.py /tmp/l1/wiki
-          rm -rf public/l1
-          git -C /tmp/l1 archive HEAD wiki | tar -x -C /tmp/l1
-          (cd /tmp/l1 && find wiki -name '*.html') | sed 's#^wiki/#public/l1/#' | while read f; do mkdir -p "$(dirname "$f")"; touch "$f"; done
-          find public/l1 -type f | wc -l
+          python3 scripts/gen_l1_redirects.py /tmp/l1/wiki/l1
+          find public/l1 -name '*.html' | wc -l
 
       # 増分ビルド用キャッシュ（transpile ワーカー等）。restore 出来れば再トランスパイルを省略
       - name: Restore Quartz build cache
@@ -156,3 +153,5 @@ jobs:
         with:
           path: .deploy-marker
           key: deployed-v5-${{ needs.build.outputs.vault_sha }}-${{ github.sha }}
+
+<!-- redeploy trigger: public/l1 meta refresh pages (f9eaecb4) -->
