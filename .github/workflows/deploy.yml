@@ -73,7 +73,8 @@ jobs:
         run: |
           git clone --depth 1 https://github.com/allusionistwiki/AllusionistLLMWiki2_Obsidian.git /tmp/l1
           python3 scripts/gen_l1_redirects.py /tmp/l1/wiki/l1
-          git ls-files public/l1 | while read f; do touch "$f"; done
+          # NUL 区切り（quotepath で quote された日本語パスを touch に渡さない）
+          git -c core.quotepath=false ls-files -z public/l1 | xargs -0 -r touch
           find public/l1 -name '*.html' | wc -l
 
       # 増分ビルド用キャッシュ（transpile ワーカー等）。restore 出来れば再トランスパイルを省略
