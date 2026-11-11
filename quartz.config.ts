@@ -87,7 +87,7 @@ const config: QuartzConfig = {
         // v1 の /l1/* は転送スタブ 15,980 ページ。contentIndex に載ると
         // Explorer（サイドバー）・グラフ・検索に無理やり流入するため層ごと除外
         // （/AllusionistWiki/l1/* の URL 自体はスタブなのでそのまま有効）
-        excludePrefixes: ["redirects/"],
+        excludePrefixes: [],
       }),
       Plugin.RecentUpdatesPage({ limit: 1000 }),
       Plugin.Assets(),

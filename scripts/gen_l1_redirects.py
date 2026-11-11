@@ -1,22 +1,28 @@
 #!/usr/bin/env python3
-"""gen_l1_redirects.py — 旧 /AllusionistWiki/l1/* URL を新 Wiki2 サイトへ転送するスタブを生成する。
+"""gen_l1_redirects.py — 旧 /AllusionistWiki/l1/* URL を新 Wiki2 サイトへ転送するページを生成する。
 
-CI（deploy.yml）で /tmp/l1（L1 vault）を clone した後に実行する。
-vault の wiki/**/*.md に対応する content/l1/<relpath> を
-meta refresh + 手動リンク付きスタブ md で生成する（旧 URL の外部被リンク保全）。
+argv1 = L1 内容ルート（v2 vault の `<clone>/wiki/l1`。vault ルートを渡すと prefix 二重化）。
+argv2 = 出力先（既定 public/l1）。出力は `public/l1/<rel>.html` の meta refresh 実体で、
+git 追跡により全デプロイで旧 URL を保持する（l1-redirect-stubs.yml が定期再生成・コミット）。
 """
 import sys
 from pathlib import Path
 
-VAULT = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("/tmp/l1/wiki")
-OUT = Path("content/l1")
+VAULT = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("/tmp/l1/wiki/l1")
+OUT = Path(sys.argv[2]) if len(sys.argv) > 2 else Path("public/l1")
 BASE = "https://allusionistwiki.github.io/AllusionistWiki2/L1/"
 
-def slugify(s: str) -> str:
+def slugify(s: str):
     s = s.replace("&", "and")
     import re
     s = re.sub(r"\s+", "-", s)
     return s
+
+def page(target: str) -> str:
+    return ('<!DOCTYPE html><meta http-equiv="Content-Type" content="text/html; charset=utf-8">\n'
+            f'<meta http-equiv="refresh" content="0; url={target}">\n'
+            "<title>移設済み</title>\n"
+            f'<p>このページは <a href="{target}">アリュージョニスト Wiki 2</a> へ移設しました。</p>\n')
 
 def main():
     pages = [p for p in VAULT.rglob("*.md")]
@@ -28,24 +34,13 @@ def main():
             target = BASE + slugify(target_rel[:-6]) + "/"
         else:
             target = BASE + slugify(target_rel)
-        out = OUT / (str(rel) + ".md")
+        out = OUT / (str(rel).replace("\\", "/") + ".html")
         out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(
-            "---\ntitle: 移設済み（AllusionistWiki2 へ）\n---\n\n"
-            f'<meta http-equiv="refresh" content="0; url={target}">\n\n'
-            f"この L1 ページは **アリュージョニスト Wiki 2** へ移設しました。"
-            f"移動しない場合は [こちら]({target}) を開いてください。\n",
-            encoding="utf-8",
-        )
+        out.write_text(page(target), encoding="utf-8")
         n += 1
     OUT.mkdir(parents=True, exist_ok=True)
-    (OUT / "index.md").write_text(
-        "---\ntitle: L1 層（移設済み）\n---\n\n"
-        f'<meta http-equiv="refresh" content="0; url={BASE}">\n\n'
-        f"この L1 層は [アリュージョニスト Wiki 2]({BASE}) へ移設しました。\n",
-        encoding="utf-8",
-    )
-    print(f"l1 redirect stubs: {n}")
+    (OUT / "index.html").write_text(page(BASE), encoding="utf-8")
+    print(f"l1 redirect pages: {n}")
 
 if __name__ == "__main__":
     main()
