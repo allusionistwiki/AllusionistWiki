@@ -75,7 +75,11 @@ jobs:
           python3 scripts/gen_l1_redirects.py /tmp/l1/wiki/l1
           # NUL 区切り（quotepath で quote された日本語パスを touch に渡さない）
           git -c core.quotepath=false ls-files -z public/l1 | xargs -0 -r touch
-          find public/l1 -name '*.html' | wc -l
+          # Quartz 側で public/ が gitignore 対象のため、git 追跡の public/l1 を
+          # ビルドが消す → build の git rm -rf 前に退避し build 後に復元する
+          # （public/ が gitignore でない環境では -e のまま両方成功）。
+          mv public/l1 public-l1-stubs
+          find public-l1-stubs -name '*.html' | wc -l
 
       # 増分ビルド用キャッシュ（transpile ワーカー等）。restore 出来れば再トランスパイルを省略
       - name: Restore Quartz build cache
@@ -112,7 +116,9 @@ jobs:
 
       - name: Build Quartz
         if: steps.flag.outputs.deploy == 'true'
-        run: npx quartz build
+        run: |
+          npx quartz build
+          mkdir -p public && cp -r public-l1-stubs public/l1
 
       - name: Save Quartz build cache
         if: steps.flag.outputs.deploy == 'true'
