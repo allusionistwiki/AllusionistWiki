@@ -157,3 +157,4 @@ jobs:
           key: deployed-v5-${{ needs.build.outputs.vault_sha }}-${{ github.sha }}
 
 # redeploy trigger: public/l1 meta refresh pages (f9eaecb4)
+# redeploy trigger: 全 public/l1 スタブ（15,981 件）の Pages 反映確認 # 202611111055
