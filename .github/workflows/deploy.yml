@@ -155,4 +155,4 @@ jobs:
           path: .deploy-marker
           key: deployed-v5-${{ needs.build.outputs.vault_sha }}-${{ github.sha }}
 
-<!-- redeploy trigger: public/l1 meta refresh pages (f9eaecb4) -->
+# redeploy trigger: public/l1 meta refresh pages (f9eaecb4)
